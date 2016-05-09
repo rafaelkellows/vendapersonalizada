@@ -1,7 +1,6 @@
 <form class="base">
   <fieldset>
     <legend>Base existe ou nova</legend>
-
     <div class="w-410">
       <div class="btns">
         <a class="btn dark left" data-value="1" href="javascript:void(0);">Base Existente</a>
@@ -80,8 +79,43 @@
            </div>
          </li>
        </ul>
+       <div class="hide">
+          <div class="w-410">
+            <div class="search">
+               <input id="findProduct" type="text" placeholder="Digite o código do artigo similar:" value="" />
+               <span><input type="button" value="Search Product" /></span>
+            </div>
+          </div>
+          <p class="title">Qual alteração deseja fazer?</p>
+          <div class="w-220">
+            <label>Largura</label>
+            <input id="width" type="text" placeholder="cm" value="" />
+          </div>
+          <div class="w-220">
+            <label>Grammage</label>
+            <input id="grammageA" placeholder="g/m2" type="text" value="" />
+            <input id="grammageB" placeholder="g/m" type="text" value="" />
+          </div>
+          <div class="w-220">
+            <label>Rendimento</label>
+            <input id="yieldA" placeholder="m" type="text" value="" />
+            <input id="yieldB" placeholder="Kg" type="text" value="" />
+          </div>
+          <div class="w-680">
+            <label>Composição</label>
+            <input id="composition" type="text" value="" />
+          </div>
+          <div class="w-680">
+            <label>Acabamento</label>
+            <input id="finishing" type="text" value="" />
+          </div>
+          <div class="w-680">
+            <label>Descrição</label>
+            <textarea></textarea>
+          </div>
+        </div>
     </div>
-
+    <span class="little-break">&nbsp;</span>
     <a class="btn next right" href="javascript:void(0);">Próximo<span><i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
     <a class="btn prev right" href="javascript:void(0);"><span><i class="fa fa-chevron-left" aria-hidden="true"></i><i class="fa fa-chevron-left" aria-hidden="true"></i></span>Anterior</a>
   </fieldset>

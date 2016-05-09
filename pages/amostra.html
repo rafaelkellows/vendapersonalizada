@@ -1,0 +1,119 @@
+<form class="amostra">
+  <fieldset>
+    <legend>Amostra</legend>
+
+    <p class="title l-bottom">Solicitar Amostra - Tipo:</p>
+  
+    <div class="content">
+      <ul class="block">
+        <li>
+         <div class="checkbox">
+           <input id="type-item-1" type="checkbox" name="type" value="type-item-1" />
+           <label for="type-item-1">Roupa confeccionada</label>
+         </div>
+        </li>
+        <li>
+         <div class="checkbox">
+           <input id="type-item-2" type="checkbox" name="type" value="type-item-2" />
+           <label for="type-item-2">Catálogo/Foto</label>
+           <em>Anexar imagem</em>
+         </div>
+        </li>
+        <li>
+         <div class="checkbox">
+           <input id="type-item-3" type="checkbox" name="type" value="type-item-3" />
+           <label for="type-item-3">Amostra de tecido</label>
+         </div>
+        </li>
+        <li>
+         <div class="checkbox">
+           <input id="type-item-4" type="checkbox" name="type" value="type-item-4" />
+           <label for="type-item-4">Amostra de Estampa</label>
+           <em>Desenho Estúdio</em>
+         </div>
+        </li>
+      </ul>
+
+      <div>
+        <ul class="inline">
+          <li>
+           <div class="radio">
+             <input id="pantone" type="radio" name="info" value="Pantone" />
+             <label for="pantone">Pantone</label>
+           </div>
+          </li>
+          <li>
+           <div class="radio">
+             <input id="txp" type="radio" name="info" value="TXP" />
+             <label for="txp">TXP</label>
+             <em>(Papel)</em>
+           </div>
+          </li>
+          <li>
+           <div class="radio">
+             <input id="tc" type="radio" name="info" value="TC" />
+             <label for="tc">TC</label>
+             <em>(Tecido)</em>
+           </div>
+          </li>
+          <li>
+            <div class="w-300">
+              <label for="pantoneCode">Código Pantone</label>
+              <input id="pantoneCode" name="pantoneCode" type="text" value="" />
+            </div>
+          </li>
+          <li>
+            <div class="w-680">
+              <label for="others">Outros especificar</label>
+              <textarea id="others" name="others"></textarea>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <p class="title">É necessária a devolução?</p>
+      <ul class="inline">
+        <li>
+         <div class="radio">
+           <input id="giveBackYes" type="radio" name="giveBack" value="Yes" />
+           <label for="giveBackYes">Sim</label>
+         </div>
+        </li>
+        <li>
+         <div class="radio">
+           <input id="giveBackNo" type="radio" name="giveBack" value="No" />
+           <label for="giveBackNo">Não</label>
+         </div>
+        </li>
+      </ul>
+
+      <p class="title">Pode ser cortada?</p>
+      <ul class="inline">
+        <li>
+         <div class="radio">
+           <input id="couldBeCutYes" type="radio" name="couldBeCut" value="Yes" />
+           <label for="couldBeCutYes">Sim</label>
+         </div>
+        </li>
+        <li>
+         <div class="radio">
+           <input id="couldBeCutNo" type="radio" name="couldBeCut" value="No" />
+           <label for="couldBeCutNo">Não</label>
+         </div>
+        </li>
+      </ul>
+
+      <p class="title">Identificação da amostra <em>(identificar a amostra com o número gerado)</em></p>
+      <a class="btn" href="javascript:void(0)">Gerar código da amostra</a>
+      <ul class="block codes">
+        <li><a href="javascript:void(0)">VP 001/16 – 01</a></li>
+        <li><a href="javascript:void(0)">VP 001/16 – 02</a></li>
+        <li><a href="javascript:void(0)">VP 001/16 – 03</a></li>
+        <li><a href="javascript:void(0)">VP 001/16 – 04</a></li>
+      <ul>
+    </div>
+
+    <a class="btn next right" href="javascript:void(0);">Próximo<span><i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+    <a class="btn prev right" href="javascript:void(0);"><span><i class="fa fa-chevron-left" aria-hidden="true"></i><i class="fa fa-chevron-left" aria-hidden="true"></i></span>Anterior</a>
+  </fieldset>
+</form>

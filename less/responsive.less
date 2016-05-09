@@ -50,8 +50,8 @@
     }
   }
   @media (max-width: 768px) {
-    main{
-      form{
+    main{ 
+      form.dados{
         div[class^='w-']{
           width: calc(~"50% - 8px") !important; 
         }
@@ -84,6 +84,28 @@
           }
         }
       }
+      form.base, form.amostra{
+        div div[class^='w-']{
+          width: 100% !important;
+        }
+        .newBase{
+          > div:not(.l-bottom){ 
+            width:100%;
+          }
+        }
+      }
+      form.amostra{
+        .content div .inline{
+          padding: 10px;
+          li{
+            display: block;
+            padding: 5px 0;
+            .w-300{
+              margin: 0;
+            }
+          }
+        }
+      }
     }
   }
   @media (max-width: 425px) {
@@ -107,13 +129,37 @@
           }
         }
       }
-      form{
+      form:not(.base){
         div[class^='w-']{
           width: 100% !important; 
         }
         .l-both, .msg{
           padding-left: 0;
           padding-right: 0;
+        }
+      }
+      form.base{
+        div[class^='w-']{
+          width: 100% !important; 
+        }
+        ul{ 
+          li{
+            display: block;
+            padding-bottom: 10px;
+          }
+        }
+        .newBase{
+          > div:not(.l-bottom){
+            width:100%;
+          }
+        }
+      }
+      form.amostra{
+        .radio, .checkbox{
+          >em{
+            display: block;
+            padding-left: 50px;
+          }
         }
       }
     }

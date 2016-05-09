@@ -114,7 +114,6 @@ main form fieldset legend {
 }
 .show,
 main nav > ul > li > ul li.active ul,
-main nav > ul > li:hover:not(.disabled) > ul,
 main nav > ul > li.active > ul {
   display: block !important;
   opacity: 1;
@@ -136,13 +135,19 @@ main nav > p {
 }
 .title {
   line-height: 1.125em;
-  font-size: 1.125em;
   text-align: left;
   color: #535659;
+  font-size: 1.125em;
   font-weight: 700;
 }
+.title em {
+  color: #535659;
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
 .form-fields,
-main form fieldset input[type=text] {
+main form fieldset input[type=text],
+main form fieldset textarea {
   border: 1px solid #cad0d6;
 }
 .l-both {
@@ -155,8 +160,8 @@ main form fieldset input[type=text] {
 .l-bottom {
   border-bottom: 2px solid #ced4d9;
   display: block;
-  padding: 0.625em;
-  margin: 0.625em 0;
+  padding: 10px;
+  margin: 10px 0;
 }
 .msg {
   background: #f2f3f5;
@@ -181,6 +186,14 @@ main form fieldset input[type=text] {
   display: block;
   width: 100%;
   height: 14px;
+}
+ul.inline li {
+  display: inline-block;
+  vertical-align: middle;
+}
+ul.block li {
+  display: block;
+  padding-bottom: 10px;
 }
 /* Mixins and Functions */
 meuteste {
@@ -379,25 +392,6 @@ main nav > ul > li:hover:not(.disabled) a * {
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
 }
-main nav > ul > li:hover:not(.disabled) > ul {
-  border: 1px solid #ced4d9;
-  position: absolute;
-  left: 1px;
-  width: 100%;
-  margin: 11px -1px;
-}
-main nav > ul > li:hover:not(.disabled) > ul:before {
-  content: "";
-  height: 0.62em;
-  width: calc(100% + 2px);
-  background: #0056a5;
-  margin: -11px -1px 0;
-}
-main nav > ul > li:hover:not(.disabled) > ul > li {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: -4px;
-}
 main nav > ul > li.active {
   background: #0056a5;
   border-color: #0056a5;
@@ -439,6 +433,8 @@ main form fieldset div[class^='w-'] {
   display: inline-block;
   vertical-align: middle;
   margin: 6px 6px 0 0;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
 }
 main form fieldset div[class^='w-'] label {
   text-align: left;
@@ -507,6 +503,18 @@ main form fieldset a.btn.next span {
 main form fieldset a.btn.prev span {
   padding: 0 10px 0 0;
 }
+main form fieldset a:not(.btn) {
+  color: #004fa5;
+  font-size: 0.875em;
+  line-height: 0.875em;
+  display: initial;
+}
+main form fieldset a:not(.btn):hover {
+  text-decoration: underline;
+}
+main form fieldset a:not(.btn):visited {
+  color: #ced4d9;
+}
 main form fieldset .radio label,
 main form fieldset .checkbox label {
   display: inline-block !important;
@@ -514,10 +522,18 @@ main form fieldset .checkbox label {
   position: relative;
   padding-left: 30px;
   margin-right: 25px;
+  vertical-align: middle;
   text-align: left;
   color: #535659;
   font-size: 0.93em;
   font-weight: 700;
+}
+main form fieldset .radio > em,
+main form fieldset .checkbox > em {
+  font-size: 0.8125em;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 20px 0 -20px;
 }
 main form fieldset .radio label:before,
 main form fieldset .checkbox label:before {
@@ -564,9 +580,20 @@ main form fieldset input[type=text] {
   color: #535659;
   font-size: 0.93em;
   font-weight: 400;
-  padding: 0.673em;
-  margin-top: 0.375em;
+  padding: 10px;
+  margin: 6px 0 5px;
   width: calc(100% - 23px);
+}
+main form fieldset textarea {
+  text-align: left;
+  color: #535659;
+  font-size: 0.93em;
+  font-weight: 400;
+  padding: 10px;
+  margin: 6px 0 5px;
+  width: calc(100% - 23px);
+  min-width: calc(100% - 23px);
+  max-width: calc(100% - 23px);
 }
 main form fieldset input[type=button] {
   background: #287bca;
@@ -591,11 +618,8 @@ main form.segmentacao fieldset > .title {
   padding-bottom: 15px;
 }
 main form.segmentacao fieldset > .radio em {
-  font-size: 0.8125em;
-  margin-left: -15px;
+  margin: 0 20px 0 -20px;
   width: 48%;
-  display: inline-block;
-  vertical-align: middle;
 }
 main form.segmentacao fieldset .l-both {
   padding: 0;
@@ -720,6 +744,12 @@ main form.base div.w-410 > em {
 main form.base fieldset > ul {
   padding: 0 0.625em;
 }
+main form.base fieldset .radio label {
+  margin-right: 40px;
+}
+main form.base ul {
+  padding: 0 10px;
+}
 main form.base ul li {
   display: inline-block;
   vertical-align: middle;
@@ -731,9 +761,47 @@ main form.base ul li p {
   width: auto;
   display: block;
 }
+main form.base .l-bottom {
+  padding: 10px 0px;
+}
 main form.base .l-bottom div.radio label:before {
   top: 7px;
   bottom: initial;
+}
+main form.base .newBase > div:not(.l-bottom) {
+  margin: 0 auto;
+  width: 685px;
+}
+main form.base .newBase > div:not(.l-bottom) .w-410 {
+  margin: 0 auto 20px;
+  display: block;
+}
+main form.base .newBase > div:not(.l-bottom) .w-220 {
+  vertical-align: top;
+}
+main form.base .newBase > div:not(.l-bottom) .w-680 textarea {
+  height: 80px;
+  min-height: 80px;
+  max-height: 80px;
+}
+main form.amostra .content {
+  padding: 10px;
+}
+main form.amostra .content p.title {
+  padding: 20px 0 8px;
+}
+main form.amostra .content ul li .w-300 {
+  margin: -10px 0 0 12px;
+}
+main form.amostra .content ul li textarea {
+  height: 18px;
+  min-height: 18px;
+  max-height: 18px;
+}
+main form.amostra .content a.btn {
+  display: inline-block;
+  margin-left: 0;
+  margin-top: 0;
 }
 /*******************************
 
@@ -790,7 +858,7 @@ main form.base .l-bottom div.radio label:before {
   }
 }
 @media screen and (max-width: 768px) {
-  main form div[class^='w-'] {
+  main form.dados div[class^='w-'] {
     width: calc(50% - 8px) !important;
   }
   main form.segmentacao fieldset .l-both ul li p {
@@ -811,6 +879,24 @@ main form.base .l-bottom div.radio label:before {
     width: auto !important;
     padding-bottom: 9.5px;
   }
+  main form.base div div[class^='w-'],
+  main form.amostra div div[class^='w-'] {
+    width: 100% !important;
+  }
+  main form.base .newBase > div:not(.l-bottom),
+  main form.amostra .newBase > div:not(.l-bottom) {
+    width: 100%;
+  }
+  main form.amostra .content div .inline {
+    padding: 10px;
+  }
+  main form.amostra .content div .inline li {
+    display: block;
+    padding: 5px 0;
+  }
+  main form.amostra .content div .inline li .w-300 {
+    margin: 0;
+  }
 }
 @media screen and (max-width: 425px) {
   main nav > ul > li {
@@ -828,12 +914,27 @@ main form.base .l-bottom div.radio label:before {
   main nav > ul > li > ul > li:after {
     display: none;
   }
-  main form div[class^='w-'] {
+  main form:not(.base) div[class^='w-'] {
     width: 100% !important;
   }
-  main form .l-both,
-  main form .msg {
+  main form:not(.base) .l-both,
+  main form:not(.base) .msg {
     padding-left: 0;
     padding-right: 0;
+  }
+  main form.base div[class^='w-'] {
+    width: 100% !important;
+  }
+  main form.base ul li {
+    display: block;
+    padding-bottom: 10px;
+  }
+  main form.base .newBase > div:not(.l-bottom) {
+    width: 100%;
+  }
+  main form.amostra .radio > em,
+  main form.amostra .checkbox > em {
+    display: block;
+    padding-left: 50px;
   }
 }

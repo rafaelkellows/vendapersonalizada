@@ -8,11 +8,8 @@ main{
 	      >.title{ padding-bottom: 15px; }
 	      >.radio{
 	        em{
-	          .px-to-em(13);
-	          font-size: @px-to-em;
-	          margin-left:-15px;
+	          margin:0 20px 0 -20px;
 	          width: 48%;
-	          .d-inline(middle);
 	        }
 	      }
 	      .l-both{
@@ -142,8 +139,12 @@ main{
 			>ul{
 				padding: 0 0.625em;
 			}
+			.radio{
+				 label{ margin-right:40px; }
+			}
 		}
 		ul{
+			padding: 0 10px;
 			li{
 				.d-inline(middle);
 				p{
@@ -157,11 +158,58 @@ main{
 			}
 		}
 		.l-bottom{
+			padding: 10px 0px;
 			div.radio{
 				label:before{
 				  top:7px;
 				  bottom: initial;
 				}
+			}
+		}
+		.newBase{
+			>div:not(.l-bottom){
+				margin: 0 auto;
+				width: 685px;
+				.w-410{
+					margin: 0 auto 20px;
+					display: block;
+				}
+				.w-220{
+					vertical-align: top;
+				}
+				.w-680{
+					textarea{
+						height: 80px;
+						min-height: 80px;
+						max-height: 80px;
+					}
+				}
+			}
+		}
+	}
+	form.amostra{
+		.content{
+			padding:10px;
+			p.title{
+				padding: 20px 0 8px;
+			}
+			ul li{
+				.w-300{
+					margin: -10px 0 0 12px;
+				}
+				textarea{
+					height: 18px;
+					min-height: 18px;
+					max-height: 18px;
+				}
+			}
+			a.btn{
+				display: inline-block;
+				margin-left:0;
+				margin-top:0;
+			}
+			ul.codes{
+
 			}
 		}
 	}

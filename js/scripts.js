@@ -3,7 +3,7 @@ $(function(){
 		var vendapersonalizada = {
 	        init: function() {
 	            this.menu();
-	            //this.load('segmentacao'); 
+	            this.load('amostra'); 
 	        },
 	        menu: function() {
 	        	//Mobile
@@ -33,7 +33,7 @@ $(function(){
 	        },
 	        load: function(page){
 	        	$.ajax({
-        			url: page+".html",
+        			url: "pages/"+page+".html",
 	        		beforeSend: function(){
 						$('body main section').html('');
 	        		},
@@ -94,18 +94,28 @@ $(function(){
 	        base: function(){
 	        	vendapersonalizada.navButtons(0);
 	        	$('body main section form.base > fieldset .btns a').click(function() {
-	        		var _t = $(this).closest('form');
+	        		$(this).parent().find('a').removeClass('active');
+	        		$(this).addClass('active');
+	        		var _f = $(this).closest('form');
 	        		var _v = $(this).attr('data-value');
-	        		_t.find('.base').addClass('hide');
+	        		_f.find('.base').addClass('hide');
 	        		switch(_v){
 	        			case '1':
-	        				_t.find('div.existBase').removeClass('hide');
+	        				_f.find('div.existBase').removeClass('hide');
 	        				break;
 	        			case '0':
-	        				_t.find('div.newBase').removeClass('hide');
+	        				_f.find('div.newBase').removeClass('hide');
+	        				vendapersonalizada.baseNova();
 	        				break;
 	        		}
 	        		vendapersonalizada.navButtons(1);
+	        	});
+	        },
+	        baseNova: function(){
+	        	$('body main section form.base > fieldset .newBase > ul li input[type=radio]').click(function() {
+	        		$(this).closest('ul').hide('fast',function(){
+	        			$(this).next('div').removeClass('hide');
+	        		})
 	        	});
 	        }
     	}

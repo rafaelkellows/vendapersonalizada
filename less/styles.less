@@ -47,16 +47,27 @@ body{
 .right{ float: right; }
 .t-right{ text-align: right; }
 .t-center{ text-align: center; }
-.title{ .px-to-em(18); line-height:@px-to-em; font-size:@px-to-em; text-align: left; color:#535659; font-weight: 700;}
+.title{ 
+  .px-to-em(18); 
+  line-height:@px-to-em; 
+  .txt-sets(left,#535659,1.125,700); 
+  em{
+    color:#535659;
+    font-size: 0.8125rem;
+    font-weight: 400;
+  }
+}
 .form-fields{ border:1px solid #cad0d6; }
 .l-both{ border-top:2px solid @dark-gray; border-bottom:2px solid @dark-gray; display: block; padding:0.625em; margin: 0.625em 0; }
-.l-bottom{ border-bottom:2px solid @dark-gray; display: block; padding:0.625em; margin: 0.625em 0; }
+.l-bottom{ border-bottom:2px solid @dark-gray; display: block; padding:10px; margin:10px 0; }
 .msg{ 
   background: @medium-gray; margin: -0.68em 0 0.625em; display: block; padding: 0.75em;
   .error{ .txt-sets(right,#d12527,0.8125,400); }  
   .success{ .txt-sets(right,#287bca,0.8125,400); }  
 }
 .little-break{ float: none; display: block; width: 100%; height: 14px; }
+ul.inline li{.d-inline(middle);}
+ul.block li{display: block; padding-bottom: 10px;}
 
 /* Mixins and Functions */
 .lnk-active-hover(){
@@ -263,7 +274,12 @@ main{
           }
         }
         &:hover:not(.disabled){
-          .lnk-active-hover();
+          background: @medium-blue;
+          border-color: @medium-blue;
+          a *{
+            color: #fff;
+            .transit(0.3s); 
+          }
         }
         &.active{
           .lnk-active-hover();
@@ -288,7 +304,8 @@ main{
       }
       div[class^='w-']{
         .d-inline(middle);
-        margin:6px 6px 0 0; 
+        margin:6px 6px 0 0;
+        .transit(0.3s);
         label{
           .txt-sets(left,#535659,0.93,700);
           display: block;
@@ -333,7 +350,6 @@ main{
             border: 1px solid @medium-blue;
           }
         }
-
       }
       a.btn.next{
         span{
@@ -345,13 +361,23 @@ main{
           padding: 0 10px 0 0;
         }
       }
+      a:not(.btn){ color: @dark-blue; .px-to-em(14); font-size:@px-to-em; line-height:@px-to-em; display: initial; }
+      a:not(.btn):hover{ text-decoration: underline; }
+      a:not(.btn):visited{ color: @dark-gray; }
       .radio label, .checkbox label {
         display: inline-block !important;
         cursor: pointer;
         position: relative;
         padding-left: 30px;
         margin-right: 25px;
+        vertical-align: middle;
         .txt-sets(left,#535659,0.93,700);
+      }
+      .radio > em, .checkbox > em {
+        .px-to-em(13);
+        font-size: @px-to-em;
+        .d-inline(middle);
+        margin:0 20px 0 -20px;
       }
       .radio label:before, .checkbox label:before {
         content: "";
@@ -394,9 +420,18 @@ main{
       input[type=text]{
         &:extend(.form-fields);
         .txt-sets(left,#535659,0.93,400);
-        padding:0.673em;
-        margin-top: 0.375em;
+        padding:10px;
+        margin: 6px 0 5px;
         width: calc(~"100% - 23px");
+      }
+      textarea{
+        &:extend(.form-fields);
+        .txt-sets(left,#535659,0.93,400);
+        padding:10px;
+        margin: 6px 0 5px;
+        width: calc(~"100% - 23px");
+        min-width: calc(~"100% - 23px");
+        max-width: calc(~"100% - 23px");
       }
       input[type=button]{
         background: @light-blue;
