@@ -196,6 +196,7 @@ main{
 			ul li{
 				.w-300{
 					margin: -10px 0 0 12px;
+					a{ margin: -36px; }
 				}
 				textarea{
 					height: 18px;
@@ -209,7 +210,14 @@ main{
 				margin-top:0;
 			}
 			ul.codes{
-
+				li{
+					color: @dark-blue; .px-to-em(14); font-size:@px-to-em; line-height:@px-to-em;
+					padding-bottom: 5px;
+					a.ico-circle{
+						margin-left:10px;
+					}
+					p{ .d-inline(middle); }
+				}
 			}
 		}
 	}

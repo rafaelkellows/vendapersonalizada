@@ -364,6 +364,33 @@ main{
       a:not(.btn){ color: @dark-blue; .px-to-em(14); font-size:@px-to-em; line-height:@px-to-em; display: initial; }
       a:not(.btn):hover{ text-decoration: underline; }
       a:not(.btn):visited{ color: @dark-gray; }
+      a.ico-circle{
+        .d-inline(middle);
+        text-align: center;
+        width: 19px;
+        height: 19px;
+        background: @light-blue;
+        border-radius: 10px;
+        border: 1px solid @light-blue;
+        .transit(0.3s);
+        i{
+          color: #fff;
+          vertical-align: middle;
+        }
+        &:after{
+          content: '';
+          height: 21px;
+          width: 0;
+          .d-inline(middle);
+        }
+        &:hover{
+          background: @medium-gray;
+          border: 1px solid @super-dark-gray;
+          i{
+            color:@light-blue;
+          }
+        }
+      }
       .radio label, .checkbox label {
         display: inline-block !important;
         cursor: pointer;

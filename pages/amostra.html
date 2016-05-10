@@ -16,6 +16,7 @@
          <div class="checkbox">
            <input id="type-item-2" type="checkbox" name="type" value="type-item-2" />
            <label for="type-item-2">Catálogo/Foto</label>
+           <input class="hide" id="photoFile" type="file" value="" />
            <em>Anexar imagem</em>
          </div>
         </li>
@@ -60,6 +61,7 @@
             <div class="w-300">
               <label for="pantoneCode">Código Pantone</label>
               <input id="pantoneCode" name="pantoneCode" type="text" value="" />
+              <a class="ico-circle right" href="javascript:void(0);"><i class="fa fa-plus" aria-hidden="true"></i></a>
             </div>
           </li>
           <li>
@@ -106,10 +108,10 @@
       <p class="title">Identificação da amostra <em>(identificar a amostra com o número gerado)</em></p>
       <a class="btn" href="javascript:void(0)">Gerar código da amostra</a>
       <ul class="block codes">
-        <li><a href="javascript:void(0)">VP 001/16 – 01</a></li>
-        <li><a href="javascript:void(0)">VP 001/16 – 02</a></li>
-        <li><a href="javascript:void(0)">VP 001/16 – 03</a></li>
-        <li><a href="javascript:void(0)">VP 001/16 – 04</a></li>
+        <li><p>VP 001/16 – 01</p><input name="pantoneCode" type="hidden" value="VP 001/16 – 01" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
+        <li><p>VP 001/16 – 02</p><input name="pantoneCode" type="hidden" value="VP 001/16 – 02" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
+        <li><p>VP 001/16 – 03</p><input name="pantoneCode" type="hidden" value="VP 001/16 – 03" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
+        <li><p>VP 001/16 – 04</p><input name="pantoneCode" type="hidden" value="VP 001/16 – 04" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
       <ul>
     </div>
 

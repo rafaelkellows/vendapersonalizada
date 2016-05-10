@@ -3,7 +3,7 @@ $(function(){
 		var vendapersonalizada = {
 	        init: function() {
 	            this.menu();
-	            this.load('amostra'); 
+	            //this.load('amostra'); 
 	        },
 	        menu: function() {
 	        	//Mobile
@@ -48,6 +48,9 @@ $(function(){
 				    		break;
 				    		case 'base':
 				    		vendapersonalizada.base(); 
+				    		break;
+				    		case 'amostra':
+				    		vendapersonalizada.amostra(); 
 				    		break;
 				    	}
 				    }
@@ -116,6 +119,34 @@ $(function(){
 	        		$(this).closest('ul').hide('fast',function(){
 	        			$(this).next('div').removeClass('hide');
 	        		})
+	        	});
+	        },
+	        amostra: function(){
+	        	var _field = $('#pantoneCode');
+	        	var _codes = $('ul.block.codes');
+	        	_field.next('a').click(function() {
+	        		if( _field.val().length > 0 ){
+		        		_codes.prepend('<li style="display:none"><p>'+_field.val()+'</p><input name="pantoneCode" type="hidden" value="'+_field.val()+'" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>');
+		        		_codes.find('li').fadeIn('slow');
+		        		_field.val('');
+		        		action();
+	        		}
+	        	});
+	        	var action = function(){
+	        		_codes.find('a.ico-circle').unbind('click').click(function(){
+	        			$(this).closest('li').fadeOut(400,function(){
+	        				$(this).remove();
+	        			})
+	        		});
+	        	}
+	        	action();
+	        	/**/
+	        	$('#type-item-2').click(function(){
+	        		$('#photoFile').click();
+	        	});
+	        	$('#photoFile').on('change', function(){
+	        		_val = $(this).val();
+	        		$(this).next('em').html( _val );
 	        	});
 	        }
     	}

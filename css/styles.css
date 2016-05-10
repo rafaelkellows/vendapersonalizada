@@ -515,6 +515,36 @@ main form fieldset a:not(.btn):hover {
 main form fieldset a:not(.btn):visited {
   color: #ced4d9;
 }
+main form fieldset a.ico-circle {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 19px;
+  height: 19px;
+  background: #287bca;
+  border-radius: 10px;
+  border: 1px solid #287bca;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+}
+main form fieldset a.ico-circle i {
+  color: #fff;
+  vertical-align: middle;
+}
+main form fieldset a.ico-circle:after {
+  content: '';
+  height: 21px;
+  width: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+main form fieldset a.ico-circle:hover {
+  background: #f2f3f5;
+  border: 1px solid #ccd1d7;
+}
+main form fieldset a.ico-circle:hover i {
+  color: #287bca;
+}
 main form fieldset .radio label,
 main form fieldset .checkbox label {
   display: inline-block !important;
@@ -793,6 +823,9 @@ main form.amostra .content p.title {
 main form.amostra .content ul li .w-300 {
   margin: -10px 0 0 12px;
 }
+main form.amostra .content ul li .w-300 a {
+  margin: -36px;
+}
 main form.amostra .content ul li textarea {
   height: 18px;
   min-height: 18px;
@@ -802,6 +835,19 @@ main form.amostra .content a.btn {
   display: inline-block;
   margin-left: 0;
   margin-top: 0;
+}
+main form.amostra .content ul.codes li {
+  color: #004fa5;
+  font-size: 0.875em;
+  line-height: 0.875em;
+  padding-bottom: 5px;
+}
+main form.amostra .content ul.codes li a.ico-circle {
+  margin-left: 10px;
+}
+main form.amostra .content ul.codes li p {
+  display: inline-block;
+  vertical-align: middle;
 }
 /*******************************
 
@@ -896,6 +942,7 @@ main form.amostra .content a.btn {
   }
   main form.amostra .content div .inline li .w-300 {
     margin: 0;
+    width: calc(100% - 50px) !important;
   }
 }
 @media screen and (max-width: 425px) {
