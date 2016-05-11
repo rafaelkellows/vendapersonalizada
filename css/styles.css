@@ -76,11 +76,17 @@ body {
 .w-110 {
   width: 110px;
 }
+.w-135 {
+  width: 135px;
+}
 .w-210 {
   width: 210px;
 }
 .w-220 {
   width: 220px;
+}
+.w-235 {
+  width: 235px;
 }
 .w-300 {
   width: 300px;
@@ -574,7 +580,7 @@ main form fieldset .checkbox label:before {
   margin-right: 10px;
   position: absolute;
   left: 0;
-  bottom: 1px;
+  top: 0;
   background-color: #f3f3f3;
   border: 1px solid #e6e7e8;
 }
@@ -849,6 +855,101 @@ main form.amostra .content ul.codes li p {
   display: inline-block;
   vertical-align: middle;
 }
+main form.finalidade_produto fieldset .l-bottom {
+  margin: 0;
+  padding: 13px 10px;
+}
+main form.finalidade_produto fieldset .l-bottom p.title {
+  cursor: pointer;
+}
+main form.finalidade_produto fieldset .l-bottom p.title span {
+  margin: -6px 6px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+  color: #287bca;
+}
+main form.finalidade_produto fieldset .l-bottom p.title span i {
+  display: block;
+  margin: -0.5em 0;
+}
+main form.finalidade_produto fieldset .l-bottom > ul {
+  display: none;
+  margin: 15px 25px 5px;
+}
+main form.finalidade_produto fieldset .l-bottom > ul li {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+}
+main form.finalidade_produto fieldset .l-bottom > ul li .checkbox label {
+  margin-right: 0;
+}
+main form.finalidade_produto fieldset .segment ul li:not(.w-880) {
+  width: 235px;
+  margin: 0 0 10px;
+}
+main form.finalidade_produto fieldset .segment ul li:nth-child(4n+4) {
+  width: auto;
+}
+main form.finalidade_produto fieldset .modeling ul li {
+  width: 235px;
+  margin: 0 0 10px;
+}
+main form.finalidade_produto fieldset .top ul li:not(.w-210),
+main form.finalidade_produto fieldset .bottom ul li:not(.w-210),
+main form.finalidade_produto fieldset .home ul li:not(.w-210),
+main form.finalidade_produto fieldset .stampingBase ul li:not(.w-210),
+main form.finalidade_produto fieldset .underwear ul li:not(.w-210),
+main form.finalidade_produto fieldset .wholesaleSector ul li:not(.w-210),
+main form.finalidade_produto fieldset .anotherPurpose ul li:not(.w-210) {
+  width: 135px;
+  margin: 0 0 10px;
+}
+main form.finalidade_produto fieldset .top ul li.w-210,
+main form.finalidade_produto fieldset .bottom ul li.w-210,
+main form.finalidade_produto fieldset .home ul li.w-210,
+main form.finalidade_produto fieldset .stampingBase ul li.w-210,
+main form.finalidade_produto fieldset .underwear ul li.w-210,
+main form.finalidade_produto fieldset .wholesaleSector ul li.w-210,
+main form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
+  position: absolute;
+  right: -20px;
+  margin: -15px 0 0 0;
+}
+main form.finalidade_produto fieldset .home ul li:not(.w-210) {
+  margin: 0 0 20px;
+}
+main form.finalidade_produto fieldset .home ul li.w-210 {
+  margin: -5px 0 0 0;
+}
+main form.finalidade_produto fieldset .underwear ul li {
+  margin-bottom: 60px !important;
+}
+main form.finalidade_produto fieldset .underwear ul li:nth-child(4),
+main form.finalidade_produto fieldset .underwear ul li:nth-child(5) {
+  width: 210px;
+}
+main form.finalidade_produto fieldset .underwear ul li.w-210 {
+  margin-top: 35px !important;
+}
+main form.finalidade_produto fieldset .wholesaleSector,
+main form.finalidade_produto fieldset .anotherPurpose {
+  padding: 20px 10px;
+}
+main form.finalidade_produto fieldset .wholesaleSector p.title,
+main form.finalidade_produto fieldset .anotherPurpose p.title {
+  padding-left: 24px;
+}
+main form.finalidade_produto fieldset .wholesaleSector ul,
+main form.finalidade_produto fieldset .anotherPurpose ul {
+  margin: 0;
+  display: block;
+}
+main form.finalidade_produto fieldset .wholesaleSector ul li.w-210,
+main form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
+  margin: -36px 25px !important;
+}
 /*******************************
 
             MEDIA QUERIES
@@ -902,6 +1003,26 @@ main form.amostra .content ul.codes li p {
     margin: -10px 10px 0;
     width: calc(100% - 20px) !important;
   }
+  main form.finalidade_produto fieldset .l-bottom:not(.wholesaleSector):not(.anotherPurpose) > ul li.w-880 {
+    width: 100%;
+  }
+  main form.finalidade_produto fieldset .l-bottom:not(.wholesaleSector):not(.anotherPurpose) > ul li[class^='w-'] {
+    position: relative !important;
+    display: block !important;
+    margin: 0 !important;
+    right: 0 !important;
+  }
+  main form.finalidade_produto fieldset .underwear ul li,
+  main form.finalidade_produto fieldset .top ul li {
+    margin-bottom: 10px !important;
+  }
+  main form.finalidade_produto fieldset .underwear ul li.w-210,
+  main form.finalidade_produto fieldset .top ul li.w-210 {
+    margin-top: -5px !important;
+  }
+  main form.finalidade_produto fieldset li {
+    width: 32% !important;
+  }
 }
 @media screen and (max-width: 768px) {
   main form.dados div[class^='w-'] {
@@ -944,6 +1065,10 @@ main form.amostra .content ul.codes li p {
     margin: 0;
     width: calc(100% - 50px) !important;
   }
+  main form.finalidade_produto fieldset li {
+    width: 49% !important;
+    margin-bottom: 10px !important;
+  }
 }
 @media screen and (max-width: 425px) {
   main nav > ul > li {
@@ -983,5 +1108,15 @@ main form.amostra .content ul.codes li p {
   main form.amostra .checkbox > em {
     display: block;
     padding-left: 50px;
+  }
+  main form.finalidade_produto fieldset .l-bottom p.title {
+    padding-left: 0;
+  }
+  main form.finalidade_produto fieldset .l-bottom > ul li[class^='w-'] {
+    position: relative !important;
+    display: block !important;
+    margin: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
   }
 }

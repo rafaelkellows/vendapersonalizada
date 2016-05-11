@@ -47,6 +47,34 @@
         margin: -10px 10px 0;
         width: calc(~"100% - 20px") !important; 
       }
+      form.finalidade_produto{
+        fieldset{
+          .l-bottom:not(.wholesaleSector):not(.anotherPurpose){
+            >ul{
+              li.w-880{
+                width:100%;
+              }
+              li[class^='w-']{
+                position: relative !important;
+                display: block !important;
+                margin: 0 !important;
+                right: 0 !important;
+              }
+            }
+          }
+          .underwear, .top{
+            ul li{
+              margin-bottom: 10px !important;
+              &.w-210{
+                margin-top: -5px !important;
+              }
+            }
+          }
+          li{
+            width: 32% !important;
+          }
+        }
+      }
     }
   }
   @media (max-width: 768px) {
@@ -107,6 +135,14 @@
           }
         }
       }
+      form.finalidade_produto{
+        fieldset{
+          li{
+            width: 49% !important;
+            margin-bottom: 10px !important;
+          }
+        }
+      }
     }
   }
   @media (max-width: 425px) {
@@ -160,6 +196,22 @@
           >em{
             display: block;
             padding-left: 50px;
+          }
+        }
+      }
+      form.finalidade_produto{
+        fieldset{
+          .l-bottom{
+            p.title{ padding-left: 0; }
+            >ul{
+              li[class^='w-']{
+                position: relative !important;
+                display: block !important;
+                margin: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+              }
+            }
           }
         }
       }

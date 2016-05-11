@@ -3,7 +3,7 @@ $(function(){
 		var vendapersonalizada = {
 	        init: function() {
 	            this.menu();
-	            //this.load('amostra'); 
+	            //this.load('finalidade_produto'); 
 	        },
 	        menu: function() {
 	        	//Mobile
@@ -51,6 +51,9 @@ $(function(){
 				    		break;
 				    		case 'amostra':
 				    		vendapersonalizada.amostra(); 
+				    		break;
+				    		case 'finalidade_produto':
+				    		vendapersonalizada.finalidadeProduto(); 
 				    		break;
 				    	}
 				    }
@@ -147,6 +150,15 @@ $(function(){
 	        	$('#photoFile').on('change', function(){
 	        		_val = $(this).val();
 	        		$(this).next('em').html( _val );
+	        	});
+	        },
+	        finalidadeProduto:function(){
+	        	$('form.finalidade_produto fieldset .l-bottom:not(.wholesaleSector):not(.anotherPurpose) p.title').click(function(){
+					var _i = $(this).find('span i');
+					_i.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+	        		$(this).next('ul').fadeToggle(400,function(){
+						($(this).is(':hidden')) ? _i.removeClass('fa-chevron-down').addClass('fa-chevron-up'):null;
+	        		});
 	        	});
 	        }
     	}

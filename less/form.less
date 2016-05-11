@@ -221,4 +221,101 @@ main{
 			}
 		}
 	}
+	form.finalidade_produto{
+		fieldset{
+			.l-bottom{
+				margin: 0; 
+				padding: 13px 10px;
+				p.title{
+					cursor: pointer;
+					span{
+						margin: -6px 6px 0 0;
+						.d-inline(middle);
+						color: @light-blue;
+						i{
+							display:block;
+							margin: -0.5em 0;
+						}
+					}
+				}
+				>ul{
+					display:none;
+					margin: 15px 25px 5px;
+					li{
+						.d-inline(middle);
+						.transit(0.3s);
+						.checkbox label{
+							margin-right:0;
+						}
+					}
+				}
+			}
+			.segment{
+				ul li:not(.w-880){ 
+					.w-235;
+					margin: 0 0 10px;
+				}
+				ul li{
+					&:nth-child(4n+4){
+						width: auto;
+					}
+				}
+			}
+			.modeling{
+				ul li{ 
+					.w-235;
+					margin: 0 0 10px;
+				}
+			}
+			.top, .bottom, .home, .stampingBase, .underwear, .wholesaleSector, .anotherPurpose{
+				ul li{
+					&:not(.w-210){ 
+						.w-135;
+						margin: 0 0 10px;
+					}
+					&.w-210{
+						position: absolute;
+						right: -20px;
+						margin: -15px 0 0 0;
+					}
+				}
+			}
+			.home{
+				ul li{
+					&:not(.w-210){
+						margin: 0 0 20px;
+					}
+					&.w-210{
+						margin: -5px 0 0 0;
+					}
+				}
+			}
+			.underwear{
+				ul li{
+					margin-bottom: 60px !important;
+					&:nth-child(4), &:nth-child(5){
+						width:210px;
+					}
+					&.w-210{
+						margin-top: 35px !important;
+					}
+				}
+			}
+			.wholesaleSector, .anotherPurpose{
+				padding:20px 10px; 
+				p.title{
+					padding-left: 24px;
+				}
+				ul{
+					margin: 0;
+					display: block;
+					li{
+						&.w-210{
+							margin: -36px 25px !important
+						}
+					}
+				}
+			}
+		}
+	}
 }
