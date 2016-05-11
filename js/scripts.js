@@ -3,7 +3,7 @@ $(function(){
 		var vendapersonalizada = {
 	        init: function() {
 	            this.menu();
-	            //this.load('finalidade_produto'); 
+	            //this.load('prazo_preco_quantidade');
 	        },
 	        menu: function() {
 	        	//Mobile

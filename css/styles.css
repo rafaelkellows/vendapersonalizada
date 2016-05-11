@@ -435,14 +435,14 @@ main form {
   width: 920px;
   margin: 49px auto;
 }
-main form fieldset div[class^='w-'] {
+main form fieldset [class^='w-'] {
   display: inline-block;
   vertical-align: middle;
   margin: 6px 6px 0 0;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
 }
-main form fieldset div[class^='w-'] label {
+main form fieldset [class^='w-'] label {
   text-align: left;
   color: #535659;
   font-size: 0.93em;
@@ -532,6 +532,7 @@ main form fieldset a.ico-circle {
   border: 1px solid #287bca;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+  margin: -36px;
 }
 main form fieldset a.ico-circle i {
   color: #fff;
@@ -950,6 +951,45 @@ main form.finalidade_produto fieldset .wholesaleSector ul li.w-210,
 main form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
   margin: -36px 25px !important;
 }
+main form.prazo_preco_quant .content {
+  padding: 10px;
+}
+main form.prazo_preco_quant .content .l-bottom:first-child {
+  margin-top: 0;
+}
+main form.prazo_preco_quant .content .l-bottom:first-child p.title {
+  padding-top: 0;
+}
+main form.prazo_preco_quant .content .l-bottom p.title {
+  padding-bottom: 8px;
+}
+main form.prazo_preco_quant .content ul.inline div.radio {
+  width: 110px;
+  margin: 0 0 -20px 0;
+}
+main form.prazo_preco_quant .content ul.inline div.checkbox {
+  margin: -23px -15px 0 10px;
+}
+main form.prazo_preco_quant .content ul.inline [class^='w-'] {
+  margin-right: 20px;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+}
+main form.prazo_preco_quant .content ul.inline .w-210 {
+  margin-left: -13px;
+}
+main form.prazo_preco_quant .content > p.title {
+  margin: 20px 10px 0;
+}
+main form.prazo_preco_quant .content > ul.inline {
+  margin: 20px 10px 0;
+}
+main form.prazo_preco_quant .content > ul.inline div.radio {
+  margin: 0;
+}
+main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
+  margin: -40px 0 0 250px;
+}
 /*******************************
 
             MEDIA QUERIES
@@ -1023,6 +1063,12 @@ main form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
   main form.finalidade_produto fieldset li {
     width: 32% !important;
   }
+  main form.prazo_preco_quant .content > ul.inline li:nth-child(4) {
+    margin-left: 466px;
+  }
+  main form.prazo_preco_quant .content > ul.inline div.checkbox {
+    margin: -10px -15px -13px 10px;
+  }
 }
 @media screen and (max-width: 768px) {
   main form.dados div[class^='w-'] {
@@ -1068,6 +1114,33 @@ main form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
   main form.finalidade_produto fieldset li {
     width: 49% !important;
     margin-bottom: 10px !important;
+  }
+  main form.prazo_preco_quant .content ul.inline .w-210 {
+    display: block;
+    margin: 6px 6px 0 -13px !important;
+  }
+  main form.prazo_preco_quant .content > ul.inline {
+    margin: 5px 10px 30px;
+  }
+  main form.prazo_preco_quant .content > ul.inline li:nth-child(4) {
+    margin-left: -10px;
+  }
+  main form.prazo_preco_quant .content > ul.inline div.radio {
+    margin: 5px 0 15px 0;
+  }
+  main form.prazo_preco_quant .content > ul.inline .w-210 {
+    margin-top: 0 !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  main form.prazo_preco_quant .content ul.inline [class^='w-'] {
+    display: block;
+  }
+  main form.prazo_preco_quant .content ul.inline div.radio {
+    margin: 5px 0 20px 0;
+  }
+  main form.prazo_preco_quant .content ul.inline .w-210 {
+    margin: -10px 6px 0 0 !important;
   }
 }
 @media screen and (max-width: 425px) {
@@ -1118,5 +1191,15 @@ main form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
     margin: 0 !important;
     right: 0 !important;
     width: 100% !important;
+  }
+  main form.prazo_preco_quant .content ul.inline [class^='w-'] {
+    display: block;
+    width: 100%;
+  }
+  main form.prazo_preco_quant .content ul.inline div.radio {
+    margin: 5px 0 20px 0;
+  }
+  main form.prazo_preco_quant .content ul.inline .w-210 {
+    margin-top: -10px !important;
   }
 }
