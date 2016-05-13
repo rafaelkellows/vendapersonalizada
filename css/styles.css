@@ -79,6 +79,9 @@ body {
 .w-135 {
   width: 135px;
 }
+.w-170 {
+  width: 170px;
+}
 .w-210 {
   width: 210px;
 }
@@ -202,9 +205,6 @@ ul.block li {
   padding-bottom: 10px;
 }
 /* Mixins and Functions */
-meuteste {
-  padding: 3.125em;
-}
 /*******************************
 
             MAIN
@@ -651,34 +651,34 @@ main form fieldset input[type=button]:hover {
 
             FORMS
 *******************************/
-main form.segmentacao fieldset > .title {
+main form.segmentacao fieldset .content > .title {
   padding-bottom: 15px;
 }
-main form.segmentacao fieldset > .radio em {
-  margin: 0 20px 0 -20px;
+main form.segmentacao fieldset .content > .radio em {
+  margin: 0 0 0 -20px;
   width: 48%;
 }
-main form.segmentacao fieldset .l-both {
+main form.segmentacao fieldset .content .l-both {
   padding: 0;
 }
-main form.segmentacao fieldset .l-both ul li {
+main form.segmentacao fieldset .content .l-both ul li {
   padding: 9.5px;
 }
-main form.segmentacao fieldset .l-both ul li:nth-child(odd) {
+main form.segmentacao fieldset .content .l-both ul li:nth-child(odd) {
   background: #f2f3f5;
 }
-main form.segmentacao fieldset .l-both ul li > * {
+main form.segmentacao fieldset .content .l-both ul li > * {
   display: inline-block;
   vertical-align: middle;
 }
-main form.segmentacao fieldset .l-both ul li > div {
+main form.segmentacao fieldset .content .l-both ul li > div {
   min-width: 335px;
 }
-main form.segmentacao fieldset .l-both ul li p {
+main form.segmentacao fieldset .content .l-both ul li p {
   font-size: 0.8125em;
   width: calc(100% - 340px);
 }
-main form.segmentacao fieldset .l-both ul li ul {
+main form.segmentacao fieldset .content .l-both ul li ul {
   width: calc(100% - 281px);
   border: 1px solid #d7d7d7;
   background: #ebeced;
@@ -687,30 +687,30 @@ main form.segmentacao fieldset .l-both ul li ul {
   display: inline-block;
   vertical-align: top;
 }
-main form.segmentacao fieldset .l-both ul li ul li {
+main form.segmentacao fieldset .content .l-both ul li ul li {
   background: none !important;
   display: inline-block;
   vertical-align: middle;
   width: calc(42% - 21px);
   padding: 0 9.5px;
 }
-main form.segmentacao fieldset .l-both ul li ul li p {
+main form.segmentacao fieldset .content .l-both ul li ul li p {
   font-size: 0.8125em;
   float: none;
   padding-left: 30px;
   width: auto;
   display: block;
 }
-main form.segmentacao fieldset .l-both ul li ul li div {
+main form.segmentacao fieldset .content .l-both ul li ul li div {
   display: inline-block;
   vertical-align: top;
   margin-top: 0;
 }
-main form.segmentacao fieldset .l-both ul li ul li div label:before {
+main form.segmentacao fieldset .content .l-both ul li ul li div label:before {
   top: 7px;
   bottom: initial;
 }
-main form.segmentacao fieldset .l-both ul li ul li:first-child {
+main form.segmentacao fieldset .content .l-both ul li ul li:first-child {
   width: calc(58% - 21px);
 }
 main form.base div.w-410 {
@@ -847,7 +847,7 @@ main form.amostra .content ul.codes li {
   color: #004fa5;
   font-size: 0.875em;
   line-height: 0.875em;
-  padding-bottom: 5px;
+  padding: 5px 0;
 }
 main form.amostra .content ul.codes li a.ico-circle {
   margin-left: 10px;
@@ -952,7 +952,7 @@ main form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
   margin: -36px 25px !important;
 }
 main form.prazo_preco_quant .content {
-  padding: 10px;
+  padding: 10px 0;
 }
 main form.prazo_preco_quant .content .l-bottom:first-child {
   margin-top: 0;
@@ -989,6 +989,40 @@ main form.prazo_preco_quant .content > ul.inline div.radio {
 }
 main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
   margin: -40px 0 0 250px;
+}
+main form.similaridade .content {
+  padding: 10px;
+}
+main form.similaridade .content .l-bottom:first-child {
+  margin-top: 0;
+}
+main form.similaridade .content .l-bottom:first-child p.title {
+  padding-bottom: 8px;
+}
+main form.similaridade .content .l-bottom:first-child .radio {
+  margin: 5px 0 15px;
+}
+main form.similaridade .content .l-bottom:first-child .radio label {
+  margin-right: 45px;
+}
+main form.similaridade .content .l-bottom:nth-child(2) .w-220 {
+  vertical-align: top;
+}
+main form.similaridade .content .l-bottom:nth-child(3) ul.w-220 {
+  border-left: 2px solid #ced4d9;
+  padding-left: 20px;
+  margin-left: -20px;
+  height: 30px;
+}
+main form.similaridade .content .l-bottom:nth-child(3) > ul {
+  margin: 0 0 -20px 10px;
+}
+main form.similaridade .content .l-bottom:nth-child(4) .title {
+  padding-bottom: 5px;
+}
+main form.similaridade .content .l-bottom:nth-child(4) .radio,
+main form.similaridade .content .l-bottom:nth-child(4) .checkbox {
+  padding: 10px 0;
 }
 /*******************************
 
@@ -1043,6 +1077,25 @@ main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
     margin: -10px 10px 0;
     width: calc(100% - 20px) !important;
   }
+  main form fieldset legend {
+    display: block !important;
+    opacity: 1;
+    height: auto;
+    text-align: center;
+    color: #004fa5;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-bottom: 1px solid #287bca;
+  }
+  main form fieldset > .content {
+    padding-top: 10px;
+  }
+  main form.base .content {
+    padding-top: 20px;
+  }
+  main form.amostra .content {
+    padding: 10px 0;
+  }
   main form.finalidade_produto fieldset .l-bottom:not(.wholesaleSector):not(.anotherPurpose) > ul li.w-880 {
     width: 100%;
   }
@@ -1063,32 +1116,51 @@ main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
   main form.finalidade_produto fieldset li {
     width: 32% !important;
   }
+  main form.prazo_preco_quant .content > .l-bottom {
+    padding: 10px 0;
+  }
+  main form.prazo_preco_quant .content > p.title {
+    margin-left: 0;
+    margin-right: 0;
+  }
   main form.prazo_preco_quant .content > ul.inline li:nth-child(4) {
     margin-left: 466px;
   }
   main form.prazo_preco_quant .content > ul.inline div.checkbox {
     margin: -10px -15px -13px 10px;
   }
+  main form.similaridade .content {
+    padding: 10px 0;
+  }
+  main form.similaridade .content .l-bottom {
+    padding: 10px 0;
+  }
+  main form.similaridade .content .l-bottom:nth-child(3) > :nth-child(2) {
+    display: block;
+  }
+  main form.similaridade .content .l-bottom:nth-child(3) > ul {
+    margin: 10px 0 20px;
+  }
 }
 @media screen and (max-width: 768px) {
   main form.dados div[class^='w-'] {
     width: calc(50% - 8px) !important;
   }
-  main form.segmentacao fieldset .l-both ul li p {
+  main form.segmentacao fieldset .content .l-both ul li p {
     padding: 5px 29px 0;
     display: block;
     width: auto;
     line-height: auto;
   }
-  main form.segmentacao fieldset .l-both ul li > div {
+  main form.segmentacao fieldset .content .l-both ul li > div {
     min-width: auto;
   }
-  main form.segmentacao fieldset .l-both ul li ul {
+  main form.segmentacao fieldset .content .l-both ul li ul {
     margin: 10px;
     display: block;
     width: auto;
   }
-  main form.segmentacao fieldset .l-both ul li ul li {
+  main form.segmentacao fieldset .content .l-both ul li ul li {
     width: auto !important;
     padding-bottom: 9.5px;
   }
@@ -1117,7 +1189,7 @@ main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
   }
   main form.prazo_preco_quant .content ul.inline .w-210 {
     display: block;
-    margin: 6px 6px 0 -13px !important;
+    margin: 6px 6px 0 0px !important;
   }
   main form.prazo_preco_quant .content > ul.inline {
     margin: 5px 10px 30px;
@@ -1131,6 +1203,12 @@ main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
   main form.prazo_preco_quant .content > ul.inline .w-210 {
     margin-top: 0 !important;
   }
+  main form.similaridade div div[class^='w-'] {
+    width: calc(50% - 8px) !important;
+  }
+  main form.similaridade div div[class^='w-680'] {
+    width: calc(100% - 7px) !important;
+  }
 }
 @media screen and (max-width: 650px) {
   main form.prazo_preco_quant .content ul.inline [class^='w-'] {
@@ -1141,6 +1219,14 @@ main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
   }
   main form.prazo_preco_quant .content ul.inline .w-210 {
     margin: -10px 6px 0 0 !important;
+  }
+  main form.similaridade .content .l-bottom:nth-child(3) ul.w-220 {
+    border-left: none;
+    display: block;
+  }
+  main form.similaridade .content .l-bottom:nth-child(4) .radio label,
+  main form.similaridade .content .l-bottom:nth-child(4) .checkbox label {
+    margin: 10px 25px 10px 0;
   }
 }
 @media screen and (max-width: 425px) {
@@ -1192,6 +1278,9 @@ main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
     right: 0 !important;
     width: 100% !important;
   }
+  main form.prazo_preco_quant .content > ul.inline {
+    margin-left: 0 !important;
+  }
   main form.prazo_preco_quant .content ul.inline [class^='w-'] {
     display: block;
     width: 100%;
@@ -1201,5 +1290,11 @@ main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
   }
   main form.prazo_preco_quant .content ul.inline .w-210 {
     margin-top: -10px !important;
+  }
+  main form.similaridade .content .l-bottom:first-child .radio label {
+    margin-bottom: 10px;
+  }
+  main form.similaridade div div[class^='w-'] {
+    width: 100% !important;
   }
 }

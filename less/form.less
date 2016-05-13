@@ -5,68 +5,70 @@
 main{ 
 	form.segmentacao{
 	    fieldset{
-	      >.title{ padding-bottom: 15px; }
-	      >.radio{
-	        em{
-	          margin:0 20px 0 -20px;
-	          width: 48%;
-	        }
-	      }
-	      .l-both{
-	        padding:0;
-	        ul{
-	          li{
-	            padding: 9.5px;
-	            &:nth-child(odd){
-	              background:@medium-gray;
-	            }
-	            >*{
-	              .d-inline(middle);
-	            }
-	            >div{
-	              min-width: 335px;
-	            }
-	            p{
-	              .px-to-em(13);
-	              font-size: @px-to-em;
-	              width: calc(~"100% - 340px");
-	            }
-	            ul{
-	              width: calc(~"100% - 281px");
-	              border: 1px solid #d7d7d7;
-	              background: #ebeced;
-	              margin: -10px -10px -9px -50px;
-	              min-height: 38px;
-	              .d-inline(top);
-	              li{
-	                background: none !important;
-	                .d-inline(middle);
-	                width: calc(~"42% - 21px");
-	                padding:0 9.5px; 
-	                p{
-	                  .px-to-em(13);
-	                  font-size: @px-to-em;
-	                  float: none;
-	                  padding-left: 30px;
-	                  width: auto;
-	                  display: block;
-	                }
-	                div{
-	                  .d-inline(top);
-	                  margin-top:0;
-	                  label:before{
-	                    top:7px;
-	                    bottom: initial;
-	                  }
-	                }
-	              }
-	              li:first-child{
-	                width: calc(~"58% - 21px");
-	              }
-	            }
-	          }
-	        }
-	      }
+			.content{
+		      >.title{ padding-bottom: 15px; }
+		      >.radio{
+		        em{
+		          margin:0 0 0 -20px;
+		          width: 48%;
+		        }
+		      }
+		      .l-both{
+		        padding:0;
+		        ul{
+		          li{
+		            padding: 9.5px;
+		            &:nth-child(odd){
+		              background:@medium-gray;
+		            }
+		            >*{
+		              .d-inline(middle);
+		            }
+		            >div{
+		              min-width: 335px;
+		            }
+		            p{
+		              .px-to-em(13);
+		              font-size: @px-to-em;
+		              width: calc(~"100% - 340px");
+		            }
+		            ul{
+		              width: calc(~"100% - 281px");
+		              border: 1px solid #d7d7d7;
+		              background: #ebeced;
+		              margin: -10px -10px -9px -50px;
+		              min-height: 38px;
+		              .d-inline(top);
+		              li{
+		                background: none !important;
+		                .d-inline(middle);
+		                width: calc(~"42% - 21px");
+		                padding:0 9.5px; 
+		                p{
+		                  .px-to-em(13);
+		                  font-size: @px-to-em;
+		                  float: none;
+		                  padding-left: 30px;
+		                  width: auto;
+		                  display: block;
+		                }
+		                div{
+		                  .d-inline(top);
+		                  margin-top:0;
+		                  label:before{
+		                    top:7px;
+		                    bottom: initial;
+		                  }
+		                }
+		              }
+		              li:first-child{
+		                width: calc(~"58% - 21px");
+		              }
+		            }
+		          }
+		        }
+		      }
+		    }
 	    }
 	}
 	form.base{
@@ -212,7 +214,7 @@ main{
 			ul.codes{
 				li{
 					color: @dark-blue; .px-to-em(14); font-size:@px-to-em; line-height:@px-to-em;
-					padding-bottom: 5px;
+					padding: 5px 0;
 					a.ico-circle{
 						margin-left:10px;
 					}
@@ -320,7 +322,7 @@ main{
 	}
 	form.prazo_preco_quant{
 		.content{
-		padding:10px;
+			padding:10px 0;
 			.l-bottom{
 				&:first-child{
 					margin-top:0;
@@ -358,6 +360,49 @@ main{
 				}
 				li[class^='w-']{
 					margin:-40px 0 0 250px;
+				}
+			}
+		}
+	}
+	form.similaridade{
+		.content{
+			padding:10px;
+			.l-bottom{
+				&:first-child{
+					margin-top:0;
+					p.title{
+						padding-bottom: 8px;
+					}
+					.radio{
+						margin: 5px 0 15px;
+						label{
+							margin-right: 45px;
+						}
+					}
+				}
+				&:nth-child(2){
+					.w-220{
+						vertical-align: top;
+					}
+				}
+				&:nth-child(3){
+					ul.w-220{
+						border-left: 2px solid @dark-gray;
+						padding-left: 20px;
+	    				margin-left: -20px;
+	    				height: 30px;
+					}
+					>ul{
+						margin: 0 0 -20px 10px;
+					}
+				}
+				&:nth-child(4){
+					.title{
+						padding-bottom: 5px;
+					}
+					.radio, .checkbox{
+						padding:10px 0
+					}
 				}
 			}
 		}

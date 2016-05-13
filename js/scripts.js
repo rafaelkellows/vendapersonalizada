@@ -3,7 +3,7 @@ $(function(){
 		var vendapersonalizada = {
 	        init: function() {
 	            this.menu();
-	            //this.load('prazo_preco_quantidade');
+	            //this.load('similaridade');
 	        },
 	        menu: function() {
 	        	//Mobile
@@ -83,7 +83,7 @@ $(function(){
 	        },
 	        segmentacao:function(){
 				vendapersonalizada.navButtons(0);
-	        	$('body main section form.segmentacao > fieldset > .radio input[type=radio]').click(function() {
+	        	$('body main section form.segmentacao > fieldset > .content > .radio input[type=radio]').click(function() {
 	        		var _t = $(this);
 	        		_t.closest('form').find('div.l-both > ul').addClass('hide');
 	        		switch($(this).val()){

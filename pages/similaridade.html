@@ -1,0 +1,130 @@
+        <form class="similaridade">
+          <fieldset>
+            <legend>Similaridade</legend>
+            <div class="content">
+              <div class="l-bottom">
+                <p class="title">Algum concorrente produz tecido similar ao solicitado?</p>
+                <div class="radio">
+                  <input id="competitorProducesYes" type="radio" name="competitorProduces" value="yes" />
+                  <label for="competitorProducesYes">Sim</label>
+                  <input id="competitorProducesNo" type="radio" name="competitorProduces" value="no" />
+                  <label for="competitorProducesNo">Não</label>
+                  <input id="competitorProducesUnknown" type="radio" name="competitorProduces" value="unknown" />
+                  <label for="competitorProducesUnknown">Desconheço</label>
+                </div>
+              </div>
+
+              <div class="l-bottom">
+                <p class="title">Concorrente e dados do artigo na concorrência:</p>
+                <div class="w-680">
+                  <label for="competitorName">Nome do concorrente</label>
+                  <input id="competitorName" type="text" value="" />
+                </div>
+                <div class="w-335">
+                  <label for="article">Artigo</label>
+                  <input id="article" type="text" value="" />
+                </div>
+                <div class="w-335">
+                  <label for="code">Código</label>
+                  <input id="code" type="text" value="" />
+                </div>
+                <div class="w-220">
+                  <label for="width">Largura</label>
+                  <input id="width" type="text" placeholder="cm" value="" />
+                </div>
+                <div class="w-220">
+                  <label for="grammageA">Gramatura</label>
+                  <input id="grammageA" placeholder="g/m2" type="text" value="" />
+                  <input id="grammageB" placeholder="g/m" type="text" value="" />
+                </div>
+                <div class="w-220">
+                  <label for="yieldA">Rendimento</label>
+                  <input id="yieldA" placeholder="m" type="text" value="" />
+                  <input id="yieldB" placeholder="Kg" type="text" value="" />
+                </div>
+              </div>
+
+              <div class="l-bottom">
+                <p class="title">Condições comerciais praticadas pelo concorrente:</p>
+                <div class="w-220 inline">
+                  <label for="width">Preço</label>
+                  <input id="width" type="text" value="" />
+                </div>
+                <ul class="w-170 inline">
+                  <li>
+                    <div class="radio">
+                      <input id="currencyReal" type="radio" name="currency" value="real" />
+                      <label for="currencyReal">R$</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input id="currencyDolar" type="radio" name="currency" value="dolar" />
+                      <label for="currencyDolar">US$</label>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="w-220 inline">
+                  <li>
+                    <div class="radio">
+                      <input id="byMetros" type="radio" name="averageTerm" value="Metros" />
+                      <label for="byMetros">Metros</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input id="byKilos" type="radio" name="averageTerm" value="Quilos" />
+                      <label for="byKilos">Quilos</label>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="w-220 inline">
+                  <li>
+                    <div class="radio">
+                      <input id="byMetros" type="radio" name="averageTerm" value="Metros" />
+                      <label for="byMetros">Liso</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input id="byKilos" type="radio" name="averageTerm" value="Quilos" />
+                      <label for="byKilos">Estampado</label>
+                    </div>
+                  </li>
+                </ul>
+                <div class="w-220">
+                  <label for="width">Prazo Médio</label>
+                  <input id="width" type="text" placeholder="Dias" value="" />
+                </div>
+                <div class="w-220 inline">
+                  <label for="width">ICMS</label>
+                  <input id="width" type="text" placeholder="%" value="" />
+                </div>
+              </div>
+
+              <div class="l-bottom">
+                <p class="title">Há variação de preço por cor?</p>
+                <div class="radio">
+                  <input id="priceVariationYes" type="radio" name="priceVariation" value="yes" />
+                  <label for="priceVariationYes">Sim</label>
+                  <input id="priceVariationNo" type="radio" name="priceVariation" value="no" />
+                  <label for="priceVariationNo">Não</label>
+                </div>
+                <div class="checkbox">
+                 <input id="yes-item-1" type="checkbox" name="existBase" value="yes-item-1" />
+                 <label for="yes-item-1">PT/PFD</label>
+                 <input id="yes-item-1" type="checkbox" name="existBase" value="yes-item-1" />
+                 <label for="yes-item-1">Clara</label>
+                 <input id="yes-item-1" type="checkbox" name="existBase" value="yes-item-1" />
+                 <label for="yes-item-1">Média</label>
+                 <input id="yes-item-1" type="checkbox" name="existBase" value="yes-item-1" />
+                 <label for="yes-item-1">Escura</label>
+                 <input id="yes-item-1" type="checkbox" name="existBase" value="yes-item-1" />
+                 <label for="yes-item-1">Especial</label>
+                </div>
+              </div>
+            </div>
+            <a class="btn next right" href="javascript:void(0);">Próximo<span><i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+            <a class="btn prev right" href="javascript:void(0);"><span><i class="fa fa-chevron-left" aria-hidden="true"></i><i class="fa fa-chevron-left" aria-hidden="true"></i></span>Anterior</a>
+          </fieldset>       
+        </form>

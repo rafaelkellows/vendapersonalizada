@@ -1,119 +1,121 @@
 <form class="base">
   <fieldset>
-    <legend>Base existe ou nova</legend>
-    <div class="w-410">
-      <div class="btns">
-        <a class="btn dark left" data-value="1" href="javascript:void(0);">Base Existente</a>
-        <a class="btn dark left" data-value="0" href="javascript:void(0);">Base Nova</a>
+    <legend>Base existe ou nova?</legend>
+    <div class="content">
+      <div class="w-410">
+        <div class="btns">
+          <a class="btn dark left" data-value="1" href="javascript:void(0);">Base Existente</a>
+          <a class="btn dark left" data-value="0" href="javascript:void(0);">Base Nova</a>
+        </div>
       </div>
-    </div>
-    <!-- Base Existente -->
-    <div class="existBase hide base">
-       <div class="w-410">
-         <div class="search">
-           <input id="findProduct" type="text" placeholder="Digite o código do artigo:" value="" />
-           <span><input type="button" value="Search Product" /></span>
+      <!-- Base Existente -->
+      <div class="existBase hide base">
+         <div class="w-410">
+           <div class="search">
+             <input id="findProduct" type="text" placeholder="Digite o código do artigo:" value="" />
+             <span><input type="button" value="Search Product" /></span>
+           </div>
+           <em>Sistema traz nome e descrição</em>
          </div>
-         <em>Sistema traz nome e descrição</em>
-       </div>
-       <span class="little-break">&nbsp;</span>
-       <ul>
-         <li>
-           <div class="checkbox">
-             <input id="yes-item-1" type="checkbox" name="existBase" value="yes-item-1" />
-             <label for="yes-item-1">Cor Nova</label>
-           </div>
-         </li>
-         <li>
-           <div class="checkbox">
-             <input id="yes-item-2" type="checkbox" name="existBase" value="yes-item-2" />
-             <label for="yes-item-2">Estampa Nova</label>
-           </div>
-         </li>
-         <li>
-           <div class="checkbox">
-             <input id="yes-item-3" type="checkbox" name="existBase" value="yes-item-3" />
-             <label for="yes-item-3">Padronagem Fio Tinto Nova</label>
-           </div>
-         </li>
-       </ul>
-    </div>
-    
-    <!-- Base Nova -->
-    <div class="newBase hide base">
-       <div class="l-bottom">
+         <span class="little-break">&nbsp;</span>
+         <ul>
+           <li>
+             <div class="checkbox">
+               <input id="yes-item-1" type="checkbox" name="existBase" value="yes-item-1" />
+               <label for="yes-item-1">Cor Nova</label>
+             </div>
+           </li>
+           <li>
+             <div class="checkbox">
+               <input id="yes-item-2" type="checkbox" name="existBase" value="yes-item-2" />
+               <label for="yes-item-2">Estampa Nova</label>
+             </div>
+           </li>
+           <li>
+             <div class="checkbox">
+               <input id="yes-item-3" type="checkbox" name="existBase" value="yes-item-3" />
+               <label for="yes-item-3">Padronagem Fio Tinto Nova</label>
+             </div>
+           </li>
+         </ul>
+      </div>
+      
+      <!-- Base Nova -->
+      <div class="newBase hide base">
+         <div class="l-bottom">
+           <ul>
+             <li>
+               <div class="radio">
+                 <input id="baseTypeA" type="radio" name="baseType" value="Similar" />
+                 <label for="baseTypeA">Similar alguma base da Focus</label>
+               </div>
+               <p>Informar SKU</p>
+             </li>
+             <li>
+               <div class="radio">
+                 <input id="baseTypeB" type="radio" name="baseType" value="Nova" />
+                 <label for="baseTypeB">Totalmente Nova</label>
+               </div>
+               <p>Fornecer Amostra</p>
+             </li>
+           </ul>
+         </div>
          <ul>
            <li>
              <div class="radio">
-               <input id="baseTypeA" type="radio" name="baseType" value="Similar" />
-               <label for="baseTypeA">Similar alguma base da Focus</label>
+               <input id="yes-item-1b" type="radio" name="newBase" value="yes-item-1b" />
+               <label for="yes-item-1b">Plano</label>
              </div>
-             <p>Informar SKU</p>
            </li>
            <li>
              <div class="radio">
-               <input id="baseTypeB" type="radio" name="baseType" value="Nova" />
-               <label for="baseTypeB">Totalmente Nova</label>
+               <input id="yes-item-2b" type="radio" name="newBase" value="yes-item-2b" />
+               <label for="yes-item-2b">Malha</label>
              </div>
-             <p>Fornecer Amostra</p>
+           </li>
+           <li>
+             <div class="radio">
+               <input id="yes-item-3b" type="radio" name="newBase" value="yes-item-3b" />
+               <label for="yes-item-3b">Não Tecido</label>
+             </div>
            </li>
          </ul>
-       </div>
-       <ul>
-         <li>
-           <div class="radio">
-             <input id="yes-item-1b" type="radio" name="newBase" value="yes-item-1b" />
-             <label for="yes-item-1b">Plano</label>
-           </div>
-         </li>
-         <li>
-           <div class="radio">
-             <input id="yes-item-2b" type="radio" name="newBase" value="yes-item-2b" />
-             <label for="yes-item-2b">Malha</label>
-           </div>
-         </li>
-         <li>
-           <div class="radio">
-             <input id="yes-item-3b" type="radio" name="newBase" value="yes-item-3b" />
-             <label for="yes-item-3b">Não Tecido</label>
-           </div>
-         </li>
-       </ul>
-       <div class="hide">
-          <div class="w-410">
-            <div class="search">
-               <input id="findProduct" type="text" placeholder="Digite o código do artigo similar:" value="" />
-               <span><input type="button" value="Search Product" /></span>
+         <div class="hide">
+            <div class="w-410">
+              <div class="search">
+                 <input id="findProduct" type="text" placeholder="Digite o código do artigo similar:" value="" />
+                 <span><input type="button" value="Search Product" /></span>
+              </div>
+            </div>
+            <p class="title">Qual alteração deseja fazer?</p>
+            <div class="w-220">
+              <label>Largura</label>
+              <input id="width" type="text" placeholder="cm" value="" />
+            </div>
+            <div class="w-220">
+              <label>Gramatura</label>
+              <input id="grammageA" placeholder="g/m2" type="text" value="" />
+              <input id="grammageB" placeholder="g/m" type="text" value="" />
+            </div>
+            <div class="w-220">
+              <label>Rendimento</label>
+              <input id="yieldA" placeholder="m" type="text" value="" />
+              <input id="yieldB" placeholder="Kg" type="text" value="" />
+            </div>
+            <div class="w-680">
+              <label>Composição</label>
+              <input id="composition" type="text" value="" />
+            </div>
+            <div class="w-680">
+              <label>Acabamento</label>
+              <input id="finishing" type="text" value="" />
+            </div>
+            <div class="w-680">
+              <label>Descrição</label>
+              <textarea></textarea>
             </div>
           </div>
-          <p class="title">Qual alteração deseja fazer?</p>
-          <div class="w-220">
-            <label>Largura</label>
-            <input id="width" type="text" placeholder="cm" value="" />
-          </div>
-          <div class="w-220">
-            <label>Grammage</label>
-            <input id="grammageA" placeholder="g/m2" type="text" value="" />
-            <input id="grammageB" placeholder="g/m" type="text" value="" />
-          </div>
-          <div class="w-220">
-            <label>Rendimento</label>
-            <input id="yieldA" placeholder="m" type="text" value="" />
-            <input id="yieldB" placeholder="Kg" type="text" value="" />
-          </div>
-          <div class="w-680">
-            <label>Composição</label>
-            <input id="composition" type="text" value="" />
-          </div>
-          <div class="w-680">
-            <label>Acabamento</label>
-            <input id="finishing" type="text" value="" />
-          </div>
-          <div class="w-680">
-            <label>Descrição</label>
-            <textarea></textarea>
-          </div>
-        </div>
+      </div>
     </div>
     <span class="little-break">&nbsp;</span>
     <a class="btn next right" href="javascript:void(0);">Próximo<span><i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>

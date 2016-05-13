@@ -45,7 +45,27 @@
       }
       form{
         margin: -10px 10px 0;
-        width: calc(~"100% - 20px") !important; 
+        width: calc(~"100% - 20px") !important;
+        fieldset{
+          legend{
+            .show;
+            .txt-sets(center,@dark-blue,1.1,700);
+            border-bottom: 1px solid @light-blue;
+          }
+          >.content{
+            padding-top: 10px;
+          }
+        }
+      }
+      form.base{
+        .content{
+          padding-top: 20px;
+        }
+      }
+      form.amostra{
+        .content{
+          padding: 10px 0; 
+        }
       }
       form.finalidade_produto{
         fieldset{
@@ -77,12 +97,35 @@
       }
       form.prazo_preco_quant{
         .content{
+          >.l-bottom{
+            padding: 10px 0;
+          }
+          >p.title{
+            margin-left: 0;
+            margin-right: 0;
+          }
           >ul.inline{
             li:nth-child(4){
               margin-left:466px;
             }
             div.checkbox{
               margin:-10px -15px -13px 10px;
+            }
+          }
+        }
+      }
+      form.similaridade{
+        .content{
+          padding: 10px 0;
+          .l-bottom{
+            padding: 10px 0;
+            &:nth-child(3){
+              >:nth-child(2){
+                display:block;
+              }
+              >ul{
+                margin: 10px 0 20px;
+              }
             }
           }
         }
@@ -98,25 +141,27 @@
       }
       form.segmentacao{
         fieldset{
-          .l-both{
-            ul{
-              li{
-                p{
-                  padding: 5px 29px 0;
-                  display: block;
-                  width: auto;
-                  line-height: auto;
-                }
-                >div{
-                  min-width: auto;
-                }
-                ul{
-                  margin: 10px;
-                  display: block;
-                  width: auto;
-                  li{
-                    width: auto !important;
-                    padding-bottom: 9.5px;
+          .content{
+            .l-both{
+              ul{
+                li{
+                  p{
+                    padding: 5px 29px 0;
+                    display: block;
+                    width: auto;
+                    line-height: auto;
+                  }
+                  >div{
+                    min-width: auto;
+                  }
+                  ul{
+                    margin: 10px;
+                    display: block;
+                    width: auto;
+                    li{
+                      width: auto !important;
+                      padding-bottom: 9.5px;
+                    }
                   }
                 }
               }
@@ -160,7 +205,7 @@
           ul.inline{
             .w-210{
               display: block;
-              margin: 6px 6px 0 -13px !important;
+              margin: 6px 6px 0 0px !important;
             }
           }
           >ul.inline{
@@ -175,6 +220,14 @@
               margin-top:0 !important;
             }
           }
+        }
+      }
+      form.similaridade{
+        div div[class^='w-']{
+          width: calc(~"50% - 8px") !important; 
+        }
+        div div[class^='w-680']{
+          width: calc(~"100% - 7px") !important;
         }
       }
     }
@@ -196,9 +249,25 @@
           }
         }
       }
+      form.similaridade{
+        .content{
+          .l-bottom{
+            &:nth-child(3){
+              ul.w-220{
+                border-left: none;
+                display: block;
+              }
+            }
+            &:nth-child(4){
+              .radio label, .checkbox label{
+                margin: 10px 25px 10px 0;
+              }
+            }
+          }
+        }
+      }
     }
   }
-
   @media (max-width: 425px) {
     main{
       nav{
@@ -271,6 +340,9 @@
       }
       form.prazo_preco_quant{
         .content{
+          >ul.inline{
+            margin-left: 0 !important;
+          }
           ul.inline{
             [class^='w-']{
               display: block;
@@ -283,6 +355,22 @@
               margin-top:-10px !important;
             }
           }
+        }
+      }
+      form.similaridade{
+        .content{
+          .l-bottom{
+            &:first-child{
+              .radio{
+                label{
+                  margin-bottom: 10px;
+                }
+              }
+            }
+          }
+        }
+        div div[class^='w-']{
+          width: 100% !important; 
         }
       }
     }
