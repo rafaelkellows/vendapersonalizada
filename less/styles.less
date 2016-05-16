@@ -70,7 +70,7 @@ body{
 }
 .little-break{ float: none; display: block; width: 100%; height: 14px; }
 ul.inline li{.d-inline(middle);}
-ul.block li{display: block; padding-bottom: 10px;}
+ul.block li{display: block !important; padding-bottom: 10px !important;}
 
 /* Mixins and Functions */
 .lnk-active-hover(){
@@ -138,7 +138,7 @@ ul.block li{display: block; padding-bottom: 10px;}
 main{ 
   width: 100%;
   /* LOADER */
-  loader{
+  div.loader{
     position: fixed;
     left: 0;
     top: 0;
@@ -146,15 +146,18 @@ main{
     width: 100%;
     height: 100%;
     img{
-      top:calc(~"50% - 16px"); 
-      left:calc(~"50% - 16px"); 
+      top: calc(~"50% - 16px"); 
+      top: 50%\9;
+      left: calc(~"50% - 16px");
+      left: 50%\9;
       position: absolute;
       z-index: 99;
     }
     &:after{
       content: '';
       background: #fff;
-      opacity: 0.5; 
+      opacity: 0.5;
+      filter: alpha(opacity=50);
       width: 100%;
       height: 100%;
     }
@@ -192,7 +195,7 @@ main{
         margin-right: -3px;
         background: @medium-gray;
         border: 1px solid @dark-gray;
-        position: initial;
+        position: static;
         .d-inline(middle);
         .transit(0.3s);
         >a{
@@ -373,7 +376,9 @@ main{
         border-radius: 10px;
         border: 1px solid @light-blue;
         .transit(0.3s);
-        margin: -36px;
+        position: absolute;
+        top: 34px;
+        right: -36px;
         i{
           color: #fff;
           vertical-align: middle;
@@ -391,6 +396,9 @@ main{
             color:@light-blue;
           }
         }
+      }
+      ul.codes li a.ico-circle{
+        top:3px; right: 3px;
       }
       .radio label, .checkbox label {
         display: inline-block !important;
@@ -420,7 +428,9 @@ main{
         border: 1px solid #e6e7e8;
       }
       .radio input[type=radio], .checkbox input[type=checkbox]{  
-        display: none;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        position: absolute;
       }
       .radio label:before {
         border-radius: 8px;
@@ -450,7 +460,8 @@ main{
         .txt-sets(left,#535659,0.93,400);
         padding:10px;
         margin: 6px 0 5px;
-        width: calc(~"100% - 23px");
+        width: 100%;
+        box-sizing:border-box;
       }
       textarea{
         &:extend(.form-fields);
@@ -470,6 +481,24 @@ main{
         &:hover{
          color:@light-blue;
           background: @medium-gray;
+        }
+      }
+      ul.codes{
+        li{
+          color: @dark-blue; .px-to-em(15); font-size:@px-to-em; line-height:@px-to-em;
+          padding: 5px 0;
+          a.ico-circle{
+            margin-left:10px;
+          }
+          p{ 
+            .d-inline(middle); font-size:@px-to-em; margin: 0; width: calc(~"100% - 38px");
+            span{
+              .d-inline(middle);
+              &:last-child{
+                
+              }
+            }
+          }
         }
       }
     }

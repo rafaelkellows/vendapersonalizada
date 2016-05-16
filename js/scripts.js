@@ -3,7 +3,8 @@ $(function(){
 		var vendapersonalizada = {
 	        init: function() {
 	            this.menu();
-	            //this.load('similaridade');
+	            $('div.loader').fadeOut('fast');
+	            this.load('segmentacao');
 	        },
 	        menu: function() {
 	        	//Mobile
@@ -12,7 +13,7 @@ $(function(){
 	        		$(this).closest('ul').find('>li').not(':first').fadeToggle('fast');
 	        	});
 	        	//First Level
-	        	$('main nav > ul > li > a').click(function() {
+	        	$('main nav > ul > li:not(.disabled) > a').click(function() {
 	        		$('main nav > ul li').removeClass('active');
 	        		$(this).parent().addClass('active');
 	        	});
@@ -55,19 +56,18 @@ $(function(){
 				    		case 'finalidade_produto':
 				    		vendapersonalizada.finalidadeProduto(); 
 				    		break;
+				    		case 'prazo_preco_quantidade':
+				    		vendapersonalizada.prazoPrecoQuantidade(); 
+				    		break;
 				    	}
 				    }
 				})
 	        },
 	        loader: function(l){
 	        	if(l){
-		        	$('loader').remove();
-		        	var html = '<loader><img src="images/loader.gif" height="32" width="32" /></loader>';
-		        	$('body main').prepend(html);
+		        	$('div.loader').fadeIn('fast');
 		        }else{
-		        	$('loader').fadeOut('fast',function(){
-		        		$(this).remove();
-		        	});
+		        	$('div.loader').fadeOut('fast');
 		        }
 	        },
 	        navButtons: function(st){
@@ -108,21 +108,59 @@ $(function(){
 	        		switch(_v){
 	        			case '1':
 	        				_f.find('div.existBase').removeClass('hide');
+	        				vendapersonalizada.existBase();
 	        				break;
 	        			case '0':
 	        				_f.find('div.newBase').removeClass('hide');
-	        				vendapersonalizada.baseNova();
+	        				vendapersonalizada.newBase();
 	        				break;
 	        		}
 	        		vendapersonalizada.navButtons(1);
 	        	});
 	        },
-	        baseNova: function(){
-	        	$('body main section form.base > fieldset .newBase > ul li input[type=radio]').click(function() {
-	        		$(this).closest('ul').hide('fast',function(){
-	        			$(this).next('div').removeClass('hide');
-	        		})
+	        newBase: function(){
+	        	$('body main section form.base > fieldset .newBase input[name=baseType]').click(function() {
+					$(this).closest('.newBase').find('>*:not(.l-bottom)').addClass('hide');
+					switch($(this).val()){
+	        			case 'Nova':
+			        		$(this).closest('.newBase').find('>ul').removeClass('hide');
+	        				break;
+	        			case 'Similar':
+	        				$(this).closest('.newBase').find('>div:not(.l-bottom)').removeClass('hide');
+	        				break;
+	        		}
 	        	});
+	        },
+	        existBase: function(){
+	        	var _result = $('#findProductResult');
+	        		_result.hide();
+	        	var _field = $('#findProduct');
+	        	var _codes = $('ul.block.codes');
+	        	_field.keyup(function() {
+	        		if( $(this).val().length > 3){ 
+						_result.fadeIn(400,function(){
+							$(this).find('em').unbind('click').click(function(){
+				        		$(this).fadeOut('slow',function(){
+				        			$(this).remove();
+				        		})
+				        		_codes.prepend('<li style="display:none"><p>'+$(this).text()+'</p><input name="productID" type="hidden" value="'+$(this).text()+'" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>');
+				        		_codes.find('li').fadeIn('slow');
+				        		_field.val('');
+				        		action();
+							});
+						});
+	        		}else{
+						_result.fadeOut();
+	        		}
+	        	});
+	        	var action = function(){
+	        		_codes.find('a.ico-circle').unbind('click').click(function(){
+	        			$(this).closest('li').fadeOut(400,function(){
+	        				$(this).remove();
+	        			})
+	        		});
+	        	}
+	        	action();
 	        },
 	        amostra: function(){
 	        	var _field = $('#pantoneCode');
@@ -160,6 +198,28 @@ $(function(){
 						($(this).is(':hidden')) ? _i.removeClass('fa-chevron-down').addClass('fa-chevron-up'):null;
 	        		});
 	        	});
+	        },
+	        prazoPrecoQuantidade:function(){
+	        	var _fieldA  = $('#nameCode');
+	        	var _fieldB = $('#amount');
+	        	var _codes = $('ul.block.codes');
+	        	_fieldB.next('a').click(function(){
+	        		if( _fieldA.val().length > 0 && _fieldB.val().length > 0 ){
+		        		_codes.prepend('<li style="display:none"><p><span class="w-300">'+_fieldA.val()+"</span><span>"+_fieldB.val()+'</span></p><input name="colorAmount" type="hidden" value="'+_fieldA.val()+"/"+_fieldB.val()+'" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>');
+		        		_codes.find('li').fadeIn('slow');
+		        		_fieldA.val('');
+		        		_fieldB.val('');
+		        		action();
+	        		}
+	        	});
+	        	var action = function(){
+	        		_codes.find('a.ico-circle').unbind('click').click(function(){
+	        			$(this).closest('li').fadeOut(400,function(){
+	        				$(this).remove();
+	        			})
+	        		});
+	        	}
+	        	action();
 	        }
     	}
 		vendapersonalizada.init();

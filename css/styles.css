@@ -201,8 +201,8 @@ ul.inline li {
   vertical-align: middle;
 }
 ul.block li {
-  display: block;
-  padding-bottom: 10px;
+  display: block !important;
+  padding-bottom: 10px !important;
 }
 /* Mixins and Functions */
 /*******************************
@@ -216,7 +216,7 @@ main {
   /* NAV */
   /* FORM */
 }
-main loader {
+main div.loader {
   position: fixed;
   left: 0;
   top: 0;
@@ -224,16 +224,19 @@ main loader {
   width: 100%;
   height: 100%;
 }
-main loader img {
+main div.loader img {
   top: calc(50% - 16px);
+  top: 50%\9;
   left: calc(50% - 16px);
+  left: 50%\9;
   position: absolute;
   z-index: 99;
 }
-main loader:after {
+main div.loader:after {
   content: '';
   background: #fff;
   opacity: 0.5;
+  filter: alpha(opacity=50);
   width: 100%;
   height: 100%;
 }
@@ -275,7 +278,7 @@ main nav > ul > li {
   margin-right: -3px;
   background: #f2f3f5;
   border: 1px solid #ced4d9;
-  position: initial;
+  position: static;
   display: inline-block;
   vertical-align: middle;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
@@ -532,7 +535,9 @@ main form fieldset a.ico-circle {
   border: 1px solid #287bca;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
-  margin: -36px;
+  position: absolute;
+  top: 34px;
+  right: -36px;
 }
 main form fieldset a.ico-circle i {
   color: #fff;
@@ -551,6 +556,10 @@ main form fieldset a.ico-circle:hover {
 }
 main form fieldset a.ico-circle:hover i {
   color: #287bca;
+}
+main form fieldset ul.codes li a.ico-circle {
+  top: 3px;
+  right: 3px;
 }
 main form fieldset .radio label,
 main form fieldset .checkbox label {
@@ -587,7 +596,9 @@ main form fieldset .checkbox label:before {
 }
 main form fieldset .radio input[type=radio],
 main form fieldset .checkbox input[type=checkbox] {
-  display: none;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
 }
 main form fieldset .radio label:before {
   border-radius: 8px;
@@ -619,7 +630,8 @@ main form fieldset input[type=text] {
   font-weight: 400;
   padding: 10px;
   margin: 6px 0 5px;
-  width: calc(100% - 23px);
+  width: 100%;
+  box-sizing: border-box;
 }
 main form fieldset textarea {
   text-align: left;
@@ -647,6 +659,26 @@ main form fieldset input[type=button]:hover {
   color: #287bca;
   background: #f2f3f5;
 }
+main form fieldset ul.codes li {
+  color: #004fa5;
+  font-size: 0.9375em;
+  line-height: 0.9375em;
+  padding: 5px 0;
+}
+main form fieldset ul.codes li a.ico-circle {
+  margin-left: 10px;
+}
+main form fieldset ul.codes li p {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.9375em;
+  margin: 0;
+  width: calc(100% - 38px);
+}
+main form fieldset ul.codes li p span {
+  display: inline-block;
+  vertical-align: middle;
+}
 /*******************************
 
             FORMS
@@ -664,8 +696,15 @@ main form.segmentacao fieldset .content .l-both {
 main form.segmentacao fieldset .content .l-both ul li {
   padding: 9.5px;
 }
-main form.segmentacao fieldset .content .l-both ul li:nth-child(odd) {
+main form.segmentacao fieldset .content .l-both ul li:nth-child(odd),
+main form.segmentacao fieldset .content .l-both ul li.odd {
   background: #f2f3f5;
+}
+main form.segmentacao fieldset .content .l-both ul li:nth-child(odd) .checkbox label:before,
+main form.segmentacao fieldset .content .l-both ul li.odd .checkbox label:before,
+main form.segmentacao fieldset .content .l-both ul li:nth-child(odd) .radio label:before,
+main form.segmentacao fieldset .content .l-both ul li.odd .radio label:before {
+  background: #fff;
 }
 main form.segmentacao fieldset .content .l-both ul li > * {
   display: inline-block;
@@ -679,11 +718,12 @@ main form.segmentacao fieldset .content .l-both ul li p {
   width: calc(100% - 340px);
 }
 main form.segmentacao fieldset .content .l-both ul li ul {
-  width: calc(100% - 281px);
+  width: 623px;
+  box-sizing: border-box;
   border: 1px solid #d7d7d7;
   background: #ebeced;
-  margin: -10px -10px -9px -50px;
-  min-height: 38px;
+  margin: -10px -11px -9px -50px;
+  min-height: 41px;
   display: inline-block;
   vertical-align: top;
 }
@@ -773,16 +813,33 @@ main form.base div.w-410 > div.search span input[type=button] {
   position: absolute;
   left: 0;
 }
-main form.base div.w-410 > em {
+main form.base div.w-410 div#findProductResult {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+}
+main form.base div.w-410 em {
   font-size: 0.8125em;
+  border-top: 1px solid #fff;
+  cursor: pointer;
   padding: 11px;
   display: block;
+  background: #fafbfc;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+}
+main form.base div.w-410 em:hover {
+  background: #287bca;
+  color: #fff;
 }
 main form.base fieldset > ul {
   padding: 0 0.625em;
 }
 main form.base fieldset .radio label {
   margin-right: 40px;
+}
+main form.base fieldset ul.codes li p {
+  width: calc(100% - 30px);
 }
 main form.base ul {
   padding: 0 10px;
@@ -794,7 +851,7 @@ main form.base ul li {
 main form.base ul li p {
   font-size: 0.8125em;
   float: none;
-  padding-left: 30px;
+  margin-left: 30px;
   width: auto;
   display: block;
 }
@@ -827,11 +884,16 @@ main form.amostra .content {
 main form.amostra .content p.title {
   padding: 20px 0 8px;
 }
-main form.amostra .content ul li .w-300 {
-  margin: -10px 0 0 12px;
+main form.amostra .content > div {
+  padding-top: 25px;
 }
-main form.amostra .content ul li .w-300 a {
-  margin: -36px;
+main form.amostra .content ul li.pantone {
+  vertical-align: top;
+  margin-top: -35px;
+}
+main form.amostra .content ul li .w-300 {
+  /*margin: -10px 0 0 12px;
+					a{ margin: -36px; }*/
 }
 main form.amostra .content ul li textarea {
   height: 18px;
@@ -842,19 +904,6 @@ main form.amostra .content a.btn {
   display: inline-block;
   margin-left: 0;
   margin-top: 0;
-}
-main form.amostra .content ul.codes li {
-  color: #004fa5;
-  font-size: 0.875em;
-  line-height: 0.875em;
-  padding: 5px 0;
-}
-main form.amostra .content ul.codes li a.ico-circle {
-  margin-left: 10px;
-}
-main form.amostra .content ul.codes li p {
-  display: inline-block;
-  vertical-align: middle;
 }
 main form.finalidade_produto fieldset .l-bottom {
   margin: 0;
@@ -963,6 +1012,9 @@ main form.prazo_preco_quant .content .l-bottom:first-child p.title {
 main form.prazo_preco_quant .content .l-bottom p.title {
   padding-bottom: 8px;
 }
+main form.prazo_preco_quant .content .l-bottom ul.inline .w-210 {
+  margin-left: -13px !important;
+}
 main form.prazo_preco_quant .content ul.inline div.radio {
   width: 110px;
   margin: 0 0 -20px 0;
@@ -975,9 +1027,6 @@ main form.prazo_preco_quant .content ul.inline [class^='w-'] {
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
 }
-main form.prazo_preco_quant .content ul.inline .w-210 {
-  margin-left: -13px;
-}
 main form.prazo_preco_quant .content > p.title {
   margin: 20px 10px 0;
 }
@@ -989,6 +1038,9 @@ main form.prazo_preco_quant .content > ul.inline div.radio {
 }
 main form.prazo_preco_quant .content > ul.inline li[class^='w-'] {
   margin: -40px 0 0 250px;
+}
+main form.prazo_preco_quant .content ul.codes li {
+  width: 560px;
 }
 main form.similaridade .content {
   padding: 10px;
@@ -1129,6 +1181,9 @@ main form.similaridade .content .l-bottom:nth-child(4) .checkbox {
   main form.prazo_preco_quant .content > ul.inline div.checkbox {
     margin: -10px -15px -13px 10px;
   }
+  main form.prazo_preco_quant .content ul.codes li p {
+    /*width: calc(~"100% - 375px"); */
+  }
   main form.similaridade .content {
     padding: 10px 0;
   }
@@ -1179,9 +1234,19 @@ main form.similaridade .content .l-bottom:nth-child(4) .checkbox {
     display: block;
     padding: 5px 0;
   }
+  main form.amostra .content div .inline li.pantone {
+    vertical-align: top;
+    margin-top: 0;
+  }
   main form.amostra .content div .inline li .w-300 {
     margin: 0;
     width: calc(100% - 50px) !important;
+  }
+  main form.amostra .content div .inline ul.codes li p {
+    width: calc(100% - 44px);
+  }
+  main form.amostra .content div .inline ul.codes li a {
+    right: 14px;
   }
   main form.finalidade_produto fieldset li {
     width: 49% !important;
@@ -1211,14 +1276,22 @@ main form.similaridade .content .l-bottom:nth-child(4) .checkbox {
   }
 }
 @media screen and (max-width: 650px) {
-  main form.prazo_preco_quant .content ul.inline [class^='w-'] {
+  main form.prazo_preco_quant .content .l-bottom ul.inline [class^='w-'] {
     display: block;
   }
-  main form.prazo_preco_quant .content ul.inline div.radio {
+  main form.prazo_preco_quant .content .l-bottom ul.inline div.radio {
     margin: 5px 0 20px 0;
   }
-  main form.prazo_preco_quant .content ul.inline .w-210 {
+  main form.prazo_preco_quant .content .l-bottom ul.inline .w-210 {
     margin: -10px 6px 0 0 !important;
+  }
+  main form.prazo_preco_quant .content ul.codes li {
+    width: auto;
+  }
+  main form.prazo_preco_quant .content ul.codes li p span {
+    display: inline-block !important;
+    width: 44% !important;
+    margin: 6px !important;
   }
   main form.similaridade .content .l-bottom:nth-child(3) ul.w-220 {
     border-left: none;

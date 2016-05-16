@@ -18,8 +18,13 @@ main{
 		        ul{
 		          li{
 		            padding: 9.5px;
-		            &:nth-child(odd){
+		            &:nth-child(odd), &.odd{	
 		              background:@medium-gray;
+		              .checkbox, .radio{
+		              	label:before{
+							background:#fff;
+		              	}
+		              }
 		            }
 		            >*{
 		              .d-inline(middle);
@@ -33,11 +38,12 @@ main{
 		              width: calc(~"100% - 340px");
 		            }
 		            ul{
-		              width: calc(~"100% - 281px");
+		              width: 623px;
+		              box-sizing: border-box;
 		              border: 1px solid #d7d7d7;
 		              background: #ebeced;
-		              margin: -10px -10px -9px -50px;
-		              min-height: 38px;
+		              margin: -10px -11px -9px -50px;
+		              min-height: 41px;
 		              .d-inline(top);
 		              li{
 		                background: none !important;
@@ -130,11 +136,24 @@ main{
 					}
 				}
 			}
-			>em{
+			div#findProductResult{
+				position: absolute;
+				z-index: 999;
+				width: 100%;
+			}
+			em{
 				.px-to-em(13);
 				font-size: @px-to-em;
+				border-top: 1px solid #fff;
+				cursor: pointer;
 				padding: 11px;
 				display: block;
+				background: @light-gray;
+				.transit(0.3s);
+				&:hover{
+					background: @light-blue;
+					color: #fff;
+				}
 			}
 		}
 		fieldset{
@@ -143,6 +162,9 @@ main{
 			}
 			.radio{
 				 label{ margin-right:40px; }
+			}
+			ul.codes li p{
+				width: calc(~"100% - 30px");
 			}
 		}
 		ul{
@@ -153,7 +175,7 @@ main{
 					.px-to-em(13);
 					font-size: @px-to-em;
 					float: none;
-					padding-left: 30px;
+					margin-left: 30px;
 					width: auto;
 					display: block;
 				}
@@ -195,10 +217,17 @@ main{
 			p.title{
 				padding: 20px 0 8px;
 			}
+			>div{
+				padding-top: 25px;
+			}
 			ul li{
+				&.pantone{
+					vertical-align: top;
+					margin-top: -35px;
+				}
 				.w-300{
-					margin: -10px 0 0 12px;
-					a{ margin: -36px; }
+					/*margin: -10px 0 0 12px;
+					a{ margin: -36px; }*/
 				}
 				textarea{
 					height: 18px;
@@ -210,16 +239,6 @@ main{
 				display: inline-block;
 				margin-left:0;
 				margin-top:0;
-			}
-			ul.codes{
-				li{
-					color: @dark-blue; .px-to-em(14); font-size:@px-to-em; line-height:@px-to-em;
-					padding: 5px 0;
-					a.ico-circle{
-						margin-left:10px;
-					}
-					p{ .d-inline(middle); }
-				}
 			}
 		}
 	}
@@ -333,6 +352,11 @@ main{
 				p.title{
 					padding-bottom:8px;
 				}
+				ul.inline{
+					.w-210{
+						margin-left: -13px !important;
+					}
+				}
 			}	
 			ul.inline{
 				div.radio{
@@ -346,9 +370,6 @@ main{
 					margin-right: 20px;
 					.transit(0.3s);
 				}
-				.w-210{
-					margin-left: -13px;
-				}
 			}
 			>p.title{
 				margin: 20px 10px 0;
@@ -360,6 +381,11 @@ main{
 				}
 				li[class^='w-']{
 					margin:-40px 0 0 250px;
+				}
+			}
+			ul.codes{
+				li{
+					width: 560px;
 				}
 			}
 		}

@@ -64,7 +64,7 @@
       }
       form.amostra{
         .content{
-          padding: 10px 0; 
+          padding: 10px 0;
         }
       }
       form.finalidade_produto{
@@ -111,6 +111,9 @@
             div.checkbox{
               margin:-10px -15px -13px 10px;
             }
+          }
+          ul.codes li p{
+            /*width: calc(~"100% - 375px"); */
           }
         }
       }
@@ -185,9 +188,21 @@
           li{
             display: block;
             padding: 5px 0;
+            &.pantone{
+              vertical-align: top;
+              margin-top: 0;
+            }
             .w-300{
               margin: 0;
               width: calc(~"100% - 50px") !important; 
+            }
+          }
+          ul.codes li{ 
+            p{
+              width: calc(~"100% - 44px");
+            }
+            a{
+              right:14px;
             }
           }
         }
@@ -236,16 +251,30 @@
     main{
       form.prazo_preco_quant{
         .content{
-          ul.inline{
-            [class^='w-']{
-              display: block;
+          .l-bottom{
+            ul.inline{
+              [class^='w-']{
+                display: block;
+              }
+              div.radio{
+                margin: 5px 0 20px 0;
+              }
+              .w-210{
+                margin: -10px 6px 0 0 !important;
+              }
             }
-            div.radio{
-              margin: 5px 0 20px 0;
-            }
-            .w-210{
-              margin: -10px 6px 0 0 !important;
-            }
+          }
+          ul.codes{
+            li{
+                width: auto;
+                p{
+                  span{ 
+                    display: inline-block !important; 
+                    width: 44% !important;
+                    margin: 6px !important;
+                  }
+                }
+              }
           }
         }
       }

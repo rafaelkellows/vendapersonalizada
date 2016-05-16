@@ -38,9 +38,9 @@
       <div>
         <ul class="inline">
           <li>
-           <div class="radio">
-             <input id="pantone" type="radio" name="info" value="Pantone" />
-             <label for="pantone">Pantone</label>
+           <div class="checkbox">
+             <input id="type-item-5" type="checkbox" name="type" value="type-item-5" />
+             <label for="type-item-5">Pantone</label>
            </div>
           </li>
           <li>
@@ -57,12 +57,13 @@
              <em>(Tecido)</em>
            </div>
           </li>
-          <li>
+          <li class="pantone">
             <div class="w-300">
               <label for="pantoneCode">Código Pantone</label>
               <input id="pantoneCode" name="pantoneCode" type="text" value="" />
               <a class="ico-circle right" href="javascript:void(0);"><i class="fa fa-plus" aria-hidden="true"></i></a>
             </div>
+            <ul class="block codes"><!-- Conteúdo carrega aqui --></ul>
           </li>
           <li>
             <div class="w-680">
@@ -107,12 +108,12 @@
 
       <p class="title">Identificação da amostra <em>(identificar a amostra com o número gerado)</em></p>
       <a class="btn" href="javascript:void(0)">Gerar código da amostra</a>
-      <ul class="block codes">
-        <li><p>VP 001/16 – 01</p><input name="pantoneCode" type="hidden" value="VP 001/16 – 01" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
-        <li><p>VP 001/16 – 02</p><input name="pantoneCode" type="hidden" value="VP 001/16 – 02" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
-        <li><p>VP 001/16 – 03</p><input name="pantoneCode" type="hidden" value="VP 001/16 – 03" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
-        <li><p>VP 001/16 – 04</p><input name="pantoneCode" type="hidden" value="VP 001/16 – 04" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
-      <ul>
+      <ul class="codes">
+        <li><p>VP 001/16 – 01</p><input name="sampleCode" type="hidden" value="VP 001/16 – 01" /></li>
+        <li><p>VP 001/16 – 02</p><input name="sampleCode" type="hidden" value="VP 001/16 – 02" /></li>
+        <li><p>VP 001/16 – 03</p><input name="sampleCode" type="hidden" value="VP 001/16 – 03" /></li>
+        <li><p>VP 001/16 – 04</p><input name="sampleCode" type="hidden" value="VP 001/16 – 04" /></li>
+      </ul>
     </div>
 
     <a class="btn next right" href="javascript:void(0);">Próximo<span><i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
