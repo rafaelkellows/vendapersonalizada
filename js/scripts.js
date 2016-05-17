@@ -4,7 +4,6 @@ $(function(){
 	        init: function() {
 	            this.menu();
 	            $('div.loader').fadeOut('fast');
-	            this.load('segmentacao');
 	        },
 	        menu: function() {
 	        	//Mobile
@@ -39,24 +38,24 @@ $(function(){
 						$('body main section').html('');
 	        		},
 	        		success: function(result){
-			        	$('body main section').html(result);
+			        	$('body main section').hide().html(result);
 				    },
 				    complete: function(){ 
 				    	vendapersonalizada.loader(0); 
 				    	switch(page){
-				    		case 'segmentacao':
+				    		case 'solicitacao/segmentacao':
 				    		vendapersonalizada.segmentacao(); 
 				    		break;
-				    		case 'base':
+				    		case 'solicitacao/base':
 				    		vendapersonalizada.base(); 
 				    		break;
-				    		case 'amostra':
+				    		case 'solicitacao/amostra':
 				    		vendapersonalizada.amostra(); 
 				    		break;
-				    		case 'finalidade_produto':
+				    		case 'solicitacao/finalidade_produto':
 				    		vendapersonalizada.finalidadeProduto(); 
 				    		break;
-				    		case 'prazo_preco_quantidade':
+				    		case 'solicitacao/prazo_preco_quantidade':
 				    		vendapersonalizada.prazoPrecoQuantidade(); 
 				    		break;
 				    	}
@@ -64,10 +63,14 @@ $(function(){
 				})
 	        },
 	        loader: function(l){
+	        	vendapersonalizada.ie8();
 	        	if(l){
 		        	$('div.loader').fadeIn('fast');
 		        }else{
-		        	$('div.loader').fadeOut('fast');
+		        	$('div.loader').fadeOut('fast',function(){
+		        		$('body main section').show();
+		        	});
+		        	
 		        }
 	        },
 	        navButtons: function(st){
@@ -80,6 +83,18 @@ $(function(){
 	        },
 	        wSize: function(){
 	        	return $(window).width();
+	        },
+	        ie8 : function(){
+	        	if( $("html").hasClass("ie8") ) { 
+	        		$('.radio label, .checkbox label').prepend('<span class="before"></span>').click(function(){
+	        			if( $(this).parent().hasClass('radio') ){
+	        				var _i_name = $(this).prev('input').attr('name');
+	        				$('input[name='+_i_name+']').prop('checked',false).next('label').removeClass('checked');
+	        			}
+	        			$(this).toggleClass('checked');
+	        		});
+
+	        	};
 	        },
 	        segmentacao:function(){
 				vendapersonalizada.navButtons(0);

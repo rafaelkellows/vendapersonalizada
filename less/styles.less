@@ -415,7 +415,7 @@ main{
         .d-inline(middle);
         margin:0 20px 0 -20px;
       }
-      .radio label:before, .checkbox label:before {
+      .radio label:before, .checkbox label:before, .radio label .before, .checkbox label .before {
         content: "";
         display: inline-block;
         width: 16px;
@@ -426,6 +426,7 @@ main{
         top: 0;
         background-color: #f3f3f3;
         border: 1px solid #e6e7e8;
+        border-radius: 8px;
       }
       .radio input[type=radio], .checkbox input[type=checkbox]{  
         opacity: 0;
@@ -438,7 +439,7 @@ main{
       .checkbox label:before {
         border-radius: 0;
       }
-      .radio input[type=radio]:checked + label:before {
+      .radio input[type=radio]:checked + label:before, .radio input[type=radio]:checked + label .before {
         font-family: FontAwesome;
         content: "\f111";
         color: @medium-blue;        
@@ -446,7 +447,7 @@ main{
         text-align: center;
         line-height: 1.2em;
       }
-      .checkbox input[type=checkbox]:checked + label:before {
+      .checkbox input[type=checkbox]:checked + label:before, .checkbox input[type=checkbox]:checked + label .before {
         font-family: FontAwesome;
         font-weight: normal;
         content: "\f00c";
@@ -468,9 +469,9 @@ main{
         .txt-sets(left,#535659,0.93,400);
         padding:10px;
         margin: 6px 0 5px;
-        width: calc(~"100% - 23px");
-        min-width: calc(~"100% - 23px");
-        max-width: calc(~"100% - 23px");
+        box-sizing:border-box;
+        width: 100%;
+        max-width: 100%;      
       }
       input[type=button]{
         background: @light-blue;
