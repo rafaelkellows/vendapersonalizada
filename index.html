@@ -52,13 +52,13 @@
           <li>
             <a href="javascript:void(0);"><p>Solicitação de venda<span>Personalizada</span></p></a>
             <ul>
-              <li><a data-url='dados' href="javascript:void(0);">Dados Básicos</a></li>
-              <li><a data-url='segmentacao' href="javascript:void(0);">Segmentação</a></li>
-              <li><a data-url='base' href="javascript:void(0);">Base existe ou nova?</a></li>
-              <li><a data-url='amostra' href="javascript:void(0);">Amostra</a></li>
-              <li><a data-url='finalidade_produto' href="javascript:void(0);">Finalidade do Produto</a></li>
-              <li><a data-url='prazo_preco_quantidade' href="javascript:void(0);">Prazo, Preço e Quantidade</a></li>
-              <li><a data-url='similaridade' href="javascript:void(0);">Similaridade</a></li>
+              <li><a data-url='solicitacao/dados' href="javascript:void(0);">Dados Básicos</a></li>
+              <li><a data-url='solicitacao/segmentacao' href="javascript:void(0);">Segmentação</a></li>
+              <li><a data-url='solicitacao/base' href="javascript:void(0);">Base existe ou nova?</a></li>
+              <li><a data-url='solicitacao/amostra' href="javascript:void(0);">Amostra</a></li>
+              <li><a data-url='solicitacao/finalidade_produto' href="javascript:void(0);">Finalidade do Produto</a></li>
+              <li><a data-url='solicitacao/prazo_preco_quantidade' href="javascript:void(0);">Prazo, Preço e Quantidade</a></li>
+              <li><a data-url='solicitacao/similaridade' href="javascript:void(0);">Similaridade</a></li>
             </ul>
           </li>
           <li class="disabled"><a href="javascript:void(0);"><p>Fluxo de Aprovação</p></a></li>
@@ -86,6 +86,17 @@
 
     <!-- build:js js/scripts.js -->
     <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript">
+      
+      $(document).ready(function(){
+        $('nav ul li').each(function(){
+          if( $(this).find('a').attr('data-url') == "solicitacao/finalidade_produto" ){
+            $(this).find('a').click();
+          }
+        })
+      })
+
+    </script>
     <!-- endbuild -->
   </body>
 </html>

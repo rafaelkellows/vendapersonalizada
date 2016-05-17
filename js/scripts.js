@@ -4,7 +4,6 @@ $(function(){
 	        init: function() {
 	            this.menu();
 	            $('div.loader').fadeOut('fast');
-	            this.load('finalidade_produto');
 	        },
 	        menu: function() {
 	        	//Mobile
@@ -44,19 +43,19 @@ $(function(){
 				    complete: function(){ 
 				    	vendapersonalizada.loader(0); 
 				    	switch(page){
-				    		case 'segmentacao':
+				    		case 'solicitacao/segmentacao':
 				    		vendapersonalizada.segmentacao(); 
 				    		break;
-				    		case 'base':
+				    		case 'solicitacao/base':
 				    		vendapersonalizada.base(); 
 				    		break;
-				    		case 'amostra':
+				    		case 'solicitacao/amostra':
 				    		vendapersonalizada.amostra(); 
 				    		break;
-				    		case 'finalidade_produto':
+				    		case 'solicitacao/finalidade_produto':
 				    		vendapersonalizada.finalidadeProduto(); 
 				    		break;
-				    		case 'prazo_preco_quantidade':
+				    		case 'solicitacao/prazo_preco_quantidade':
 				    		vendapersonalizada.prazoPrecoQuantidade(); 
 				    		break;
 				    	}
