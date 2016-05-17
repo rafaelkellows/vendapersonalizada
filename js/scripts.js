@@ -4,7 +4,7 @@ $(function(){
 	        init: function() {
 	            this.menu();
 	            $('div.loader').fadeOut('fast');
-	            this.load('segmentacao');
+	            this.load('finalidade_produto');
 	        },
 	        menu: function() {
 	        	//Mobile
@@ -39,7 +39,7 @@ $(function(){
 						$('body main section').html('');
 	        		},
 	        		success: function(result){
-			        	$('body main section').html(result);
+			        	$('body main section').hide().html(result);
 				    },
 				    complete: function(){ 
 				    	vendapersonalizada.loader(0); 
@@ -64,10 +64,14 @@ $(function(){
 				})
 	        },
 	        loader: function(l){
+	        	vendapersonalizada.ie8();
 	        	if(l){
 		        	$('div.loader').fadeIn('fast');
 		        }else{
-		        	$('div.loader').fadeOut('fast');
+		        	$('div.loader').fadeOut('fast',function(){
+		        		$('body main section').show();
+		        	});
+		        	
 		        }
 	        },
 	        navButtons: function(st){
@@ -80,6 +84,18 @@ $(function(){
 	        },
 	        wSize: function(){
 	        	return $(window).width();
+	        },
+	        ie8 : function(){
+	        	if( $("html").hasClass("ie8") ) { 
+	        		$('.radio label, .checkbox label').prepend('<span class="before"></span>').click(function(){
+	        			if( $(this).parent().hasClass('radio') ){
+	        				var _i_name = $(this).prev('input').attr('name');
+	        				$('input[name='+_i_name+']').prop('checked',false).next('label').removeClass('checked');
+	        			}
+	        			$(this).toggleClass('checked');
+	        		});
+
+	        	};
 	        },
 	        segmentacao:function(){
 				vendapersonalizada.navButtons(0);
