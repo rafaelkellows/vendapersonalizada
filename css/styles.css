@@ -215,6 +215,7 @@ ul.block li {
 main {
   width: 100%;
   /* LOADER */
+  /* MSG BOX */
   /* HEADER */
   /* NAV */
   /* FORM */
@@ -236,6 +237,86 @@ main div.loader img {
   z-index: 99;
 }
 main div.loader:after {
+  content: '';
+  background: #fff;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  width: 100%;
+  height: 100%;
+}
+main div.msg-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+}
+main div.msg-box div {
+  width: 450px;
+  top: calc(50% - 100px);
+  top: 50%\9;
+  left: calc(50% - 225px);
+  left: 50%\9;
+  position: absolute;
+  padding: 50px 0;
+  box-sizing: border-box;
+  border: 1px solid #dfe7ee;
+  background: #f2f3f5;
+  z-index: 99;
+}
+main div.msg-box div > a {
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #3071b3;
+  background: #287bca;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 33px;
+}
+main div.msg-box div > a:hover {
+  background: #f2f3f5;
+  border: 1px solid #ccd1d7;
+  color: #287bca;
+}
+main div.msg-box div > i {
+  background: #287bca;
+  color: #fff;
+  width: 100px;
+  display: none;
+  height: 100px;
+  text-align: center;
+  font-size: 95px;
+  line-height: 95px;
+  margin: 0 19px 0 28px;
+  box-sizing: border-box;
+}
+main div.msg-box div > i.fa-exclamation {
+  padding: 6px 0 0 0;
+}
+main div.msg-box div > p {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  width: 277px;
+  line-height: 20px;
+}
+main div.msg-box div.success i.fa-check {
+  display: inline-block;
+  vertical-align: middle;
+}
+main div.msg-box div.error i.fa-exclamation {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #D12527;
+}
+main div.msg-box:after {
   content: '';
   background: #fff;
   opacity: 0.5;
