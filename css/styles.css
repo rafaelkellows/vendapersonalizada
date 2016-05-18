@@ -680,6 +680,74 @@ main form fieldset ul.codes li p span {
   vertical-align: middle;
 }
 /*******************************
+     					IE 9
+*******************************/
+/*******************************
+     					IE 8
+*******************************/
+.ie8 form fieldset a.ico-circle {
+  behavior: url(pie/PIE.htc);
+}
+.ie8 form fieldset a.ico-circle i.fa-plus {
+  margin-top: -3px;
+}
+.ie8 form fieldset a.ico-circle i.fa-minus {
+  margin-left: -1px;
+}
+.ie8 form fieldset .radio label:before,
+.ie8 form fieldset .checkbox label:before {
+  display: none;
+}
+.ie8 form fieldset .radio label .before,
+.ie8 form fieldset .checkbox label .before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #f3f3f3;
+  border: 1px solid #e6e7e8;
+}
+.ie8 form fieldset .radio label .before {
+  border-radius: 8px;
+  behavior: url(pie/PIE.htc);
+}
+.ie8 form fieldset .checkbox label .before {
+  border-radius: 0;
+}
+.ie8 form fieldset .radio label.checked span:before {
+  font-family: FontAwesome;
+  content: "\f111";
+  font-size: 0.91em;
+  text-align: center;
+  line-height: 1.2em;
+  color: #0056a5;
+  position: absolute;
+  top: 0px;
+  left: 1px;
+}
+.ie8 form fieldset .checkbox label.checked span:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  content: "\f00c";
+  font-size: 1.1em;
+  color: #0056a5;
+  text-align: center;
+  line-height: 0.9em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ie8 form.finalidade_produto fieldset .segment ul li {
+  width: 220px;
+}
+.ie8 form.similaridade .content .l-bottom .radio {
+  margin: 5px 0 15px;
+}
+/*******************************
 
             FORMS
 *******************************/
@@ -935,7 +1003,7 @@ main form.finalidade_produto fieldset .l-bottom > ul li {
 main form.finalidade_produto fieldset .l-bottom > ul li .checkbox label {
   margin-right: 0;
 }
-main form.finalidade_produto fieldset .segment ul li:not(.w-880) {
+main form.finalidade_produto fieldset .segment ul li {
   width: 235px;
   margin: 0 0 10px;
 }
