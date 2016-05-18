@@ -79,6 +79,9 @@ body {
 .w-135 {
   width: 135px;
 }
+.w-150 {
+  width: 150px;
+}
 .w-170 {
   width: 170px;
 }
@@ -745,6 +748,36 @@ main form fieldset ul.codes li p span {
   position: absolute;
   top: 0;
   left: 0;
+}
+.ie8 form.finalidade_produto fieldset .segment ul li {
+  width: 210px;
+}
+.ie8 form.finalidade_produto fieldset .segment ul li.w-880 {
+  width: 880px;
+}
+.ie8 form.finalidade_produto fieldset .top ul li,
+.ie8 form.finalidade_produto fieldset .bottom ul li,
+.ie8 form.finalidade_produto fieldset .home ul li,
+.ie8 form.finalidade_produto fieldset .stampingBase ul li,
+.ie8 form.finalidade_produto fieldset .underwear ul li,
+.ie8 form.finalidade_produto fieldset .wholesaleSector ul li,
+.ie8 form.finalidade_produto fieldset .anotherPurpose ul li {
+  width: 135px;
+}
+.ie8 form.finalidade_produto fieldset .top ul li.w-210,
+.ie8 form.finalidade_produto fieldset .bottom ul li.w-210,
+.ie8 form.finalidade_produto fieldset .home ul li.w-210,
+.ie8 form.finalidade_produto fieldset .stampingBase ul li.w-210,
+.ie8 form.finalidade_produto fieldset .underwear ul li.w-210,
+.ie8 form.finalidade_produto fieldset .wholesaleSector ul li.w-210,
+.ie8 form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
+  width: 210px;
+}
+.ie8 form.finalidade_produto fieldset .home ul li {
+  width: 150px;
+}
+.ie8 form.finalidade_produto fieldset .underwear ul li.w-220 {
+  width: 210px;
 }
 /*******************************
 
