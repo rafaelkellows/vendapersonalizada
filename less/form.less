@@ -279,8 +279,6 @@ main{
 				ul li{ 
 					.w-235;
 					margin: 0 0 10px;
-					&.w-880{
-					}
 				}
 				ul li{
 					&:nth-child(4n+4){
@@ -309,7 +307,9 @@ main{
 			}
 			.home{
 				ul li{
-					margin: 0 0 20px;
+					&:not(.w-210){
+						margin: 0 0 20px;
+					}
 					&.w-210{
 						margin: -5px 0 0 0;
 					}
