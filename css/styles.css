@@ -775,9 +775,17 @@ main form fieldset ul.codes li p span {
 }
 .ie8 form.finalidade_produto fieldset .home ul li {
   width: 150px;
+  margin: 0 0 10px;
 }
 .ie8 form.finalidade_produto fieldset .underwear ul li.w-220 {
   width: 210px;
+}
+.ie8 form.similaridade .content .l-bottom.commercialConditions ul.w-220 {
+  width: 235px;
+  margin-left: -20px;
+}
+.ie8 form.similaridade .content .l-bottom.commercialConditions ul li .radio label {
+  padding-left: 25px;
 }
 /*******************************
 
@@ -1044,7 +1052,7 @@ main form.finalidade_produto fieldset .l-bottom > ul li {
 main form.finalidade_produto fieldset .l-bottom > ul li .checkbox label {
   margin-right: 0;
 }
-main form.finalidade_produto fieldset .segment ul li {
+main form.finalidade_produto fieldset .segment ul li:not(.w-880) {
   width: 235px;
   margin: 0 0 10px;
 }
@@ -1154,35 +1162,47 @@ main form.prazo_preco_quant .content ul.codes li {
 main form.similaridade .content {
   padding: 10px;
 }
-main form.similaridade .content .l-bottom:first-child {
+main form.similaridade .content .l-bottom:first-child,
+main form.similaridade .content .l-bottom.competitorProduces {
   margin-top: 0;
 }
-main form.similaridade .content .l-bottom:first-child p.title {
+main form.similaridade .content .l-bottom:first-child p.title,
+main form.similaridade .content .l-bottom.competitorProduces p.title {
   padding-bottom: 8px;
 }
-main form.similaridade .content .l-bottom:first-child .radio {
+main form.similaridade .content .l-bottom:first-child .radio,
+main form.similaridade .content .l-bottom.competitorProduces .radio {
   margin: 5px 0 15px;
 }
-main form.similaridade .content .l-bottom:first-child .radio label {
+main form.similaridade .content .l-bottom:first-child .radio label,
+main form.similaridade .content .l-bottom.competitorProduces .radio label {
   margin-right: 45px;
 }
-main form.similaridade .content .l-bottom:nth-child(2) .w-220 {
+main form.similaridade .content .l-bottom:nth-child(2) .w-220,
+main form.similaridade .content .l-bottom.competitorDatas .w-220 {
   vertical-align: top;
 }
-main form.similaridade .content .l-bottom:nth-child(3) ul.w-220 {
+main form.similaridade .content .l-bottom:nth-child(3) ul.w-220,
+main form.similaridade .content .l-bottom.commercialConditions ul.w-220,
+main form.similaridade .content .l-bottom:nth-child(3) ul.w-210,
+main form.similaridade .content .l-bottom.commercialConditions ul.w-210 {
   border-left: 2px solid #ced4d9;
   padding-left: 20px;
   margin-left: -20px;
   height: 30px;
 }
-main form.similaridade .content .l-bottom:nth-child(3) > ul {
+main form.similaridade .content .l-bottom:nth-child(3) > ul,
+main form.similaridade .content .l-bottom.commercialConditions > ul {
   margin: 0 0 -20px 10px;
 }
-main form.similaridade .content .l-bottom:nth-child(4) .title {
+main form.similaridade .content .l-bottom:nth-child(4) .title,
+main form.similaridade .content .l-bottom.priceChange .title {
   padding-bottom: 5px;
 }
 main form.similaridade .content .l-bottom:nth-child(4) .radio,
-main form.similaridade .content .l-bottom:nth-child(4) .checkbox {
+main form.similaridade .content .l-bottom.priceChange .radio,
+main form.similaridade .content .l-bottom:nth-child(4) .checkbox,
+main form.similaridade .content .l-bottom.priceChange .checkbox {
   padding: 10px 0;
 }
 /*******************************

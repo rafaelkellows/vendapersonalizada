@@ -180,7 +180,7 @@ $(function(){
 	        amostra: function(){
 	        	var _field = $('#pantoneCode');
 	        	var _codes = $('ul.block.codes');
-	        	_field.next('a').click(function() {
+	        	$('li.pantone a').click(function() {
 	        		if( _field.val().length > 0 ){
 		        		_codes.prepend('<li style="display:none"><p>'+_field.val()+'</p><input name="pantoneCode" type="hidden" value="'+_field.val()+'" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>');
 		        		_codes.find('li').fadeIn('slow');
@@ -218,7 +218,7 @@ $(function(){
 	        	var _fieldA  = $('#nameCode');
 	        	var _fieldB = $('#amount');
 	        	var _codes = $('ul.block.codes');
-	        	_fieldB.next('a').click(function(){
+	        	$('.amountByColor a').click(function(){
 	        		if( _fieldA.val().length > 0 && _fieldB.val().length > 0 ){
 		        		_codes.prepend('<li style="display:none"><p><span class="w-300">'+_fieldA.val()+"</span><span>"+_fieldB.val()+'</span></p><input name="colorAmount" type="hidden" value="'+_fieldA.val()+"/"+_fieldB.val()+'" /><a class="ico-circle" href="javascript:void(0);"><i class="fa fa-minus" aria-hidden="true"></i></a></li>');
 		        		_codes.find('li').fadeIn('slow');

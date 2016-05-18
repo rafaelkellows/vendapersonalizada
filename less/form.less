@@ -276,7 +276,7 @@ main{
 				}
 			}
 			.segment{
-				ul li{ 
+				ul li:not(.w-880){ 
 					.w-235;
 					margin: 0 0 10px;
 				}
@@ -398,7 +398,7 @@ main{
 		.content{
 			padding:10px;
 			.l-bottom{
-				&:first-child{
+				&:first-child, &.competitorProduces{
 					margin-top:0;
 					p.title{
 						padding-bottom: 8px;
@@ -410,23 +410,23 @@ main{
 						}
 					}
 				}
-				&:nth-child(2){
+				&:nth-child(2), &.competitorDatas{
 					.w-220{
 						vertical-align: top;
 					}
 				}
-				&:nth-child(3){
-					ul.w-220{
+				&:nth-child(3), &.commercialConditions{
+					ul.w-220, ul.w-210{
 						border-left: 2px solid @dark-gray;
 						padding-left: 20px;
 	    				margin-left: -20px;
 	    				height: 30px;
 					}
 					>ul{
-						margin: 0 0 -20px 10px;
+						margin: 0 0 -20px 10px; 
 					}
 				}
-				&:nth-child(4){
+				&:nth-child(4), &.priceChange{
 					.title{
 						padding-bottom: 5px;
 					}
