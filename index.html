@@ -87,6 +87,7 @@
     <!-- build:js js/scripts.js -->
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript">
+<<<<<<< HEAD
       $(document).ready(function(){
         $('nav ul li').each(function(){ 
           if($(this).find('a').attr('data-url') == "solicitacao/finalidade_produto" ){
@@ -94,6 +95,17 @@
           }
         });
       })
+=======
+      
+      $(document).ready(function(){
+        $('nav ul li').each(function(){
+          if( $(this).find('a').attr('data-url') == "solicitacao/finalidade_produto" ){
+            $(this).find('a').click();
+          }
+        })
+      })
+
+>>>>>>> c949c5a8b95bccfe2acf07d955c5c4d8e12617e8
     </script>
     <!-- endbuild -->
   </body>

@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         src: ['dist']
       },
       github:{
-        src: ['baseProject/github']
+        src: ['VendaPersonalizada']
       },
       stylesheets:{
         //The line bellow can be changed accordding to the project
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       //Copy all the files, except that
       build:{
         //The line bellow can be changed accordding to the project
-        src:['**','!node_modules/**','!**/Gruntfile.js','!**/package.json','!less/**','!images/psd/**','!baseProject/**',"!docs/**"],
+        src:['**','!node_modules/**','!**/Gruntfile.js','!**/package.json','!less/**','!images/psd/**','!VendaPersonalizada/**',"!docs/**"],
         dest:'dist',
         expand:true
       },
@@ -46,8 +46,8 @@ module.exports = function(grunt) {
         expand:true
       },
       github:{
-        src:['**','!node_modules/**','!baseProject/**','!dist/**'],
-        dest:'baseProject/github',
+        src:['**','!node_modules/**','!VendaPersonalizada/**','!dist/**'],
+        dest:'VendaPersonalizada',
         expand:true
       }
     },

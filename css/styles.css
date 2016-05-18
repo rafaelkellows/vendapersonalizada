@@ -79,6 +79,9 @@ body {
 .w-135 {
   width: 135px;
 }
+.w-150 {
+  width: 150px;
+}
 .w-170 {
   width: 170px;
 }
@@ -582,7 +585,9 @@ main form fieldset .checkbox > em {
   margin: 0 20px 0 -20px;
 }
 main form fieldset .radio label:before,
-main form fieldset .checkbox label:before {
+main form fieldset .checkbox label:before,
+main form fieldset .radio label .before,
+main form fieldset .checkbox label .before {
   content: "";
   display: inline-block;
   width: 16px;
@@ -593,6 +598,7 @@ main form fieldset .checkbox label:before {
   top: 0;
   background-color: #f3f3f3;
   border: 1px solid #e6e7e8;
+  border-radius: 8px;
 }
 main form fieldset .radio input[type=radio],
 main form fieldset .checkbox input[type=checkbox] {
@@ -606,7 +612,8 @@ main form fieldset .radio label:before {
 main form fieldset .checkbox label:before {
   border-radius: 0;
 }
-main form fieldset .radio input[type=radio]:checked + label:before {
+main form fieldset .radio input[type=radio]:checked + label:before,
+main form fieldset .radio input[type=radio]:checked + label .before {
   font-family: FontAwesome;
   content: "\f111";
   color: #0056a5;
@@ -614,7 +621,8 @@ main form fieldset .radio input[type=radio]:checked + label:before {
   text-align: center;
   line-height: 1.2em;
 }
-main form fieldset .checkbox input[type=checkbox]:checked + label:before {
+main form fieldset .checkbox input[type=checkbox]:checked + label:before,
+main form fieldset .checkbox input[type=checkbox]:checked + label .before {
   font-family: FontAwesome;
   font-weight: normal;
   content: "\f00c";
@@ -640,9 +648,9 @@ main form fieldset textarea {
   font-weight: 400;
   padding: 10px;
   margin: 6px 0 5px;
-  width: calc(100% - 23px);
-  min-width: calc(100% - 23px);
-  max-width: calc(100% - 23px);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 main form fieldset input[type=button] {
   background: #287bca;
@@ -742,10 +750,41 @@ main form fieldset ul.codes li p span {
   left: 0;
 }
 .ie8 form.finalidade_produto fieldset .segment ul li {
+<<<<<<< HEAD
   width: 220px;
 }
 .ie8 form.similaridade .content .l-bottom .radio {
   margin: 5px 0 15px;
+=======
+  width: 210px;
+}
+.ie8 form.finalidade_produto fieldset .segment ul li.w-880 {
+  width: 880px;
+}
+.ie8 form.finalidade_produto fieldset .top ul li,
+.ie8 form.finalidade_produto fieldset .bottom ul li,
+.ie8 form.finalidade_produto fieldset .home ul li,
+.ie8 form.finalidade_produto fieldset .stampingBase ul li,
+.ie8 form.finalidade_produto fieldset .underwear ul li,
+.ie8 form.finalidade_produto fieldset .wholesaleSector ul li,
+.ie8 form.finalidade_produto fieldset .anotherPurpose ul li {
+  width: 135px;
+}
+.ie8 form.finalidade_produto fieldset .top ul li.w-210,
+.ie8 form.finalidade_produto fieldset .bottom ul li.w-210,
+.ie8 form.finalidade_produto fieldset .home ul li.w-210,
+.ie8 form.finalidade_produto fieldset .stampingBase ul li.w-210,
+.ie8 form.finalidade_produto fieldset .underwear ul li.w-210,
+.ie8 form.finalidade_produto fieldset .wholesaleSector ul li.w-210,
+.ie8 form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
+  width: 210px;
+}
+.ie8 form.finalidade_produto fieldset .home ul li {
+  width: 150px;
+}
+.ie8 form.finalidade_produto fieldset .underwear ul li.w-220 {
+  width: 210px;
+>>>>>>> c949c5a8b95bccfe2acf07d955c5c4d8e12617e8
 }
 /*******************************
 
@@ -763,6 +802,7 @@ main form.segmentacao fieldset .content .l-both {
 }
 main form.segmentacao fieldset .content .l-both ul li {
   padding: 9.5px;
+  margin: 0;
 }
 main form.segmentacao fieldset .content .l-both ul li:nth-child(odd),
 main form.segmentacao fieldset .content .l-both ul li.odd {
@@ -771,7 +811,11 @@ main form.segmentacao fieldset .content .l-both ul li.odd {
 main form.segmentacao fieldset .content .l-both ul li:nth-child(odd) .checkbox label:before,
 main form.segmentacao fieldset .content .l-both ul li.odd .checkbox label:before,
 main form.segmentacao fieldset .content .l-both ul li:nth-child(odd) .radio label:before,
-main form.segmentacao fieldset .content .l-both ul li.odd .radio label:before {
+main form.segmentacao fieldset .content .l-both ul li.odd .radio label:before,
+main form.segmentacao fieldset .content .l-both ul li:nth-child(odd) .checkbox label .before,
+main form.segmentacao fieldset .content .l-both ul li.odd .checkbox label .before,
+main form.segmentacao fieldset .content .l-both ul li:nth-child(odd) .radio label .before,
+main form.segmentacao fieldset .content .l-both ul li.odd .radio label .before {
   background: #fff;
 }
 main form.segmentacao fieldset .content .l-both ul li > * {
@@ -799,7 +843,7 @@ main form.segmentacao fieldset .content .l-both ul li ul li {
   background: none !important;
   display: inline-block;
   vertical-align: middle;
-  width: calc(42% - 21px);
+  box-sizing: border-box;
   padding: 0 9.5px;
 }
 main form.segmentacao fieldset .content .l-both ul li ul li p {
@@ -819,17 +863,19 @@ main form.segmentacao fieldset .content .l-both ul li ul li div label:before {
   bottom: initial;
 }
 main form.segmentacao fieldset .content .l-both ul li ul li:first-child {
-  width: calc(58% - 21px);
+  width: 330px;
 }
 main form.base div.w-410 {
   margin: 0;
 }
 main form.base div.w-410 > div.btns a {
   margin: 0 -3px 0 0;
-  width: calc(50% - 37.5px);
+  width: 200px;
+  box-sizing: border-box;
 }
-main form.base div.w-410 > div.btns a:first-child {
-  margin-right: 7px;
+main form.base div.w-410 > div.btns a:first-child,
+main form.base div.w-410 > div.btns a.first_child {
+  margin-right: 7px !important;
 }
 main form.base div.w-410 > div.search {
   padding-top: 10px;
@@ -930,18 +976,18 @@ main form.base .l-bottom div.radio label:before {
   top: 7px;
   bottom: initial;
 }
-main form.base .newBase > div:not(.l-bottom) {
+main form.base .newBase > div.similar {
   margin: 0 auto;
   width: 685px;
 }
-main form.base .newBase > div:not(.l-bottom) .w-410 {
+main form.base .newBase > div.similar .w-410 {
   margin: 0 auto 20px;
   display: block;
 }
-main form.base .newBase > div:not(.l-bottom) .w-220 {
+main form.base .newBase > div.similar .w-220 {
   vertical-align: top;
 }
-main form.base .newBase > div:not(.l-bottom) .w-680 textarea {
+main form.base .newBase > div.similar .w-680 textarea {
   height: 80px;
   min-height: 80px;
   max-height: 80px;
@@ -955,6 +1001,9 @@ main form.amostra .content p.title {
 main form.amostra .content > div {
   padding-top: 25px;
 }
+main form.amostra .content > div ul.inline li .radio {
+  margin: 0 -7px 0 -5px;
+}
 main form.amostra .content ul li.pantone {
   vertical-align: top;
   margin-top: -35px;
@@ -964,9 +1013,8 @@ main form.amostra .content ul li .w-300 {
 					a{ margin: -36px; }*/
 }
 main form.amostra .content ul li textarea {
-  height: 18px;
-  min-height: 18px;
-  max-height: 18px;
+  height: 40px;
+  max-height: 40px;
 }
 main form.amostra .content a.btn {
   display: inline-block;
@@ -1035,7 +1083,7 @@ main form.finalidade_produto fieldset .anotherPurpose ul li.w-210 {
   right: -20px;
   margin: -15px 0 0 0;
 }
-main form.finalidade_produto fieldset .home ul li:not(.w-210) {
+main form.finalidade_produto fieldset .home ul li {
   margin: 0 0 20px;
 }
 main form.finalidade_produto fieldset .home ul li.w-210 {
@@ -1264,6 +1312,15 @@ main form.similaridade .content .l-bottom:nth-child(4) .checkbox {
   main form.similaridade .content .l-bottom:nth-child(3) > ul {
     margin: 10px 0 20px;
   }
+  main form.segmentacao fieldset .content .l-both ul li ul {
+    margin: 10px;
+    display: block;
+    width: auto;
+  }
+  main form.segmentacao fieldset .content .l-both ul li ul li {
+    width: auto !important;
+    padding-bottom: 9.5px;
+  }
 }
 @media screen and (max-width: 768px) {
   main form.dados div[class^='w-'] {
@@ -1277,15 +1334,6 @@ main form.similaridade .content .l-bottom:nth-child(4) .checkbox {
   }
   main form.segmentacao fieldset .content .l-both ul li > div {
     min-width: auto;
-  }
-  main form.segmentacao fieldset .content .l-both ul li ul {
-    margin: 10px;
-    display: block;
-    width: auto;
-  }
-  main form.segmentacao fieldset .content .l-both ul li ul li {
-    width: auto !important;
-    padding-bottom: 9.5px;
   }
   main form.base div div[class^='w-'],
   main form.amostra div div[class^='w-'] {

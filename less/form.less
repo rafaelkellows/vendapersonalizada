@@ -18,10 +18,11 @@ main{
 		        ul{
 		          li{
 		            padding: 9.5px;
+		            margin: 0;
 		            &:nth-child(odd), &.odd{	
 		              background:@medium-gray;
 		              .checkbox, .radio{
-		              	label:before{
+		              	label:before, label .before{
 							background:#fff;
 		              	}
 		              }
@@ -48,7 +49,7 @@ main{
 		              li{
 		                background: none !important;
 		                .d-inline(middle);
-		                width: calc(~"42% - 21px");
+		                box-sizing:border-box;
 		                padding:0 9.5px; 
 		                p{
 		                  .px-to-em(13);
@@ -68,7 +69,7 @@ main{
 		                }
 		              }
 		              li:first-child{
-		                width: calc(~"58% - 21px");
+		                width:330px;
 		              }
 		            }
 		          }
@@ -83,9 +84,10 @@ main{
 			>div.btns{
 				a{
 					margin: 0 -3px 0 0;
-					width: calc(~"50% - 37.5px");
-					&:first-child{
-						margin-right:7px;
+					width: 200px;
+					box-sizing:border-box;
+					&:first-child, &.first_child{
+						margin-right:7px !important;
 					}
 				}
 			}
@@ -191,7 +193,7 @@ main{
 			}
 		}
 		.newBase{
-			>div:not(.l-bottom){
+			>div.similar{
 				margin: 0 auto;
 				width: 685px;
 				.w-410{
@@ -219,6 +221,9 @@ main{
 			}
 			>div{
 				padding-top: 25px;
+				ul.inline li .radio{
+					margin: 0 -7px 0 -5px;
+				}
 			}
 			ul li{
 				&.pantone{
@@ -230,9 +235,8 @@ main{
 					a{ margin: -36px; }*/
 				}
 				textarea{
-					height: 18px;
-					min-height: 18px;
-					max-height: 18px;
+					height: 40px;
+					max-height: 40px;
 				}
 			}
 			a.btn{
@@ -305,9 +309,7 @@ main{
 			}
 			.home{
 				ul li{
-					&:not(.w-210){
-						margin: 0 0 20px;
-					}
+					margin: 0 0 20px;
 					&.w-210{
 						margin: -5px 0 0 0;
 					}
