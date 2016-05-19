@@ -251,6 +251,7 @@ main div.msg-box {
   z-index: 999;
   width: 100%;
   height: 100%;
+  display: none;
 }
 main div.msg-box div {
   width: 450px;
@@ -404,9 +405,39 @@ main nav > ul > li > ul li a {
   display: inline-block;
   vertical-align: middle;
 }
+main nav > ul > li > ul li a p {
+  color: #0056a5 !important;
+}
 main nav > ul > li > ul li a:before {
   content: "";
   height: 3.09em;
+  display: inline-block;
+  vertical-align: middle;
+}
+main nav > ul > li > ul li a span {
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 2px;
+  font-size: 11px !important;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+}
+main nav > ul > li > ul li a span.success {
+  background-color: #40eb40;
+  border: 1px solid #1d951d;
+}
+main nav > ul > li > ul li a span.error {
+  background-color: #eb4040;
+  border: 1px solid #951d1d;
+}
+main nav > ul > li > ul li a span.warning {
+  background-color: #ebd940;
+  border: 1px solid #978b1e;
+}
+main nav > ul > li > ul li a p {
   display: inline-block;
   vertical-align: middle;
 }
@@ -434,8 +465,9 @@ main nav > ul > li > ul li:hover:not(.disabled):after,
 main nav > ul > li > ul li:hover:not(.disabled):before {
   background: #004fa5;
 }
-main nav > ul > li > ul li:hover:not(.disabled) a {
-  color: #fff;
+main nav > ul > li > ul li:hover:not(.disabled) a,
+main nav > ul > li > ul li:hover:not(.disabled) a * {
+  color: #fff !important;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
 }
@@ -447,8 +479,9 @@ main nav > ul > li > ul li.active:after,
 main nav > ul > li > ul li.active:before {
   background: #004fa5;
 }
-main nav > ul > li > ul li.active a {
-  color: #fff;
+main nav > ul > li > ul li.active a,
+main nav > ul > li > ul li.active a * {
+  color: #fff !important;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s;
 }
@@ -774,6 +807,9 @@ main form fieldset ul.codes li p span {
 /*******************************
      					IE 8
 *******************************/
+.ie8 nav > ul li > a span {
+  behavior: url(pie/PIE.htc);
+}
 .ie8 form fieldset a.ico-circle {
   behavior: url(pie/PIE.htc);
 }
