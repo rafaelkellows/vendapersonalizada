@@ -591,6 +591,8 @@ main form fieldset a.btn {
   margin: 10px 10px 20px;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  cursor: pointer;
+  z-index: 99;
 }
 main form fieldset a.btn span {
   display: inline-block;
@@ -637,6 +639,13 @@ main form fieldset a.btn.next span {
 }
 main form fieldset a.btn.prev span {
   padding: 0 10px 0 0;
+}
+main form fieldset a.btn.close {
+  top: -29px;
+}
+main form fieldset a.btn.close i {
+  margin-right: 13px;
+  font-size: 16px;
 }
 main form fieldset a:not(.btn) {
   color: #004fa5;
@@ -688,7 +697,8 @@ main form fieldset ul.codes li a.ico-circle {
   right: 3px;
 }
 main form fieldset .radio label,
-main form fieldset .checkbox label {
+main form fieldset .checkbox label,
+main form.comercial .content > div ul li.block label {
   display: inline-block !important;
   cursor: pointer;
   position: relative;
@@ -1399,10 +1409,6 @@ main form.amostra .content ul li.pantone {
   vertical-align: top;
   margin-top: -35px;
 }
-main form.amostra .content ul li .w-300 {
-  /*margin: -10px 0 0 12px;
-					a{ margin: -36px; }*/
-}
 main form.amostra .content ul li textarea {
   height: 40px;
   max-height: 40px;
@@ -1597,6 +1603,53 @@ main form.similaridade .content .l-bottom.priceChange .checkbox {
 }
 main form.inicial {
   width: 926px;
+}
+main form.comercial .content .little-break {
+  height: 40px;
+}
+main form.comercial .content .close {
+  margin-right: 0;
+}
+main form.comercial .content > div {
+  padding: 10px;
+}
+main form.comercial .content > div h3 {
+  font-size: 1.125em;
+  line-height: 1.125em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+main form.comercial .content > div p.right {
+  margin: -42px 0 0 0;
+  font-size: 1.125em;
+  line-height: 1.125em;
+  color: #535659;
+}
+main form.comercial .content > div p.title {
+  padding: 10px 0;
+}
+main form.comercial .content > div ul {
+  padding: 0 0 16px 8px;
+}
+main form.comercial .content > div ul li.block {
+  display: block !important;
+}
+main form.comercial .content > div ul li.block textarea {
+  width: 450px;
+  height: 80px;
+  max-height: 80px;
+}
+main form.comercial .content > div ul li.block label {
+  display: block !important;
+  padding: 25px 0 0;
+}
+main form.comercial .content > div ul li input {
+  float: right;
+  margin-top: 46px;
+}
+main form.comercial .content > div ul li input.no-margin {
+  margin-top: -30px;
 }
 /*******************************
 

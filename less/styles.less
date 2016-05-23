@@ -406,6 +406,8 @@ main{
         height: 38px;
         margin: 10px 10px 20px;
         .transit(0.3s);
+        cursor:pointer;
+        z-index: 99;
         span{
           .d-inline(middle);
           i{
@@ -445,6 +447,13 @@ main{
       a.btn.prev{
         span{
           padding: 0 10px 0 0;
+        }
+      }
+      a.btn.close{
+        top: -29px;
+        i{
+          margin-right: 13px;
+          font-size: 16px;
         }
       }
       a:not(.btn){ color: @dark-blue; .px-to-em(14); font-size:@px-to-em; line-height:@px-to-em; display: initial; }

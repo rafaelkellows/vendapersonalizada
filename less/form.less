@@ -231,10 +231,6 @@ main{
 					vertical-align: top;
 					margin-top: -35px;
 				}
-				.w-300{
-					/*margin: -10px 0 0 12px;
-					a{ margin: -36px; }*/
-				}
 				textarea{
 					height: 40px;
 					max-height: 40px;
@@ -441,5 +437,33 @@ main{
 	/* Fluxo de Aprovação */
 	form.inicial{
 		width: 926px;
+	}
+	form.comercial{
+		.content{
+			.little-break{
+				height: 40px;
+			}
+			.close{ margin-right: 0; }
+			>div{
+				padding: 10px;
+				h3{ .px-to-em(18); font-size:@px-to-em; line-height:@px-to-em; font-weight: bold; text-transform: uppercase; padding-bottom: 20px; }
+				p.right{ margin: -42px 0 0 0; .px-to-em(18); font-size:@px-to-em; line-height:@px-to-em; color: #535659; }
+				p.title{ padding:10px 0; }
+				ul{ 
+					padding:0 0 16px 8px; 
+					li{
+						&.block{
+							display: block !important;
+							textarea{ .w-450; height: 80px; max-height: 80px; }
+							label:extend(main form fieldset .radio label){ display: block !important; padding: 25px 0 0; }
+						}
+						input{
+							.right; margin-top:46px;
+							&.no-margin{ margin-top: -30px; }
+						}
+					}
+				}
+			}
+		}
 	}
 }
