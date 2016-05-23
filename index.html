@@ -74,8 +74,8 @@
           <li> <!--  class="disabled" class="active" -->
             <a href="javascript:void(0);"><p>Fluxo de Aprovação</p></a>
             <ul>
-              <li><a href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true">&nbsp;</span><p>Solicitação VP 123456</p></a></li>
-              <li><a href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true"></span><p>Comercial</p></a></li>
+              <li><a data-url='fluxo/inicial' href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true">&nbsp;</span><p>Solicitação VP 123456</p></a></li>
+              <li><a data-url='fluxo/comercial' href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true"></span><p>Comercial</p></a></li>
               <li><a href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Produto</p></a></li>
               <li><a href="javascript:void(0);"><span class="fa fa-check warning" aria-hidden="true"></span><p>Supply Chain</p></a></li>
               <li><a href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Financeiro</p></a></li>
@@ -102,8 +102,8 @@
       
       $(document).ready(function(){
         $('nav ul li').each(function(){
-          if( $(this).find('a').attr('data-url') == "solicitacao/finalidade_produto" ){
-            //$(this).find('a').click();
+          if( $(this).find('a').attr('data-url') == "fluxo/comercial" ){
+            $(this).find('a').click();
           }
         })
       })

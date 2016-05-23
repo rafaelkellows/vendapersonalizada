@@ -58,6 +58,9 @@ $(function(){
 				    		case 'solicitacao/prazo_preco_quantidade':
 				    		vendapersonalizada.prazoPrecoQuantidade(); 
 				    		break;
+				    		case 'fluxo/inicial':
+				    		vendapersonalizada.fluxo_inicial(); 
+				    		break;
 				    	}
 				    }
 				})
@@ -235,6 +238,22 @@ $(function(){
 	        		});
 	        	}
 	        	action();
+	        },
+	        fluxo_inicial:function(){
+	        	$('main div.table h2 i').click(function(){
+	        		if($(this).hasClass('fa-lock')){
+	        			$(this).removeClass('fa-lock').addClass('fa-unlock');
+	        		}else{
+	        			$(this).removeClass('fa-unlock').addClass('fa-lock');
+	        		}
+	        	})
+	        	$('main div.table dl dd ul li').hover(
+				  function() {
+				  	$('main div.table dl dd ul li:nth-child('+($(this).index()+1)+')').addClass('hover');
+				  }, function() {
+				    $('main div.table dl dd ul li').removeClass('hover');
+				  }
+				);
 	        }
     	}
 		vendapersonalizada.init();
