@@ -224,6 +224,7 @@ main {
   /* NAV */
   /* FORM */
   /* TABLE */
+  /* ICO LEGENDS */
 }
 main div.loader {
   position: fixed;
@@ -272,8 +273,8 @@ main div.msg-box div {
   z-index: 99;
 }
 main div.msg-box div > a {
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   width: 40px;
   height: 40px;
   border: 1px solid #3071b3;
@@ -371,8 +372,8 @@ main nav > ul > li {
   position: static;
   display: inline-block;
   vertical-align: middle;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main nav > ul > li > a {
   padding: 0 14px;
@@ -423,7 +424,14 @@ main nav > ul > li > ul li a span,
 main div.table dl dd ul li span,
 main div.table dl dd ul li span.success,
 main div.table dl dd ul li span.error,
-main div.table dl dd ul li span.warning {
+main div.table dl dd ul li span.warning,
+main ul.legends li span,
+main ul.legends li span.success,
+main ul.legends li span.error,
+main ul.legends li span.warning,
+main ul.legends li span.waiting,
+main ul.legends li span.working,
+main ul.legends li span.endend {
   width: 16px;
   height: 16px;
   box-sizing: border-box;
@@ -477,8 +485,8 @@ main nav > ul > li > ul li:hover:not(.disabled):before {
 main nav > ul > li > ul li:hover:not(.disabled) a,
 main nav > ul > li > ul li:hover:not(.disabled) a * {
   color: #fff !important;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main nav > ul > li > ul li.active {
   background: #004fa5;
@@ -491,8 +499,8 @@ main nav > ul > li > ul li.active:before {
 main nav > ul > li > ul li.active a,
 main nav > ul > li > ul li.active a * {
   color: #fff !important;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main nav > ul > li > ul li.active ul {
   border: 1px solid #ced4d9;
@@ -524,8 +532,8 @@ main nav > ul > li:hover:not(.disabled) {
 }
 main nav > ul > li:hover:not(.disabled) a * {
   color: #fff;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main nav > ul > li.active {
   background: #0056a5;
@@ -533,8 +541,8 @@ main nav > ul > li.active {
 }
 main nav > ul > li.active a * {
   color: #fff;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main nav > ul > li.active > ul {
   border: 1px solid #ced4d9;
@@ -568,8 +576,8 @@ main form fieldset [class^='w-'] {
   display: inline-block;
   vertical-align: middle;
   margin: 6px 6px 0 0;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main form fieldset [class^='w-'] label {
   text-align: left;
@@ -589,8 +597,8 @@ main form fieldset a.btn {
   padding: 0 1em;
   height: 38px;
   margin: 10px 10px 20px;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   cursor: pointer;
   z-index: 99;
 }
@@ -668,8 +676,8 @@ main form fieldset a.ico-circle {
   background: #287bca;
   border-radius: 10px;
   border: 1px solid #287bca;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   position: absolute;
   top: 34px;
   right: -36px;
@@ -698,7 +706,9 @@ main form fieldset ul.codes li a.ico-circle {
 }
 main form fieldset .radio label,
 main form fieldset .checkbox label,
-main form.comercial .content > div ul li.block label {
+main form.comercial .content > div ul li label,
+main form.financeiro .content > div ul li label,
+main form.superintendencia .content > div ul li label {
   display: inline-block !important;
   cursor: pointer;
   position: relative;
@@ -793,8 +803,8 @@ main form fieldset input[type=button] {
   font-size: 0.93em;
   font-weight: 400;
   cursor: pointer;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main form fieldset input[type=button]:hover {
   color: #287bca;
@@ -826,6 +836,7 @@ main div.table {
   overflow: hidden;
   margin: 0 auto;
   position: relative;
+  box-shadow: 0px 0px 1px #e7e7e8;
 }
 main div.table .w-10 {
   width: 10% !important;
@@ -897,6 +908,7 @@ main div.table > div {
   display: inline-block;
   vertical-align: middle;
   margin-right: -3px;
+  box-shadow: 1px 5px 5px #888888;
 }
 main div.table > div div {
   display: inline-block;
@@ -911,13 +923,14 @@ main div.table > div.tbl-container-01 {
   top: 0;
   left: 0;
   z-index: 100;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
-main div.table > div.tbl-container-01:hover {
+main div.table > div.tbl-container-01.hover {
   width: 475px;
+  top: -1px;
 }
-main div.table > div.tbl-container-01:hover h2 {
+main div.table > div.tbl-container-01.hover h2 {
   background-color: #fafbfc;
   color: #0056a5;
 }
@@ -931,15 +944,16 @@ main div.table > div.tbl-container-02 {
   top: 0;
   left: 196px;
   z-index: 99;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
-main div.table > div.tbl-container-02:hover {
+main div.table > div.tbl-container-02.hover {
   width: 953px;
   left: 47px;
+  top: -1px;
   z-index: 100;
 }
-main div.table > div.tbl-container-02:hover h2 {
+main div.table > div.tbl-container-02.hover h2 {
   background-color: #fafbfc;
   color: #0056a5;
 }
@@ -953,15 +967,16 @@ main div.table > div.tbl-container-03 {
   top: 0;
   left: 598px;
   z-index: 98;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
-main div.table > div.tbl-container-03:hover {
+main div.table > div.tbl-container-03.hover {
   width: 804px;
   left: 196px;
+  top: -1px;
   z-index: 100;
 }
-main div.table > div.tbl-container-03:hover h2 {
+main div.table > div.tbl-container-03.hover h2 {
   background-color: #fafbfc;
   color: #0056a5;
 }
@@ -973,6 +988,7 @@ main div.table h2 {
   color: #a3acb5;
   font-size: 0.8125em;
   font-weight: 700;
+  cursor: pointer;
   background: #fff;
   padding: 8px;
 }
@@ -1011,11 +1027,12 @@ main div.table dl dd ul {
 }
 main div.table dl dd ul li {
   background: #fff;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   padding: 5px;
   height: 38px;
   line-height: 14px;
+  cursor: crosshair;
   text-align: left;
   color: #0d183d;
   font-size: 0.75em;
@@ -1042,7 +1059,7 @@ main div.table dl dd ul li.odd {
   background-color: #fafbfc;
 }
 main div.table dl dd ul li a {
-  color: #0d183d;
+  color: #0056a5;
   display: inline-block;
 }
 main div.table dl dd ul li span {
@@ -1079,6 +1096,51 @@ main div.table dl.lightness dd ul li:first-child {
 }
 main div.table * {
   box-sizing: border-box;
+}
+main ul.legends {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10px 5px;
+}
+main ul.legends li {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: bold;
+  padding-right: 8px;
+}
+main ul.legends li span {
+  text-align: center;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 8px 0 0 !important;
+  padding: 4px 1px 3px 0 !important;
+  font-size: 14px !important;
+  color: #fff;
+}
+main ul.legends li span.success {
+  background-color: #40eb40;
+  border: 1px solid #1d951d;
+}
+main ul.legends li span.error {
+  background-color: #eb4040;
+  border: 1px solid #951d1d;
+}
+main ul.legends li span.warning {
+  background-color: #ebd940;
+  border: 1px solid #978b1e;
+}
+main ul.legends li span.waiting {
+  background-color: #fff;
+  border: 1px solid #2d7ecb;
+}
+main ul.legends li span.working {
+  background-color: #287bca;
+  border: 1px solid #2367a9;
+}
+main ul.legends li span.endend {
+  background-color: #464646;
+  border: 1px solid #0c0c0c;
 }
 /*******************************
      					IE 9
@@ -1294,8 +1356,8 @@ main form.base div.w-410 > div.search span {
   width: 38px;
   height: 38px;
   text-align: center;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main form.base div.w-410 > div.search span:before {
   font-family: FontAwesome;
@@ -1340,8 +1402,8 @@ main form.base div.w-410 em {
   padding: 11px;
   display: block;
   background: #fafbfc;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main form.base div.w-410 em:hover {
   background: #287bca;
@@ -1442,8 +1504,8 @@ main form.finalidade_produto fieldset .l-bottom > ul {
 main form.finalidade_produto fieldset .l-bottom > ul li {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main form.finalidade_produto fieldset .l-bottom > ul li .checkbox label {
   margin-right: 0;
@@ -1537,8 +1599,8 @@ main form.prazo_preco_quant .content ul.inline div.checkbox {
 }
 main form.prazo_preco_quant .content ul.inline [class^='w-'] {
   margin-right: 20px;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s;
+  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main form.prazo_preco_quant .content > p.title {
   margin: 20px 10px 0;
@@ -1604,52 +1666,109 @@ main form.similaridade .content .l-bottom.priceChange .checkbox {
 main form.inicial {
   width: 926px;
 }
-main form.comercial .content .little-break {
+main form.comercial .content .little-break,
+main form.financeiro .content .little-break,
+main form.superintendencia .content .little-break {
   height: 40px;
 }
-main form.comercial .content .close {
+main form.comercial .content .close,
+main form.financeiro .content .close,
+main form.superintendencia .content .close {
   margin-right: 0;
 }
-main form.comercial .content > div {
+main form.comercial .content > div,
+main form.financeiro .content > div,
+main form.superintendencia .content > div {
   padding: 10px;
 }
-main form.comercial .content > div h3 {
+main form.comercial .content > div h3,
+main form.financeiro .content > div h3,
+main form.superintendencia .content > div h3 {
   font-size: 1.125em;
   line-height: 1.125em;
   font-weight: bold;
   text-transform: uppercase;
   padding-bottom: 20px;
 }
-main form.comercial .content > div p.right {
+main form.comercial .content > div p.right,
+main form.financeiro .content > div p.right,
+main form.superintendencia .content > div p.right {
   margin: -42px 0 0 0;
   font-size: 1.125em;
   line-height: 1.125em;
   color: #535659;
 }
-main form.comercial .content > div p.title {
+main form.comercial .content > div p.title,
+main form.financeiro .content > div p.title,
+main form.superintendencia .content > div p.title {
   padding: 10px 0;
 }
-main form.comercial .content > div ul {
-  padding: 0 0 16px 8px;
+main form.comercial .content > div ul,
+main form.financeiro .content > div ul,
+main form.superintendencia .content > div ul {
+  padding: 0 0 25px 8px;
 }
-main form.comercial .content > div ul li.block {
+main form.comercial .content > div ul.no-padding,
+main form.financeiro .content > div ul.no-padding,
+main form.superintendencia .content > div ul.no-padding {
+  padding-bottom: 0;
+}
+main form.comercial .content > div ul li.block,
+main form.financeiro .content > div ul li.block,
+main form.superintendencia .content > div ul li.block {
   display: block !important;
 }
-main form.comercial .content > div ul li.block textarea {
+main form.comercial .content > div ul li.block textarea,
+main form.financeiro .content > div ul li.block textarea,
+main form.superintendencia .content > div ul li.block textarea {
   width: 450px;
   height: 80px;
   max-height: 80px;
 }
-main form.comercial .content > div ul li.block label {
+main form.comercial .content > div ul li.block label,
+main form.financeiro .content > div ul li.block label,
+main form.superintendencia .content > div ul li.block label {
   display: block !important;
   padding: 25px 0 0;
 }
-main form.comercial .content > div ul li input {
+main form.comercial .content > div ul li input[type=button],
+main form.financeiro .content > div ul li input[type=button],
+main form.superintendencia .content > div ul li input[type=button] {
   float: right;
   margin-top: 46px;
 }
-main form.comercial .content > div ul li input.no-margin {
+main form.comercial .content > div ul li input[type=button].no-margin,
+main form.financeiro .content > div ul li input[type=button].no-margin,
+main form.superintendencia .content > div ul li input[type=button].no-margin {
   margin-top: -30px;
+}
+main form.comercial .content > div ul li ul.inline,
+main form.financeiro .content > div ul li ul.inline,
+main form.superintendencia .content > div ul li ul.inline {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 40px 0 0 20px;
+  margin-bottom: -45px;
+}
+main form.comercial .content > div ul li ul.inline li,
+main form.financeiro .content > div ul li ul.inline li,
+main form.superintendencia .content > div ul li ul.inline li {
+  display: inline-block !important;
+}
+main form.comercial .content > div ul li ul.inline li label,
+main form.financeiro .content > div ul li ul.inline li label,
+main form.superintendencia .content > div ul li ul.inline li label {
+  padding: 0 0 0 30px;
+}
+main form.comercial .content > div ul li div.radio,
+main form.financeiro .content > div ul li div.radio,
+main form.superintendencia .content > div ul li div.radio {
+  min-width: 100px;
+  margin-bottom: 10px;
+}
+main form.financeiro .content > div ul li.block label,
+main form.superintendencia .content > div ul li.block label {
+  padding-top: 12px;
 }
 /*******************************
 

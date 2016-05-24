@@ -114,8 +114,8 @@ ul.block li{display: block !important; padding-bottom: 10px !important;}
   }
 }
 .transit(@time){
-  -webkit-transition: background @time, border @time, width @time, height @time, color @time, opacity @time, left @time;
-  transition: background @time, border @time, width @time, height @time, color @time, opacity @time, left @time;
+  -webkit-transition: background @time, border @time, width @time, height @time, color @time, opacity @time, left @time, top @time;
+  transition: background @time, border @time, width @time, height @time, color @time, opacity @time, left @time, top @time;
 }
 .d-inline(@va){
   display: inline-block;
@@ -598,7 +598,7 @@ main{
   }
   /* TABLE */
   div.table{
-    width: 1000px; height: 300px; overflow: hidden; margin:0 auto; position: relative;
+    width: 1000px; height: 300px; overflow: hidden; margin:0 auto; position: relative; box-shadow: 0px 0px 1px #e7e7e8;
     .w-10{ width: 10% !important; }
     .w-12_5{ width: 12.5% !important; }
     .w-15{ width: 15% !important; }
@@ -622,7 +622,7 @@ main{
     .tbl-dark-gray{ background-color: #a3acb5; }
     .tbl-middle-gray{ background-color: #b5bdc4; }
     >div{
-      .d-inline(middle); margin-right: -3px;
+      .d-inline(middle); margin-right: -3px; box-shadow: 1px 5px 5px #888888;
       div{ 
         .d-inline(middle); margin-right: -3px; width: 100%; 
       }
@@ -631,8 +631,8 @@ main{
         width: 196px;
         position: absolute; top: 0; left: 0; z-index: 100;
         .transit(0.3s);
-        &:hover{ 
-          width: 475px;
+        &.hover{ 
+          width: 475px; top:-1px; 
           h2{ background-color: #fafbfc; color: @medium-blue; }
         }
         div{ width: 475px; }
@@ -642,8 +642,8 @@ main{
         width: 402px;
         position: absolute; top: 0; left: 196px; z-index: 99;
         .transit(0.3s);
-        &:hover{ 
-          width: 953px; left: 47px; z-index: 100;
+        &.hover{ 
+          width: 953px; left: 47px; top:-1px; z-index: 100; 
           h2{ background-color: #fafbfc; color: @medium-blue; }
         }
         div{ width: 953px;}
@@ -653,15 +653,15 @@ main{
         width: 402px;
         position: absolute; top: 0; left: 598px; z-index: 98;
         .transit(0.3s);
-        &:hover{ 
-          width: 804px; left: 196px; z-index: 100; 
+        &.hover{ 
+          width: 804px; left: 196px; top:-1px; z-index: 100; 
           h2{ background-color: #fafbfc; color: @medium-blue; }
         }
         div{ width: 804px;}
       }
     }
     h2{
-      .txt-sets(left,#a3acb5,0.8125,700); 
+      .txt-sets(left,#a3acb5,0.8125,700); cursor: pointer;
       background: #fff; padding: 8px;
       i{
         cursor:pointer;
@@ -682,7 +682,7 @@ main{
         ul{
           width: 100%; border-right:1px solid #929aa3; .d-inline(top); margin-right: -3px;
           li{
-            background:#fff; .transit(0.3s); padding: 5px; height: 38px; line-height: 14px; .txt-sets(left,#0d183d,0.75,400); letter-spacing: -0.02em; border-bottom: 1px solid #e7e7e8;
+            background:#fff; .transit(0.3s); padding: 5px; height: 38px; line-height: 14px; cursor: crosshair; .txt-sets(left,#0d183d,0.75,400); letter-spacing: -0.02em; border-bottom: 1px solid #e7e7e8;
             &:first-child{ 
               .tbl-dark-gray; .txt-sets(left,#fff,0.8125,700); vertical-align: middle;
               &:before{ vertical-align:top; }
@@ -691,7 +691,7 @@ main{
               background: @dark-gray !important;
             }
             &.odd{ background-color: #fafbfc; }
-            a{ color: #0d183d; display: inline-block; }
+            a{ color: @medium-blue; display: inline-block; }
             span:extend(main nav > ul > li > ul li a span){
               width: 20px !important;
               height: 20px !important;
@@ -724,6 +724,30 @@ main{
       }
     }
     *{ box-sizing: border-box; }
+  }
+  /* ICO LEGENDS */
+  ul.legends{
+    width: 1000px; margin:0 auto; padding: 10px 5px; 
+    li{
+      .d-inline(middle);
+      font-size: 12px; font-weight: bold;
+      padding-right: 8px;
+      span:extend(main nav > ul > li > ul li a span){
+        text-align:center;
+        width: 20px !important;
+        height: 20px !important;
+        margin:0 8px 0 0 !important; 
+        padding: 4px 1px 3px 0 !important;
+        font-size: 14px !important;
+        color: #fff;
+        &.success{ background-color: #40eb40; border: 1px solid #1d951d; }
+        &.error{ background-color: #eb4040; border: 1px solid #951d1d; }
+        &.warning{ background-color: #ebd940; border: 1px solid #978b1e; }
+        &.waiting{ background-color: #fff; border: 1px solid #2d7ecb; }
+        &.working{ background-color: #287bca; border: 1px solid #2367a9; }
+        &.endend{ background-color: #464646; border: 1px solid #0c0c0c; }
+      }
+    }
   }
 }
 

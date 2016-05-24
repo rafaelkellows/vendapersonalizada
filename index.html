@@ -78,9 +78,9 @@
               <li><a data-url='fluxo/comercial' href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true"></span><p>Comercial</p></a></li>
               <li><a data-url='fluxo/produto' href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Produto</p></a></li>
               <li><a data-url='fluxo/supply_chain' href="javascript:void(0);"><span class="fa fa-check warning" aria-hidden="true"></span><p>Supply Chain</p></a></li>
-              <li><a href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Financeiro</p></a></li>
-              <li><a href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Importação</p></a></li>
-              <li><a href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true"></span><p>Superintendência</p></a></li>
+              <li><a data-url='fluxo/financeiro' href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Financeiro</p></a></li>
+              <li><a data-url='fluxo/importacao' href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Importação</p></a></li>
+              <li><a data-url='fluxo/superintendencia' href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true"></span><p>Superintendência</p></a></li>
             </ul>
           </li>
           <li>
@@ -102,7 +102,7 @@
       
       $(document).ready(function(){
         $('nav ul li').each(function(){
-          if( $(this).find('a').attr('data-url') == "fluxo/supply_chain" ){
+          if( $(this).find('a').attr('data-url') == "fluxo/inicial" ){
             $(this).find('a').click();
           }
         })

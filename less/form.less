@@ -438,7 +438,7 @@ main{
 	form.inicial{
 		width: 926px;
 	}
-	form.comercial{
+	form.comercial, form.financeiro, form.superintendencia{
 		.content{
 			.little-break{
 				height: 40px;
@@ -449,21 +449,38 @@ main{
 				h3{ .px-to-em(18); font-size:@px-to-em; line-height:@px-to-em; font-weight: bold; text-transform: uppercase; padding-bottom: 20px; }
 				p.right{ margin: -42px 0 0 0; .px-to-em(18); font-size:@px-to-em; line-height:@px-to-em; color: #535659; }
 				p.title{ padding:10px 0; }
-				ul{ 
-					padding:0 0 16px 8px; 
+				ul{
+					padding:0 0 25px 8px;
+					&.no-padding{ padding-bottom:0; }
 					li{
 						&.block{
 							display: block !important;
 							textarea{ .w-450; height: 80px; max-height: 80px; }
-							label:extend(main form fieldset .radio label){ display: block !important; padding: 25px 0 0; }
+							label{ display: block !important; padding: 25px 0 0; }
 						}
-						input{
+						label:extend(main form fieldset .radio label){}
+						input[type=button]{
 							.right; margin-top:46px;
 							&.no-margin{ margin-top: -30px; }
 						}
+						ul.inline{
+							.d-inline(middle);
+							padding: 40px 0 0 20px;
+    						margin-bottom: -45px;
+							li{
+								display: inline-block !important;
+								label{ padding:0 0 0 30px;  }
+							}
+						}
+						div.radio{
+							min-width: 100px; margin-bottom: 10px;
+						}
+
 					}
 				}
 			}
 		}
 	}
+	form.financeiro .content > div ul li.block label,
+	form.superintendencia .content > div ul li.block label{ padding-top: 12px; }
 }

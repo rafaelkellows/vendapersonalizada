@@ -240,6 +240,7 @@ $(function(){
 	        	action();
 	        },
 	        fluxo_inicial:function(){
+	        	$('main nav > ul li ul li').removeClass('active');
 	        	$('main div.table h2 i').click(function(){
 	        		if($(this).hasClass('fa-lock')){
 	        			$(this).removeClass('fa-lock').addClass('fa-unlock');
@@ -254,6 +255,23 @@ $(function(){
 				    $('main div.table dl dd ul li').removeClass('hover');
 				  }
 				);
+				_div = $('main div.table > div');
+				_div.click(function(){
+					if( $(this).hasClass('hover') ){
+						$(this).toggleClass('hover');
+						return;
+					}
+					_div.removeClass('hover');
+					$(this).addClass('hover');
+				})
+				$(document).mouseup(function (e){
+				    var container = $("main div.table");
+				    if (!container.is(e.target) // if the target of the click isn't the container...
+				        && container.has(e.target).length === 0) // ... nor a descendant of the container
+				    {
+				        _div.removeClass('hover');
+				    }
+				});
 	        }
     	}
 		vendapersonalizada.init();
