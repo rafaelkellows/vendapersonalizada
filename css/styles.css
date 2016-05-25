@@ -425,6 +425,9 @@ main div.table dl dd ul li span,
 main div.table dl dd ul li span.success,
 main div.table dl dd ul li span.error,
 main div.table dl dd ul li span.warning,
+main div.table dl dd ul li span.waiting,
+main div.table dl dd ul li span.working,
+main div.table dl dd ul li span.endend,
 main ul.legends li span,
 main ul.legends li span.success,
 main ul.legends li span.error,
@@ -442,17 +445,41 @@ main ul.legends li span.endend {
   vertical-align: middle;
   margin: 0 10px 0 0;
 }
-main nav > ul > li > ul li a span.success {
+main nav > ul > li > ul li a span.success,
+main div.table dl dd ul li span.success,
+main ul.legends li span.success {
   background-color: #40eb40;
   border: 1px solid #1d951d;
 }
-main nav > ul > li > ul li a span.error {
+main nav > ul > li > ul li a span.error,
+main div.table dl dd ul li span.error,
+main ul.legends li span.error {
   background-color: #eb4040;
   border: 1px solid #951d1d;
 }
-main nav > ul > li > ul li a span.warning {
+main nav > ul > li > ul li a span.warning,
+main div.table dl dd ul li span.warning,
+main ul.legends li span.warning {
   background-color: #ebd940;
   border: 1px solid #978b1e;
+}
+main nav > ul > li > ul li a span.waiting,
+main div.table dl dd ul li span.waiting,
+main ul.legends li span.waiting {
+  background-color: #fff;
+  border: 1px solid #2d7ecb;
+}
+main nav > ul > li > ul li a span.working,
+main div.table dl dd ul li span.working,
+main ul.legends li span.working {
+  background-color: #287bca;
+  border: 1px solid #2367a9;
+}
+main nav > ul > li > ul li a span.endend,
+main div.table dl dd ul li span.endend,
+main ul.legends li span.endend {
+  background-color: #464646;
+  border: 1px solid #0c0c0c;
 }
 main nav > ul > li > ul li a p {
   display: inline-block;
@@ -939,7 +966,7 @@ main div.table > div.tbl-container-01 div {
 }
 main div.table > div.tbl-container-02 {
   overflow: hidden;
-  width: 402px;
+  width: 449px;
   position: absolute;
   top: 0;
   left: 196px;
@@ -948,7 +975,7 @@ main div.table > div.tbl-container-02 {
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main div.table > div.tbl-container-02.hover {
-  width: 953px;
+  width: 877px;
   left: 47px;
   top: -1px;
   z-index: 100;
@@ -956,23 +983,27 @@ main div.table > div.tbl-container-02.hover {
 main div.table > div.tbl-container-02.hover h2 {
   background-color: #fafbfc;
   color: #0056a5;
+  text-align: center;
+}
+main div.table > div.tbl-container-02.tbl-move {
+  left: 475px;
 }
 main div.table > div.tbl-container-02 div {
-  width: 953px;
+  width: 877px;
 }
 main div.table > div.tbl-container-03 {
   overflow: hidden;
-  width: 402px;
+  width: 355px;
   position: absolute;
   top: 0;
-  left: 598px;
+  left: 645px;
   z-index: 98;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
 main div.table > div.tbl-container-03.hover {
-  width: 804px;
-  left: 196px;
+  width: 655px;
+  left: 343px;
   top: -1px;
   z-index: 100;
 }
@@ -980,8 +1011,11 @@ main div.table > div.tbl-container-03.hover h2 {
   background-color: #fafbfc;
   color: #0056a5;
 }
+main div.table > div.tbl-container-03.tbl-move {
+  left: 924px;
+}
 main div.table > div.tbl-container-03 div {
-  width: 804px;
+  width: 655px;
 }
 main div.table h2 {
   text-align: left;
@@ -1011,7 +1045,7 @@ main div.table dl {
 main div.table dl dt {
   text-align: left;
   color: #ffffff;
-  font-size: 0.8125em;
+  font-size: 0.79em;
   font-weight: 700;
   border-bottom: 1px solid #929aa3;
   padding: 5px;
@@ -1037,15 +1071,16 @@ main div.table dl dd ul li {
   color: #0d183d;
   font-size: 0.75em;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.08em;
   border-bottom: 1px solid #e7e7e8;
 }
 main div.table dl dd ul li:first-child {
   background-color: #a3acb5;
   text-align: left;
   color: #ffffff;
-  font-size: 0.8125em;
+  font-size: 0.79em;
   font-weight: 700;
+  letter-spacing: -0.02em;
   vertical-align: middle;
 }
 main div.table dl dd ul li:first-child:before {
@@ -1061,6 +1096,9 @@ main div.table dl dd ul li.odd {
 main div.table dl dd ul li a {
   color: #0056a5;
   display: inline-block;
+  font-weight: 700;
+  font-size: 1.05em;
+  letter-spacing: -0.02em;
 }
 main div.table dl dd ul li span {
   width: 20px !important;
@@ -1069,18 +1107,6 @@ main div.table dl dd ul li span {
   padding: 4px 1px 3px 0 !important;
   font-size: 14px !important;
   color: #fff;
-}
-main div.table dl dd ul li span.success {
-  background-color: #40eb40;
-  border: 1px solid #1d951d;
-}
-main div.table dl dd ul li span.error {
-  background-color: #eb4040;
-  border: 1px solid #951d1d;
-}
-main div.table dl dd ul li span.warning {
-  background-color: #ebd940;
-  border: 1px solid #978b1e;
 }
 main div.table dl dd ul.t-center * {
   text-align: center;
@@ -1117,30 +1143,6 @@ main ul.legends li span {
   padding: 4px 1px 3px 0 !important;
   font-size: 14px !important;
   color: #fff;
-}
-main ul.legends li span.success {
-  background-color: #40eb40;
-  border: 1px solid #1d951d;
-}
-main ul.legends li span.error {
-  background-color: #eb4040;
-  border: 1px solid #951d1d;
-}
-main ul.legends li span.warning {
-  background-color: #ebd940;
-  border: 1px solid #978b1e;
-}
-main ul.legends li span.waiting {
-  background-color: #fff;
-  border: 1px solid #2d7ecb;
-}
-main ul.legends li span.working {
-  background-color: #287bca;
-  border: 1px solid #2367a9;
-}
-main ul.legends li span.endend {
-  background-color: #464646;
-  border: 1px solid #0c0c0c;
 }
 /*******************************
      					IE 9

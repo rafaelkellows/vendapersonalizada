@@ -257,11 +257,27 @@ $(function(){
 				);
 				_div = $('main div.table > div');
 				_div.click(function(){
+					
+					_div.removeClass('tbl-move');
+
 					if( $(this).hasClass('hover') ){
 						$(this).toggleClass('hover');
 						return;
 					}
 					_div.removeClass('hover');
+					/* Move table */
+					_tbl_class = $(this).attr('class');
+					if(_tbl_class=='tbl-container-01'){
+						$('main div.table > div.tbl-container-02, main div.table > div.tbl-container-03').addClass('tbl-move');
+					}
+					if(_tbl_class=='tbl-container-02'){
+						$('main div.table > div.tbl-container-03').addClass('tbl-move');
+					}
+					if(_tbl_class=='tbl-container-03'){
+						$('main div.table > div.tbl-container-01').addClass('tbl-move');
+					}
+
+
 					$(this).addClass('hover');
 				})
 				$(document).mouseup(function (e){
@@ -269,7 +285,7 @@ $(function(){
 				    if (!container.is(e.target) // if the target of the click isn't the container...
 				        && container.has(e.target).length === 0) // ... nor a descendant of the container
 				    {
-				        _div.removeClass('hover');
+				        _div.removeClass('hover').removeClass('tbl-move');
 				    }
 				});
 	        }

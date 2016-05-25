@@ -306,6 +306,9 @@ main{
                 &.success{ background-color: #40eb40; border: 1px solid #1d951d; }
                 &.error{ background-color: #eb4040; border: 1px solid #951d1d; }
                 &.warning{ background-color: #ebd940; border: 1px solid #978b1e; }
+                &.waiting{ background-color: #fff; border: 1px solid #2d7ecb; }
+                &.working{ background-color: #287bca; border: 1px solid #2367a9; }
+                &.endend{ background-color: #464646; border: 1px solid #0c0c0c; }
               }
               p{
                 .d-inline(middle);
@@ -639,25 +642,33 @@ main{
       }
       &.tbl-container-02{ 
         overflow: hidden;
-        width: 402px;
+        width: 449px;
         position: absolute; top: 0; left: 196px; z-index: 99;
         .transit(0.3s);
         &.hover{ 
-          width: 953px; left: 47px; top:-1px; z-index: 100; 
-          h2{ background-color: #fafbfc; color: @medium-blue; }
+          width: 877px; left: 47px; top:-1px; z-index: 100; 
+          h2{ background-color: #fafbfc; color: @medium-blue; text-align: center; }
         }
-        div{ width: 953px;}
+        &.tbl-move{
+          left: 475px;
+        }
+        div{ width: 877px;}
       }
       &.tbl-container-03{ 
         overflow: hidden;
-        width: 402px;
-        position: absolute; top: 0; left: 598px; z-index: 98;
+        width: 355px;
+        position: absolute; top: 0; left: 645px; z-index: 98;
         .transit(0.3s);
         &.hover{ 
-          width: 804px; left: 196px; top:-1px; z-index: 100; 
+          width: 655px; left: 343px; top:-1px; z-index: 100; 
           h2{ background-color: #fafbfc; color: @medium-blue; }
         }
-        div{ width: 804px;}
+        &.tbl-move{
+          left: 924px;
+        }
+        div{ 
+          width: 655px;
+        }
       }
     }
     h2{
@@ -677,21 +688,21 @@ main{
     }
     dl{
       float: left; .tbl-dark-gray; border-right:1px solid #929aa3;
-      dt{ .txt-sets(left,#fff,0.8125,700); border-bottom:1px solid #929aa3; padding: 5px; height: 40px; line-height: 14px; }
+      dt{ .txt-sets(left,#fff,0.79,700); border-bottom:1px solid #929aa3; padding: 5px; height: 40px; line-height: 14px; }
       dd{
         ul{
           width: 100%; border-right:1px solid #929aa3; .d-inline(top); margin-right: -3px;
           li{
-            background:#fff; .transit(0.3s); padding: 5px; height: 38px; line-height: 14px; cursor: crosshair; .txt-sets(left,#0d183d,0.75,400); letter-spacing: -0.02em; border-bottom: 1px solid #e7e7e8;
+            background:#fff; .transit(0.3s); padding: 5px; height: 38px; line-height: 14px; cursor: crosshair; .txt-sets(left,#0d183d,0.75,400); letter-spacing: -0.08em; border-bottom: 1px solid #e7e7e8;
             &:first-child{ 
-              .tbl-dark-gray; .txt-sets(left,#fff,0.8125,700); vertical-align: middle;
+              .tbl-dark-gray; .txt-sets(left,#fff,0.79,700); letter-spacing: -0.02em; vertical-align: middle;
               &:before{ vertical-align:top; }
             }
             &:hover, &.hover{
               background: @dark-gray !important;
             }
             &.odd{ background-color: #fafbfc; }
-            a{ color: @medium-blue; display: inline-block; }
+            a{ color: @medium-blue; display: inline-block; font-weight: 700; font-size: 1.05em; letter-spacing: -0.02em; }
             span:extend(main nav > ul > li > ul li a span){
               width: 20px !important;
               height: 20px !important;
@@ -699,9 +710,12 @@ main{
               padding: 4px 1px 3px 0 !important;
               font-size: 14px !important;
               color: #fff;
-              &.success{ background-color: #40eb40; border: 1px solid #1d951d; }
-              &.error{ background-color: #eb4040; border: 1px solid #951d1d; }
-              &.warning{ background-color: #ebd940; border: 1px solid #978b1e; }
+              &.success{ &:extend(main nav > ul > li > ul li a span.success); }
+              &.error{ &:extend(main nav > ul > li > ul li a span.error); }
+              &.warning{ &:extend(main nav > ul > li > ul li a span.warning); }
+              &.waiting{ &:extend(main nav > ul > li > ul li a span.waiting); }
+              &.working{ &:extend(main nav > ul > li > ul li a span.working); }
+              &.endend{ &:extend(main nav > ul > li > ul li a span.endend); }
             }
           }
           &.t-center *{
@@ -740,12 +754,12 @@ main{
         padding: 4px 1px 3px 0 !important;
         font-size: 14px !important;
         color: #fff;
-        &.success{ background-color: #40eb40; border: 1px solid #1d951d; }
-        &.error{ background-color: #eb4040; border: 1px solid #951d1d; }
-        &.warning{ background-color: #ebd940; border: 1px solid #978b1e; }
-        &.waiting{ background-color: #fff; border: 1px solid #2d7ecb; }
-        &.working{ background-color: #287bca; border: 1px solid #2367a9; }
-        &.endend{ background-color: #464646; border: 1px solid #0c0c0c; }
+        &.success{ &:extend(main nav > ul > li > ul li a span.success); }
+        &.error{ &:extend(main nav > ul > li > ul li a span.error); }
+        &.warning{ &:extend(main nav > ul > li > ul li a span.warning); }
+        &.waiting{ &:extend(main nav > ul > li > ul li a span.waiting); }
+        &.working{ &:extend(main nav > ul > li > ul li a span.working); }
+        &.endend{ &:extend(main nav > ul > li > ul li a span.endend); }
       }
     }
   }
