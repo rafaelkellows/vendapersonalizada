@@ -60,7 +60,7 @@
             <a href="javascript:void(0);"><i class="fa fa-bars" aria-hidden="true"></i></a>
           </li>
           <li>
-            <a href="javascript:void(0);"><p>Solicitação de venda<span>Personalizada</span></p></a>
+            <a href="javascript:void(0);"><p>Solicitação de Venda<span>Personalizada</span></p></a>
             <ul>
               <li><a data-url='solicitacao/dados' href="javascript:void(0);">Dados Básicos</a></li>
               <li><a data-url='solicitacao/segmentacao' href="javascript:void(0);">Segmentação</a></li>
@@ -102,8 +102,8 @@
       
       $(document).ready(function(){
         $('nav ul li').each(function(){
-          if( $(this).find('a').attr('data-url') == "fluxo/inicial" ){
-            //$(this).find('a').click();
+          if( $(this).find('> a').attr('data-url') == "fluxo/superintendencia" ){
+            $(this).find('> a').click();
           }
         })
       })

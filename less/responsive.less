@@ -154,6 +154,18 @@
           }
         }
       }
+      /* Fluxo de Aprovação */
+      div.vpResume{ 
+        width: 100%; 
+        .table_min{ margin:0 10px; }
+        .form{
+          width: auto;
+        }
+      }
+      form.comercial .content, form.financeiro .content, form.superintendencia .content{
+        .close{ margin:-10px; }
+        > div{ padding: 0; }
+      }
       div.table{
         width: auto; height:auto;  margin:30px 10px 0; overflow: auto;
         >div{
@@ -166,12 +178,13 @@
           }
         }
       }
-      ul.legends{ 
+      ul.legends{
         width: auto; 
         li{
           margin-bottom: 8px; 
         }
       }
+      p.vp_info{ display: block; }
     }
   }
   @media (max-width: 768px) {
@@ -275,6 +288,10 @@
           width: calc(~"100% - 7px") !important;
         }
       }
+      /* Fluxo de Aprovação */
+      div.vpResume div.table_min dl{ 
+        width: 33% !important;
+      }
       ul.legends li:first-child{ display: block; }
     }
   }
@@ -324,6 +341,28 @@
               }
             }
           }
+        }
+      }
+      /* Fluxo de Aprovação */
+      div.vpResume div.table_min dl{ width: 50% !important; }
+      form.comercial .content, form.financeiro .content, form.superintendencia .content{
+        > div{
+          ul li{
+            &.block textarea{ width: calc(~"100% - 10px"); }
+            input[type=button]{ float: none; margin: 15px calc(~"50% - 57px") 0 !important; }
+          }
+          p.right{ float: none; margin: -15px 0 10px 0; text-align: center; }
+        }
+      }
+      form.financeiro .content > div ul li, form.superintendencia .content > div ul li{
+        &.w-450{
+          width: auto; margin-right: 10px;
+        }
+        &.block div.w-235{
+          width: calc(~"100% - 10px") !important;
+        }
+        ul.inline.w-235{
+          margin: 0; display: block; width: auto; padding: 20px 0 0;
         }
       }
     }
@@ -433,6 +472,11 @@
           width: 100% !important; 
         }
       }
+      /* Fluxo de Aprovação */
+      div.vpResume div.table_min dl{ 
+        width: 100% !important;
+      }
+
       div.table{
         height: 300px;
       }

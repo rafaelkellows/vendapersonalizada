@@ -262,12 +262,12 @@ $(function(){
 				$('main div.table dl dd ul li').click(function(){
 					$('main div.table dl dd ul li').removeClass('hover');
 				  	$('main div.table dl dd ul li:nth-child('+($(this).index()+1)+')').addClass('hover');
-				  	if( vendapersonalizada.wSize() <= 425 ){
+				  	if( vendapersonalizada.wSize() <= 990 ){
 				  		_vp = $('main div.table .solicitacao dl.w-25 dd ul:nth-child(1) li:nth-child('+($(this).index()+1)+') a');
 				  		_de = $('main div.table .solicitacao dl.w-25 dd ul:nth-child(2) li:nth-child('+($(this).index()+1)+')');
 				  		_cod = $('main div.table .solicitacao dl.w-30 dd ul:nth-child(1) li:nth-child('+($(this).index()+1)+')');
 				  		if( !_vp.html() ) return;
-				  		$('p.vp_info').html('<strong>VP:</strong> '+_vp.html()+'<br><strong>Data Emissão:</strong> '+_de.html()+'<br><strong>Código:</strong> '+_cod.html()).fadeIn();
+				  		$('p.vp_info').html('<strong>VP:</strong> '+_vp.html()+'<br><strong>Data Emissão:</strong> '+_de.html()+'<br><strong>Código:</strong> '+_cod.html());
 				  	}
 				});
 				$('main div.table dl dd ul li a').click(function(){
@@ -309,6 +309,10 @@ $(function(){
 					        _div.removeClass('hover').removeClass('tbl-move');
 					    }
 					});
+		        	setTimeout(function(){
+		        		var _h = $('main div.table > div > div.tbl-container-01').outerHeight();
+		        		$('main div.table').height(_h);
+		        	},1000)
 				}
 	        }
     	}

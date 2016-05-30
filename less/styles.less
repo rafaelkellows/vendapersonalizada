@@ -812,7 +812,11 @@ main{
       }
     }
   }
-  p.vp_info{ display: none; }
+  p.vp_info{
+    display: none;
+    .txt-sets(left,#a3acb5,0.8125,400); padding: 30px 10px 0; margin-bottom: -20px;
+    strong{font-weight: 700; color: @dark-blue; }
+  }
   /* VP RESUME */
   .vpResume{
     width: 950px; margin: 49px auto;

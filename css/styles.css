@@ -1286,6 +1286,16 @@ main ul.legends li span {
 }
 main p.vp_info {
   display: none;
+  text-align: left;
+  color: #a3acb5;
+  font-size: 0.8125em;
+  font-weight: 400;
+  padding: 30px 10px 0;
+  margin-bottom: -20px;
+}
+main p.vp_info strong {
+  font-weight: 700;
+  color: #004fa5;
 }
 main .vpResume {
   width: 950px;
@@ -1953,6 +1963,9 @@ main form.superintendencia .content > div ul li.block label {
             MEDIA QUERIES
 *******************************/
 @media screen and (max-width: 990px) {
+  main {
+    /* Fluxo de Aprovação */
+  }
   main nav > p {
     float: none;
     padding: 8px 0 16px;
@@ -2077,6 +2090,25 @@ main form.superintendencia .content > div ul li.block label {
     width: auto !important;
     padding-bottom: 9.5px;
   }
+  main div.vpResume {
+    width: 100%;
+  }
+  main div.vpResume .table_min {
+    margin: 0 10px;
+  }
+  main div.vpResume .form {
+    width: auto;
+  }
+  main form.comercial .content .close,
+  main form.financeiro .content .close,
+  main form.superintendencia .content .close {
+    margin: -10px;
+  }
+  main form.comercial .content > div,
+  main form.financeiro .content > div,
+  main form.superintendencia .content > div {
+    padding: 0;
+  }
   main div.table {
     width: auto;
     height: auto;
@@ -2106,8 +2138,14 @@ main form.superintendencia .content > div ul li.block label {
   main ul.legends li {
     margin-bottom: 8px;
   }
+  main p.vp_info {
+    display: block;
+  }
 }
 @media screen and (max-width: 768px) {
+  main {
+    /* Fluxo de Aprovação */
+  }
   main form.dados div[class^='w-'],
   main form.inicial div[class^='w-'] {
     width: calc(50% - 8px) !important;
@@ -2176,11 +2214,17 @@ main form.superintendencia .content > div ul li.block label {
   main form.similaridade div div[class^='w-680'] {
     width: calc(100% - 7px) !important;
   }
+  main div.vpResume div.table_min dl {
+    width: 33% !important;
+  }
   main ul.legends li:first-child {
     display: block;
   }
 }
 @media screen and (max-width: 650px) {
+  main {
+    /* Fluxo de Aprovação */
+  }
   main form.prazo_preco_quant .content .l-bottom ul.inline [class^='w-'] {
     display: block;
   }
@@ -2206,8 +2250,48 @@ main form.superintendencia .content > div ul li.block label {
   main form.similaridade .content .l-bottom:nth-child(4) .checkbox label {
     margin: 10px 25px 10px 0;
   }
+  main div.vpResume div.table_min dl {
+    width: 50% !important;
+  }
+  main form.comercial .content > div ul li.block textarea,
+  main form.financeiro .content > div ul li.block textarea,
+  main form.superintendencia .content > div ul li.block textarea {
+    width: calc(100% - 10px);
+  }
+  main form.comercial .content > div ul li input[type=button],
+  main form.financeiro .content > div ul li input[type=button],
+  main form.superintendencia .content > div ul li input[type=button] {
+    float: none;
+    margin: 15px calc(50% - 57px) 0 !important;
+  }
+  main form.comercial .content > div p.right,
+  main form.financeiro .content > div p.right,
+  main form.superintendencia .content > div p.right {
+    float: none;
+    margin: -15px 0 10px 0;
+    text-align: center;
+  }
+  main form.financeiro .content > div ul li.w-450,
+  main form.superintendencia .content > div ul li.w-450 {
+    width: auto;
+    margin-right: 10px;
+  }
+  main form.financeiro .content > div ul li.block div.w-235,
+  main form.superintendencia .content > div ul li.block div.w-235 {
+    width: calc(100% - 10px) !important;
+  }
+  main form.financeiro .content > div ul li ul.inline.w-235,
+  main form.superintendencia .content > div ul li ul.inline.w-235 {
+    margin: 0;
+    display: block;
+    width: auto;
+    padding: 20px 0 0;
+  }
 }
 @media screen and (max-width: 425px) {
+  main {
+    /* Fluxo de Aprovação */
+  }
   main nav > ul > li {
     width: 100%;
     text-align: center;
@@ -2273,6 +2357,9 @@ main form.superintendencia .content > div ul li.block label {
     margin-bottom: 10px;
   }
   main form.similaridade div div[class^='w-'] {
+    width: 100% !important;
+  }
+  main div.vpResume div.table_min dl {
     width: 100% !important;
   }
   main div.table {
