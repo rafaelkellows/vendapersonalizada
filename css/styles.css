@@ -57,6 +57,9 @@ h6 {
   padding: 0;
   font-weight: normal;
 }
+strong {
+  font-weight: 700;
+}
 /*******************************
 
             GLOBAL
@@ -122,14 +125,15 @@ body {
 /* Extends */
 .hide,
 main nav > ul > li > ul,
-main form fieldset legend {
+main form fieldset legend,
+main .form fieldset legend {
   display: none !important;
   opacity: 0;
   height: 0;
 }
 .show,
 main nav > ul > li > ul li.active ul,
-main nav > ul > li.active > ul {
+main nav > ul > li.active > ul:not(.disabled) {
   display: block !important;
   opacity: 1;
   height: auto;
@@ -161,8 +165,10 @@ main nav > p {
   font-weight: 400;
 }
 .form-fields,
-main form fieldset input[type=text],
-main form fieldset textarea {
+main form input[type=text],
+main .form input[type=text],
+main form textarea,
+main .form textarea {
   border: 1px solid #cad0d6;
 }
 .l-both {
@@ -225,6 +231,7 @@ main {
   /* FORM */
   /* TABLE */
   /* ICO LEGENDS */
+  /* VP RESUME */
 }
 main div.loader {
   position: fixed;
@@ -407,7 +414,7 @@ main nav > ul > li > ul li a {
   color: #0056a5;
   font-size: 0.81em;
   font-weight: 400;
-  padding: 0 20px;
+  padding: 0 19px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -553,6 +560,12 @@ main nav > ul > li > ul li.disabled a * {
   opacity: 0.3;
   filter: alpha(opacity=30);
 }
+main nav > ul > li > ul.no_latbars li:first-child:before {
+  display: none !important;
+}
+main nav > ul > li > ul.no_latbars li:last-child:after {
+  display: none !important;
+}
 main nav > ul > li:hover:not(.disabled) {
   background: #0056a5;
   border-color: #0056a5;
@@ -571,21 +584,21 @@ main nav > ul > li.active a * {
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
-main nav > ul > li.active > ul {
+main nav > ul > li.active > ul:not(.disabled) {
   border: 1px solid #ced4d9;
   position: absolute;
   left: 1px;
   width: 100%;
   margin: 11px -1px;
 }
-main nav > ul > li.active > ul:before {
+main nav > ul > li.active > ul:not(.disabled):before {
   content: "";
   height: 0.62em;
   width: calc(100% + 2px);
   background: #0056a5;
   margin: -11px -1px 0;
 }
-main nav > ul > li.active > ul > li {
+main nav > ul > li.active > ul:not(.disabled) > li {
   display: inline-block;
   vertical-align: middle;
   margin-left: -4px;
@@ -595,25 +608,30 @@ main nav > ul > li.disabled a {
   opacity: 0.3;
   filter: alpha(opacity=30);
 }
-main form {
+main form,
+main .form {
   width: 920px;
   margin: 49px auto;
 }
-main form fieldset [class^='w-'] {
+main form fieldset [class^='w-'],
+main .form fieldset [class^='w-'] {
   display: inline-block;
   vertical-align: middle;
   margin: 6px 6px 0 0;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
-main form fieldset [class^='w-'] label {
+main form fieldset [class^='w-'] label,
+main .form fieldset [class^='w-'] label {
   text-align: left;
   color: #535659;
   font-size: 0.93em;
   font-weight: 700;
   display: block;
 }
-main form fieldset a.btn {
+main form fieldset a.btn,
+main .form fieldset a.btn,
+main .vpResume a.btn {
   text-align: center;
   color: #ffffff;
   font-size: 0.93em;
@@ -629,14 +647,18 @@ main form fieldset a.btn {
   cursor: pointer;
   z-index: 99;
 }
-main form fieldset a.btn span {
+main form fieldset a.btn span,
+main .form fieldset a.btn span {
   display: inline-block;
   vertical-align: middle;
 }
-main form fieldset a.btn span i {
+main form fieldset a.btn span i,
+main .form fieldset a.btn span i {
   margin: 0 -0.05em;
 }
-main form fieldset a.btn:hover {
+main form fieldset a.btn:hover,
+main .form fieldset a.btn:hover,
+main .vpResume a.btn:hover {
   text-align: center;
   color: #287bca;
   font-size: 0.93em;
@@ -644,18 +666,22 @@ main form fieldset a.btn:hover {
   background: #f2f3f5;
   border: 1px solid #ccd1d7;
 }
-main form fieldset a.btn.left {
+main form fieldset a.btn.left,
+main .form fieldset a.btn.left {
   display: inline-block;
   vertical-align: middle;
 }
-main form fieldset a.btn:before {
+main form fieldset a.btn:before,
+main .form fieldset a.btn:before,
+main .vpResume a.btn:before {
   content: "";
   height: 38px;
   width: 0;
   display: inline-block;
   vertical-align: middle;
 }
-main form fieldset a.btn.dark {
+main form fieldset a.btn.dark,
+main .form fieldset a.btn.dark {
   background: #f2f3f5;
   text-align: center;
   color: #0056a5;
@@ -664,37 +690,48 @@ main form fieldset a.btn.dark {
   border: 1px solid #ccd1d7;
 }
 main form fieldset a.btn.dark:hover,
-main form fieldset a.btn.dark.active {
+main .form fieldset a.btn.dark:hover,
+main form fieldset a.btn.dark.active,
+main .form fieldset a.btn.dark.active {
   background: #0056a5;
   color: #fff;
   border: 1px solid #0056a5;
 }
-main form fieldset a.btn.next span {
+main form fieldset a.btn.next span,
+main .form fieldset a.btn.next span {
   padding: 0 0 0 10px;
 }
-main form fieldset a.btn.prev span {
+main form fieldset a.btn.prev span,
+main .form fieldset a.btn.prev span {
   padding: 0 10px 0 0;
 }
-main form fieldset a.btn.close {
+main form fieldset a.btn.close,
+main .form fieldset a.btn.close {
   top: -29px;
 }
-main form fieldset a.btn.close i {
+main form fieldset a.btn.close i,
+main .form fieldset a.btn.close i,
+main .vpResume a.btn i {
   margin-right: 13px;
   font-size: 16px;
 }
-main form fieldset a:not(.btn) {
+main form fieldset a:not(.btn),
+main .form fieldset a:not(.btn) {
   color: #004fa5;
   font-size: 0.875em;
   line-height: 0.875em;
   display: initial;
 }
-main form fieldset a:not(.btn):hover {
+main form fieldset a:not(.btn):hover,
+main .form fieldset a:not(.btn):hover {
   text-decoration: underline;
 }
-main form fieldset a:not(.btn):visited {
+main form fieldset a:not(.btn):visited,
+main .form fieldset a:not(.btn):visited {
   color: #ced4d9;
 }
-main form fieldset a.ico-circle {
+main form fieldset a.ico-circle,
+main .form fieldset a.ico-circle {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
@@ -709,33 +746,61 @@ main form fieldset a.ico-circle {
   top: 34px;
   right: -36px;
 }
-main form fieldset a.ico-circle i {
+main form fieldset a.ico-circle i,
+main .form fieldset a.ico-circle i {
   color: #fff;
   vertical-align: middle;
 }
-main form fieldset a.ico-circle:after {
+main form fieldset a.ico-circle:after,
+main .form fieldset a.ico-circle:after {
   content: '';
   height: 21px;
   width: 0;
   display: inline-block;
   vertical-align: middle;
 }
-main form fieldset a.ico-circle:hover {
+main form fieldset a.ico-circle:hover,
+main .form fieldset a.ico-circle:hover {
   background: #f2f3f5;
   border: 1px solid #ccd1d7;
 }
-main form fieldset a.ico-circle:hover i {
+main form fieldset a.ico-circle:hover i,
+main .form fieldset a.ico-circle:hover i {
   color: #287bca;
 }
-main form fieldset ul.codes li a.ico-circle {
+main form fieldset ul.codes li a.ico-circle,
+main .form fieldset ul.codes li a.ico-circle {
   top: 3px;
   right: 3px;
 }
-main form fieldset .radio label,
-main form fieldset .checkbox label,
-main form.comercial .content > div ul li label,
-main form.financeiro .content > div ul li label,
-main form.superintendencia .content > div ul li label {
+main form fieldset ul.codes li,
+main .form fieldset ul.codes li {
+  color: #004fa5;
+  font-size: 0.9375em;
+  line-height: 0.9375em;
+  padding: 5px 0;
+}
+main form fieldset ul.codes li a.ico-circle,
+main .form fieldset ul.codes li a.ico-circle {
+  margin-left: 10px;
+}
+main form fieldset ul.codes li p,
+main .form fieldset ul.codes li p {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.9375em;
+  margin: 0;
+  width: calc(100% - 38px);
+}
+main form fieldset ul.codes li p span,
+main .form fieldset ul.codes li p span {
+  display: inline-block;
+  vertical-align: middle;
+}
+main form .radio label,
+main .form .radio label,
+main form .checkbox label,
+main .form .checkbox label {
   display: inline-block !important;
   cursor: pointer;
   position: relative;
@@ -747,17 +812,23 @@ main form.superintendencia .content > div ul li label {
   font-size: 0.93em;
   font-weight: 700;
 }
-main form fieldset .radio > em,
-main form fieldset .checkbox > em {
+main form .radio > em,
+main .form .radio > em,
+main form .checkbox > em,
+main .form .checkbox > em {
   font-size: 0.8125em;
   display: inline-block;
   vertical-align: middle;
   margin: 0 20px 0 -20px;
 }
-main form fieldset .radio label:before,
-main form fieldset .checkbox label:before,
-main form fieldset .radio label .before,
-main form fieldset .checkbox label .before {
+main form .radio label:before,
+main .form .radio label:before,
+main form .checkbox label:before,
+main .form .checkbox label:before,
+main form .radio label .before,
+main .form .radio label .before,
+main form .checkbox label .before,
+main .form .checkbox label .before {
   content: "";
   display: inline-block;
   width: 16px;
@@ -770,20 +841,26 @@ main form fieldset .checkbox label .before {
   border: 1px solid #e6e7e8;
   border-radius: 8px;
 }
-main form fieldset .radio input[type=radio],
-main form fieldset .checkbox input[type=checkbox] {
+main form .radio input[type=radio],
+main .form .radio input[type=radio],
+main form .checkbox input[type=checkbox],
+main .form .checkbox input[type=checkbox] {
   opacity: 0;
   filter: alpha(opacity=0);
   position: absolute;
 }
-main form fieldset .radio label:before {
+main form .radio label:before,
+main .form .radio label:before {
   border-radius: 8px;
 }
-main form fieldset .checkbox label:before {
+main form .checkbox label:before,
+main .form .checkbox label:before {
   border-radius: 0;
 }
-main form fieldset .radio input[type=radio]:checked + label:before,
-main form fieldset .radio input[type=radio]:checked + label .before {
+main form .radio input[type=radio]:checked + label:before,
+main .form .radio input[type=radio]:checked + label:before,
+main form .radio input[type=radio]:checked + label .before,
+main .form .radio input[type=radio]:checked + label .before {
   font-family: FontAwesome;
   content: "\f111";
   color: #0056a5;
@@ -791,8 +868,10 @@ main form fieldset .radio input[type=radio]:checked + label .before {
   text-align: center;
   line-height: 1.2em;
 }
-main form fieldset .checkbox input[type=checkbox]:checked + label:before,
-main form fieldset .checkbox input[type=checkbox]:checked + label .before {
+main form .checkbox input[type=checkbox]:checked + label:before,
+main .form .checkbox input[type=checkbox]:checked + label:before,
+main form .checkbox input[type=checkbox]:checked + label .before,
+main .form .checkbox input[type=checkbox]:checked + label .before {
   font-family: FontAwesome;
   font-weight: normal;
   content: "\f00c";
@@ -801,7 +880,8 @@ main form fieldset .checkbox input[type=checkbox]:checked + label .before {
   text-align: center;
   line-height: 0.9em;
 }
-main form fieldset input[type=text] {
+main form input[type=text],
+main .form input[type=text] {
   text-align: left;
   color: #535659;
   font-size: 0.93em;
@@ -811,7 +891,8 @@ main form fieldset input[type=text] {
   width: 100%;
   box-sizing: border-box;
 }
-main form fieldset textarea {
+main form textarea,
+main .form textarea {
   text-align: left;
   color: #535659;
   font-size: 0.93em;
@@ -822,7 +903,8 @@ main form fieldset textarea {
   width: 100%;
   max-width: 100%;
 }
-main form fieldset input[type=button] {
+main form input[type=button],
+main .form input[type=button] {
   background: #287bca;
   padding: 0.74em 2.492em;
   text-align: left;
@@ -833,29 +915,10 @@ main form fieldset input[type=button] {
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
-main form fieldset input[type=button]:hover {
+main form input[type=button]:hover,
+main .form input[type=button]:hover {
   color: #287bca;
   background: #f2f3f5;
-}
-main form fieldset ul.codes li {
-  color: #004fa5;
-  font-size: 0.9375em;
-  line-height: 0.9375em;
-  padding: 5px 0;
-}
-main form fieldset ul.codes li a.ico-circle {
-  margin-left: 10px;
-}
-main form fieldset ul.codes li p {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 0.9375em;
-  margin: 0;
-  width: calc(100% - 38px);
-}
-main form fieldset ul.codes li p span {
-  display: inline-block;
-  vertical-align: middle;
 }
 main div.table {
   width: 1000px;
@@ -931,19 +994,19 @@ main div.table .tbl-dark-gray {
 main div.table .tbl-middle-gray {
   background-color: #b5bdc4;
 }
-main div.table > div {
+main div.table > div > div {
   display: inline-block;
   vertical-align: middle;
   margin-right: -3px;
   box-shadow: 1px 5px 5px #888888;
 }
-main div.table > div div {
+main div.table > div > div div {
   display: inline-block;
   vertical-align: middle;
   margin-right: -3px;
   width: 100%;
 }
-main div.table > div.tbl-container-01 {
+main div.table > div > div.tbl-container-01 {
   overflow: hidden;
   width: 196px;
   position: absolute;
@@ -953,18 +1016,18 @@ main div.table > div.tbl-container-01 {
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
-main div.table > div.tbl-container-01.hover {
+main div.table > div > div.tbl-container-01.hover {
   width: 475px;
   top: -1px;
 }
-main div.table > div.tbl-container-01.hover h2 {
+main div.table > div > div.tbl-container-01.hover h2 {
   background-color: #fafbfc;
   color: #0056a5;
 }
-main div.table > div.tbl-container-01 div {
+main div.table > div > div.tbl-container-01 div {
   width: 475px;
 }
-main div.table > div.tbl-container-02 {
+main div.table > div > div.tbl-container-02 {
   overflow: hidden;
   width: 449px;
   position: absolute;
@@ -974,24 +1037,24 @@ main div.table > div.tbl-container-02 {
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
-main div.table > div.tbl-container-02.hover {
+main div.table > div > div.tbl-container-02.hover {
   width: 877px;
   left: 47px;
   top: -1px;
   z-index: 100;
 }
-main div.table > div.tbl-container-02.hover h2 {
+main div.table > div > div.tbl-container-02.hover h2 {
   background-color: #fafbfc;
   color: #0056a5;
   text-align: center;
 }
-main div.table > div.tbl-container-02.tbl-move {
+main div.table > div > div.tbl-container-02.tbl-move {
   left: 475px;
 }
-main div.table > div.tbl-container-02 div {
+main div.table > div > div.tbl-container-02 div {
   width: 877px;
 }
-main div.table > div.tbl-container-03 {
+main div.table > div > div.tbl-container-03 {
   overflow: hidden;
   width: 355px;
   position: absolute;
@@ -1001,20 +1064,20 @@ main div.table > div.tbl-container-03 {
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
 }
-main div.table > div.tbl-container-03.hover {
+main div.table > div > div.tbl-container-03.hover {
   width: 655px;
   left: 343px;
   top: -1px;
   z-index: 100;
 }
-main div.table > div.tbl-container-03.hover h2 {
+main div.table > div > div.tbl-container-03.hover h2 {
   background-color: #fafbfc;
   color: #0056a5;
 }
-main div.table > div.tbl-container-03.tbl-move {
+main div.table > div > div.tbl-container-03.tbl-move {
   left: 924px;
 }
-main div.table > div.tbl-container-03 div {
+main div.table > div > div.tbl-container-03 div {
   width: 655px;
 }
 main div.table h2 {
@@ -1037,12 +1100,14 @@ main div.table h2 i {
   text-align: center;
   display: none;
 }
-main div.table dl {
+main div.table dl,
+main div.table_min dl {
   float: left;
   background-color: #a3acb5;
   border-right: 1px solid #929aa3;
 }
-main div.table dl dt {
+main div.table dl dt,
+main div.table_min dl dt {
   text-align: left;
   color: #ffffff;
   font-size: 0.79em;
@@ -1059,7 +1124,8 @@ main div.table dl dd ul {
   vertical-align: top;
   margin-right: -3px;
 }
-main div.table dl dd ul li {
+main div.table dl dd ul li,
+main div.table_min dl dd {
   background: #fff;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
   transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
@@ -1086,7 +1152,6 @@ main div.table dl dd ul li:first-child {
 main div.table dl dd ul li:first-child:before {
   vertical-align: top;
 }
-main div.table dl dd ul li:hover,
 main div.table dl dd ul li.hover {
   background: #ced4d9 !important;
 }
@@ -1120,13 +1185,88 @@ main div.table dl.lightness {
 main div.table dl.lightness dd ul li:first-child {
   background-color: #b5bdc4;
 }
-main div.table * {
+main div.table *,
+main div.table_min * {
   box-sizing: border-box;
+}
+main div.table_min {
+  border-left: 1px solid #929aa3;
+}
+main div.table_min .w-10 {
+  width: 10% !important;
+}
+main div.table_min .w-12_5 {
+  width: 12.5% !important;
+}
+main div.table_min .w-15 {
+  width: 15% !important;
+}
+main div.table_min .w-20 {
+  width: 20% !important;
+}
+main div.table_min .w-25 {
+  width: 25% !important;
+}
+main div.table_min .w-30 {
+  width: 30% !important;
+}
+main div.table_min .w-35 {
+  width: 35% !important;
+}
+main div.table_min .w-40 {
+  width: 40% !important;
+}
+main div.table_min .w-45 {
+  width: 45% !important;
+}
+main div.table_min .w-50 {
+  width: 50% !important;
+}
+main div.table_min .w-55 {
+  width: 55% !important;
+}
+main div.table_min .w-60 {
+  width: 60% !important;
+}
+main div.table_min .w-65 {
+  width: 65% !important;
+}
+main div.table_min .w-70 {
+  width: 70% !important;
+}
+main div.table_min .w-75 {
+  width: 75% !important;
+}
+main div.table_min .w-80 {
+  width: 80% !important;
+}
+main div.table_min .w-85 {
+  width: 85% !important;
+}
+main div.table_min .w-90 {
+  width: 90% !important;
+}
+main div.table_min .w-95 {
+  width: 95% !important;
+}
+main div.table_min .w-100 {
+  width: 100% !important;
+}
+main div.table_min dl {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -3px;
+  float: none;
+}
+main div.table_min dl dd {
+  letter-spacing: -0.04em;
+  border-bottom-width: 2px;
+  font-size: 0.8em;
 }
 main ul.legends {
   width: 1000px;
   margin: 0 auto;
-  padding: 10px 5px;
+  padding: 10px 5px 10px 10px;
 }
 main ul.legends li {
   display: inline-block;
@@ -1141,8 +1281,44 @@ main ul.legends li span {
   height: 20px !important;
   margin: 0 8px 0 0 !important;
   padding: 4px 1px 3px 0 !important;
-  font-size: 14px !important;
+  font-size: 14px !importiniant;
   color: #fff;
+}
+main p.vp_info {
+  display: none;
+}
+main .vpResume {
+  width: 950px;
+  margin: 49px auto;
+}
+main .vpResume span.little-break {
+  clear: both;
+  margin-bottom: -40px;
+}
+main .vpResume a.btn {
+  z-index: 99;
+  top: -29px;
+  margin-right: 0;
+}
+main .vpResume h2 {
+  padding: 5px 0 15px;
+  font-size: 1.125em;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+}
+main .vpResume .answer {
+  padding: 10px;
+  font-size: 0.9125em;
+  line-height: 24px;
+}
+main .vpResume .form {
+  margin: 5px 10px 20px;
+}
+main .vpResume .form li {
+  padding: 4px 0;
+  display: inline-block;
+  vertical-align: top;
 }
 /*******************************
      					IE 9
@@ -1902,17 +2078,38 @@ main form.superintendencia .content > div ul li.block label {
     padding-bottom: 9.5px;
   }
   main div.table {
-    width: 100%;
-    margin: 0 20px;
+    width: auto;
+    height: auto;
+    margin: 30px 10px 0;
     overflow: auto;
   }
-  main div.table div {
-    position: relative !important;
-    width: auto !important;
+  main div.table > div {
+    width: 2005px;
+  }
+  main div.table > div > div {
+    position: static !important;
+    left: initial !important;
+    box-shadow: none;
+  }
+  main div.table > div > div.tbl-container-01 {
+    width: 475px;
+  }
+  main div.table > div > div.tbl-container-02 {
+    width: 877px;
+  }
+  main div.table > div > div.tbl-container-03 {
+    width: 655px;
+  }
+  main ul.legends {
+    width: auto;
+  }
+  main ul.legends li {
+    margin-bottom: 8px;
   }
 }
 @media screen and (max-width: 768px) {
-  main form.dados div[class^='w-'] {
+  main form.dados div[class^='w-'],
+  main form.inicial div[class^='w-'] {
     width: calc(50% - 8px) !important;
   }
   main form.segmentacao fieldset .content .l-both ul li p {
@@ -1978,6 +2175,9 @@ main form.superintendencia .content > div ul li.block label {
   }
   main form.similaridade div div[class^='w-680'] {
     width: calc(100% - 7px) !important;
+  }
+  main ul.legends li:first-child {
+    display: block;
   }
 }
 @media screen and (max-width: 650px) {
@@ -2074,5 +2274,20 @@ main form.superintendencia .content > div ul li.block label {
   }
   main form.similaridade div div[class^='w-'] {
     width: 100% !important;
+  }
+  main div.table {
+    height: 300px;
+  }
+  main p.vp_info {
+    text-align: left;
+    color: #a3acb5;
+    font-size: 0.8125em;
+    font-weight: 400;
+    padding: 30px 10px 0;
+    margin-bottom: -20px;
+  }
+  main p.vp_info strong {
+    font-weight: 700;
+    color: #004fa5;
   }
 }

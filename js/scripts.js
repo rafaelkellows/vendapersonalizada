@@ -15,6 +15,10 @@ $(function(){
 	        	$('main nav > ul > li:not(.disabled) > a').click(function() {
 	        		$('main nav > ul li').removeClass('active');
 	        		$(this).parent().addClass('active');
+	        		if($(this).attr('data-url')!=undefined && $(this).attr('data-url')!=null){
+		        		vendapersonalizada.loader(1);
+		        		vendapersonalizada.load($(this).attr('data-url'));
+	        		}
 	        	});
 	        	//Second Level
 	        	$('main nav > ul > li > ul > li > a').click(function() {
@@ -61,6 +65,13 @@ $(function(){
 				    		case 'fluxo/inicial':
 				    		vendapersonalizada.fluxo_inicial(); 
 				    		break;
+				    	}
+				    	if(page.indexOf('fluxo/') > -1){
+				    		$('a.btn').click(function(){
+				    			$('nav ul li ul.no_latbars').addClass('disabled');
+				        		vendapersonalizada.loader(1);
+				        		vendapersonalizada.load('fluxo/inicial');
+				    		});
 				    	}
 				    }
 				})
@@ -248,46 +259,57 @@ $(function(){
 	        			$(this).removeClass('fa-unlock').addClass('fa-lock');
 	        		}
 	        	})
-	        	$('main div.table dl dd ul li').hover(
-				  function() {
+				$('main div.table dl dd ul li').click(function(){
+					$('main div.table dl dd ul li').removeClass('hover');
 				  	$('main div.table dl dd ul li:nth-child('+($(this).index()+1)+')').addClass('hover');
-				  }, function() {
-				    $('main div.table dl dd ul li').removeClass('hover');
-				  }
-				);
-				_div = $('main div.table > div');
-				_div.click(function(){
-					
-					_div.removeClass('tbl-move');
-
-					if( $(this).hasClass('hover') ){
-						$(this).toggleClass('hover');
-						return;
-					}
-					_div.removeClass('hover');
-					/* Move table */
-					_tbl_class = $(this).attr('class');
-					if(_tbl_class=='tbl-container-01'){
-						$('main div.table > div.tbl-container-02, main div.table > div.tbl-container-03').addClass('tbl-move');
-					}
-					if(_tbl_class=='tbl-container-02'){
-						$('main div.table > div.tbl-container-03').addClass('tbl-move');
-					}
-					if(_tbl_class=='tbl-container-03'){
-						$('main div.table > div.tbl-container-01').addClass('tbl-move');
-					}
-
-
-					$(this).addClass('hover');
-				})
-				$(document).mouseup(function (e){
-				    var container = $("main div.table");
-				    if (!container.is(e.target) // if the target of the click isn't the container...
-				        && container.has(e.target).length === 0) // ... nor a descendant of the container
-				    {
-				        _div.removeClass('hover').removeClass('tbl-move');
-				    }
+				  	if( vendapersonalizada.wSize() <= 425 ){
+				  		_vp = $('main div.table .solicitacao dl.w-25 dd ul:nth-child(1) li:nth-child('+($(this).index()+1)+') a');
+				  		_de = $('main div.table .solicitacao dl.w-25 dd ul:nth-child(2) li:nth-child('+($(this).index()+1)+')');
+				  		_cod = $('main div.table .solicitacao dl.w-30 dd ul:nth-child(1) li:nth-child('+($(this).index()+1)+')');
+				  		if( !_vp.html() ) return;
+				  		$('p.vp_info').html('<strong>VP:</strong> '+_vp.html()+'<br><strong>Data Emissão:</strong> '+_de.html()+'<br><strong>Código:</strong> '+_cod.html()).fadeIn();
+				  	}
 				});
+				$('main div.table dl dd ul li a').click(function(){
+					$('nav ul.disabled').removeClass('disabled').find('li:first-child').addClass('active');
+	        		vendapersonalizada.loader(1);
+	        		vendapersonalizada.load('fluxo/resumo');
+				})
+				if( vendapersonalizada.wSize() > 991 ){
+					_div = $('main div.table > div > div');
+					_div.click(function(){
+						
+						_div.removeClass('tbl-move');
+
+						if( $(this).hasClass('hover') ){
+							$(this).toggleClass('hover');
+							return;
+						}
+						_div.removeClass('hover');
+						/* Move table */
+						_tbl_class = $(this).attr('class');
+						if(_tbl_class=='tbl-container-01'){
+							$('main div.table div.tbl-container-02, main div.table div.tbl-container-03').addClass('tbl-move');
+						}
+						if(_tbl_class=='tbl-container-02'){
+							$('main div.table div.tbl-container-03').addClass('tbl-move');
+						}
+						if(_tbl_class=='tbl-container-03'){
+							$('main div.table div.tbl-container-01').addClass('tbl-move');
+						}
+
+
+						$(this).addClass('hover');
+					})
+					$(document).mouseup(function (e){
+					    var container = $("main div.table");
+					    if (!container.is(e.target) // if the target of the click isn't the container...
+					        && container.has(e.target).length === 0) // ... nor a descendant of the container
+					    {
+					        _div.removeClass('hover').removeClass('tbl-move');
+					    }
+					});
+				}
 	        }
     	}
 		vendapersonalizada.init();
