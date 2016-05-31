@@ -246,7 +246,7 @@ main{
   }
   /* NAV */
   nav{
-    padding: 10px 10px 20px;
+    padding: 10px 10px 20px; z-index: 999; position: relative;
     >p{
       &:extend(.right);
       .txt-sets(center,@dark-blue,0.87,400);
@@ -289,6 +289,15 @@ main{
               .d-inline(middle);
               p{
                 color: @medium-blue !important;
+                span{
+                  color: @medium-blue !important;
+                  font-weight: 400 !important;
+                  display: block;
+                  text-align: center;
+                  width: auto;
+                  padding: 0;
+                  margin: 0;
+                }
               }
               &:before{
                 content: "";
@@ -828,6 +837,7 @@ main{
       &:before{ &:extend(main form fieldset a.btn:before); }
       i{ &:extend(main form fieldset a.btn.close i); }
     }
+    >h2{ display: none; }
     h2{ padding: 5px 0 15px; font-size: 1.125em; text-align: center; color: #000; text-transform: uppercase; }
     .answer{ padding: 10px; font-size: 0.9125em; line-height: 24px; }
     .form{ 

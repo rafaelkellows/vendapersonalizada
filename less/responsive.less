@@ -155,12 +155,21 @@
         }
       }
       /* Fluxo de Aprovação */
-      div.vpResume{ 
-        width: 100%; 
+      div.vpResume{
+        margin: 0; width: 100%;
+        a.btn{ margin: 0; top:0;  }
+        >h2{
+          display: block;
+          >p{
+            &:extend(main form fieldset legend);
+            padding: 0; text-transform: none; font-size: 1.1rem; display: inline-block !important;
+          }
+        }
         .table_min{ margin:0 10px; }
         .form{
           width: auto;
         }
+        span.little-break{ margin-bottom: 0; }
       }
       form.comercial .content, form.financeiro .content, form.superintendencia .content{
         .close{ margin:-10px; }

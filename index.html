@@ -71,14 +71,16 @@
               <li><a data-url='solicitacao/similaridade' href="javascript:void(0);">Similaridade</a></li>
             </ul>
           </li>
-          <li> <!--  class="disabled" class="active" -->
+          <li><!--  class="disabled" class="active" -->
             <a data-url="fluxo/inicial" href="javascript:void(0);"><p>Fluxo de Aprovação</p></a>
             <ul class="no_latbars disabled">
-              <li><a data-url='fluxo/resumo' href="javascript:void(0);"><p>Resumo da Solicitação    VP 123456</p></a></li>
-              <li><a data-url='fluxo/comercial' href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true"></span><p>Comercial</p></a></li>
+              <li><a data-url='fluxo/resumo' href="javascript:void(0);"><p>Resumo da Solicitação</p></a></li>
+              <li><a data-url='fluxo/comercial_g' href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true"></span><p>Comercial<span>Gestor</span></p></a></li>
+              <li><a data-url='fluxo/comercial_d' href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true"></span><p>Comercial<span>Diretoria</span></p></a></li>
               <li><a data-url='fluxo/produto' href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Produto</p></a></li>
               <li><a data-url='fluxo/supply_chain' href="javascript:void(0);"><span class="fa fa-check warning" aria-hidden="true"></span><p>Supply Chain</p></a></li>
-              <li><a data-url='fluxo/financeiro' href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Financeiro</p></a></li>
+              <li><a data-url='fluxo/financeiro_cus' href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Financeiro<span>Custos</span></p></a></li>
+              <li><a data-url='fluxo/financeiro_cre' href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Financeiro<span>Crédito</span></p></a></li>
               <li><a data-url='fluxo/importacao' href="javascript:void(0);"><span class="fa fa-times error" aria-hidden="true"></span><p>Importação</p></a></li>
               <li><a data-url='fluxo/superintendencia' href="javascript:void(0);"><span class="fa fa-check success" aria-hidden="true"></span><p>Superintendência</p></a></li>
             </ul>
@@ -102,8 +104,8 @@
       
       $(document).ready(function(){
         $('nav ul li').each(function(){
-          if( $(this).find('> a').attr('data-url') == "fluxo/superintendencia" ){
-            $(this).find('> a').click();
+          if( $(this).find('> a').attr('data-url') == "fluxo/inicial" ){
+            //$(this).find('> a').click();
           }
         })
       })
