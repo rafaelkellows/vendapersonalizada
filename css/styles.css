@@ -1868,6 +1868,9 @@ main form.similaridade .content .l-bottom.priceChange .checkbox {
 main form.inicial {
   width: 926px;
 }
+main form.inicial .content div.w-335.block {
+  margin-right: 50px;
+}
 main form.comercial .content .little-break,
 main form.financeiro .content .little-break,
 main form.superintendencia .content .little-break {
