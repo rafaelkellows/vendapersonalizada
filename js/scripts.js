@@ -20,6 +20,7 @@ $(function(){
 	        			$(this).attr('data-url')!=null &&
 	        			$(this).next('ul').hasClass('disabled')
 	        		){
+	        			//$(this).next('ul').removeClass('disabled')
 		        		vendapersonalizada.loader(1);
 		        		vendapersonalizada.load($(this).attr('data-url'));
 	        			if( vendapersonalizada.wSize() < 990 ){ $('main nav > ul > li:first-child a').click(); }
@@ -353,7 +354,7 @@ $(function(){
 					        null;
 					}
 	        	});
-	        	$('div.vpResume a.btn').click(function(){
+	        	$('div.vpResume > a.btn').click(function(){
 	        		vendapersonalizada.loader(1);
 	        		vendapersonalizada.load('validacao/inicial');
 	        	});
@@ -363,7 +364,7 @@ $(function(){
 	        	})
 	        },
 	        validacao_result : function(){
-	        	$('form.finalResult ul li div input[type=radio]').click(function() {
+	        	$('form.finalResult ul li div input[name=approved]').click(function() {
 	        		var _t = $(this);
 	        		_t.closest('form').find('div.approved, div.disapproved').addClass('hide');
 	        		switch($(this).val()){

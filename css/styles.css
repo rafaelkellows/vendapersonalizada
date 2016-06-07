@@ -593,6 +593,16 @@ main nav > ul > li.active {
   background: #0056a5;
   border-color: #0056a5;
 }
+main nav > ul > li.active:before {
+  content: "";
+  height: 0.6875em;
+  width: calc(100% + 2px);
+  background: #0056a5;
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  z-index: 9;
+}
 main nav > ul > li.active a * {
   color: #fff;
   -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
@@ -604,13 +614,13 @@ main nav > ul > li.active > ul:not(.disabled) {
   left: 1px;
   width: 100%;
   margin: 11px -1px;
-}
-main nav > ul > li.active > ul:not(.disabled):before {
-  content: "";
-  height: 0.62em;
-  width: calc(100% + 2px);
-  background: #0056a5;
-  margin: -11px -1px 0;
+  /*&:before{ 
+      content: "";
+      height: 0.62em;
+      width: calc(~"100% + 2px"); 
+      background: @medium-blue;
+      margin:-11px -1px 0;
+    }*/
 }
 main nav > ul > li.active > ul:not(.disabled) > li {
   display: inline-block;
@@ -1408,10 +1418,13 @@ main .vpResume .subtitle {
   font-size: 0.9375em;
   font-weight: 700;
 }
+main .vpResume.validacao {
+  margin-top: 20px;
+}
 main .vpResume a.btn {
   z-index: 99;
   top: -29px;
-  margin: 10px 10px 20px 0;
+  margin: 10px 10px 7px 0;
   color: #fff;
 }
 main .vpResume a.btn:hover i,
@@ -1430,7 +1443,7 @@ main .vpResume .btnsActions {
 }
 main .vpResume .btnsActions a {
   float: left;
-  margin-left: 10px;
+  margin: 10px 0px 0 10px;
 }
 main .vpResume > h2 {
   display: none;

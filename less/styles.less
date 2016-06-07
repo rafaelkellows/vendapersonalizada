@@ -80,6 +80,16 @@ ul.block li{display: block !important; padding-bottom: 10px !important;}
 .lnk-active-hover(){
   background: @medium-blue;
   border-color: @medium-blue;
+  &:before{ 
+    content: "";
+    height: 0.6875em;
+    width: calc(~"100% + 2px"); 
+    background: @medium-blue;
+    position: absolute;
+    bottom:-11px;
+    left: 0;
+    z-index: 9;
+  }
   a *{
     color: #fff;
     .transit(0.3s); 
@@ -91,13 +101,13 @@ ul.block li{display: block !important; padding-bottom: 10px !important;}
     left: 1px;
     width: 100%;
     margin: 11px -1px;
-    &:before{ 
+    /*&:before{ 
       content: "";
       height: 0.62em;
       width: calc(~"100% + 2px"); 
       background: @medium-blue;
-      margin:-11px -1px 0; 
-    }
+      margin:-11px -1px 0;
+    }*/
     >li{
       .d-inline(middle);
       margin-left: -4px;
@@ -380,7 +390,6 @@ main{
               display:none !important;
             }
           }
-
         }
         &:hover:not(.disabled){
           background: @medium-blue;
@@ -878,8 +887,11 @@ main{
     width: 950px; margin: 49px auto;
     span.little-break{ clear:both; margin-bottom:-40px; }
     .subtitle{ .txt-sets(left,#535659,0.9375,700); }
+    &.validacao{
+      margin-top: 20px;
+    }
     a.btn{
-      z-index: 99; top:-29px; margin: 10px 10px 20px 0; color: #fff;
+      z-index: 99; top:-29px; margin: 10px 10px 7px 0; color: #fff;
       &:extend(main form fieldset a.btn);
       &:hover{ 
         &:extend(main form fieldset a.btn:hover);
@@ -897,7 +909,7 @@ main{
       float: right;
       text-align: right;
       a{ 
-        float: left; margin-left: 10px;
+        float: left; margin: 10px 0px 0 10px;
       } 
     }
     >h2{ display: none; }
