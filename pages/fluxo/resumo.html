@@ -4,8 +4,8 @@
 	<h2 class="t-center"><p>Resumo da Solicitação</p></h2>
 	<div>
 		<h2 class="title">Dados Básicos</h2>
-		<div class="table_min">
-			<dl class="w-15">
+		<div class="table_min no_latbars">
+			<dl class="w-15 first">
 				<dt>Código</dt>
 				<dd>987456321</dd>
 			</dl>
@@ -17,11 +17,11 @@
 				<dt>Nome Fantasia</dt>
 				<dd>Lorem ipsum dolor site amet</dd>
 			</dl>
-			<dl class="w-25">
+			<dl class="w-25 last">
 				<dt>Marca</dt>
 				<dd>Consecuteur amet dolor</dd>
-			</dl>
-			<dl class="w-30">
+			</dl>	
+			<dl class="w-30 first">
 				<dt>Contato</dt>
 				<dd>Fulano de Tal</dd>
 			</dl>
@@ -33,7 +33,7 @@
 				<dt>Telefone</dt>
 				<dd>+ 55 11 96541.6321</dd>
 			</dl>
-			<dl class="w-30">
+			<dl class="w-30 last">
 				<dt>Gestor</dt>
 				<dd>Beltrano de Tal</dd>
 			</dl>
@@ -41,7 +41,7 @@
 	</div>
 	<div class="l-bottom segmentacao">
 		<h2 class="title">Segmentação</h2>
-		<p class="title">Cliente compra tecidos da Focus?</p>
+		<p class="subtitle">Cliente compra tecidos da Focus?</p>
 		<p class="answer">Sim</p>
         <ul class="form">
           <li class="odd">
@@ -73,7 +73,7 @@
 	<div class="l-bottom base">
 		<h2 class="title">Base existente ou nova?</h2>
 		<div class="hide exist">
-			<p class="title">Base Existente</p>
+			<p class="subtitle">Base Existente</p>
 			<p class="answer">
 				Artigo 1: 27682ABSM23-10<br>
 				Artigo 2: 27682ABSM23-10<br>
@@ -95,7 +95,7 @@
 	        </ul>
         </div>
 		<div class="hide totalNew">
-			<p class="title">Base Nova</p>
+			<p class="subtitle">Base Nova</p>
 			<p class="answer">Totalmente Nova</p>
 	        <ul class="form">
 	          <li class="odd">
@@ -107,22 +107,43 @@
 	        </ul>
         </div>
 		<div class="similar">
-			<p class="title">Base Nova</p>
-			<p class="answer">Similar alguma base da Focus<br><strong>SKU:</strong> 27682ABSM23-10</p>
-			<p class="title">Qual alteração deseja fazer?</p>
-			<ul class="answer">
-				<li><strong>Largura:</strong> 99,99cm</li>
-				<li><strong>Gramatura:</strong> 99,99g/m2 | 99,99g/m</li>
-				<li><strong>Rendimento:</strong> 01,00m | 10Kg</li>
-				<li><strong>Composição:</strong> Lorem ipsum dolor sit amet consectetur</li>
-				<li><strong>Acabamento:</strong> Duis aute irure dolor in reprehenderit in voluptate</li>
-				<li><strong>Descrição:</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</li>
-			</ul>
+			<p class="subtitle">Base Nova</p>
+			<aside class="answer">
+				<p>Similar alguma base da Focus</p>
+				<em><strong>SKU</strong> 27682ABSM23-10</em>
+			</aside>
+			<p class="subtitle">Qual alteração deseja fazer?</p>
+		
+			<aside class="answer">
+				<dl>
+					<dt><strong>Largura</strong></dt>
+					<dd>99,99cm</dd>
+				</dl>
+				<dl>
+					<dt><strong>Gramatura</strong></dt>
+					<dd>99,99g/m2 | 99,99g/m</dd>
+				</dl>
+				<dl class="last">
+					<dt><strong>Rendimento</strong></dt>
+					<dd>01,00m | 10Kg</dd>
+				</dl>
+				<dl>
+					<dt><strong>Composição</strong></dt>
+					<dd>Lorem ipsum dolor sit amet consectetur</dd>
+				</dl>
+				<dl class="last">
+					<dt><strong>Acabamento</strong></dt>
+					<dd>Duis aute irure dolor in reprehenderit in voluptate</dd>
+				</dl>
+				<ul>
+					<li><strong>Descrição:</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi necessáriaiunt.</li>
+				</ul>					
+			</aside>
         </div>
 	</div>
 	<div class="l-bottom amostra">
 		<h2 class="title">Amostra</h2>
-		<p class="title">Solicitar Amostra - Tipo:</p>
+		<p class="subtitle">Solicitar Amostra - Tipo:</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -151,16 +172,16 @@
 			</p>
           </li>
         </ul>
-		<p class="title">É necessária a devolução?</p>
+		<p class="subtitle">É necessária a devolução?</p>
 		<p class="answer">Não</p>
-		<p class="title">Pode ser cortada?</p>
+		<p class="subtitle">Pode ser cortada?</p>
 		<p class="answer">Não</p>
-		<p class="title">Identificação da amostra</p>
+		<p class="subtitle">Identificação da amostra</p>
 		<p class="answer">A-J2H4O-01</p>
 	</div>
 	<div class="l-bottom finalidade_produto">
 		<h2 class="title">Finalidade do Produto</h2>
-		<p class="title">Segmento</p>
+		<p class="subtitle">Segmento</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -181,7 +202,7 @@
             </div>
           </li>
         </ul>
-		<p class="title">Modelagem</p>
+		<p class="subtitle">Modelagem</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -190,7 +211,7 @@
             </div>
           </li>
         </ul>
-		<p class="title">Top</p>
+		<p class="subtitle">Top</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -205,7 +226,7 @@
             </div>
           </li>
         </ul>
-		<p class="title">Bottom</p>
+		<p class="subtitle">Bottom</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -214,7 +235,7 @@
             </div>
           </li>
         </ul>
-		<p class="title">Home</p>
+		<p class="subtitle">Home</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -223,7 +244,7 @@
             </div>
           </li>
         </ul>
-		<p class="title">Base para Estamparia</p>
+		<p class="subtitle">Base para Estamparia</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -232,7 +253,7 @@
             </div>
           </li>
         </ul>
-		<p class="title">Moda Íntima</p>
+		<p class="subtitle">Moda Íntima</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -247,7 +268,7 @@
             </div>
           </li>
         </ul>
-		<p class="title">Setor Atacadista</p>
+		<p class="subtitle">Setor Atacadista</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -256,7 +277,7 @@
             </div>
           </li>
         </ul>
-		<p class="title">Outra Finalidade</p>
+		<p class="subtitle">Outra Finalidade</p>
         <ul class="form">
           <li class="odd">
             <div class="checkbox">
@@ -268,52 +289,113 @@
 	</div>
 	<div class="l-bottom prazo_preco_qnt">
 		<h2 class="title">Prazo, Preço e Quantidade</h2>
-		<p class="title">Quantidade estimada pelo cliente:</p>
-		<p class="answer">Quantidade Total: 200 Metros</p>
-        <p class="title">Quantidade por cor:</p>
-        <ul class="answer">
-			<li><strong>30 itens</strong> - Yellow ipsum dolor - 2JH32B</li>
-			<li><strong>4 itens</strong> - Blue - H2G3HJ</li>
-			<li><strong>11 itens</strong> - Green adinet - 87AF84</li>
-        </ul>
-		<p class="title">Preço desejado pelo cliente:</p>
-		<p class="answer"><strong>Preço:</strong> R$<br><strong>Prazo Médio:</strong> Quilos</p>
-
-		<p class="title">Entrega da Produção tem data limite?</p>
-		<p class="answer">Sim<br><strong>Data Limite:</strong> 15/09/2017</p>
-		<p class="title">Cliente necessita de corte 5m da produção?</p>
-		<p class="answer">Sim<br><strong>Data Limite:</strong> 15/09/2017</p>
-		<p class="title">Cliente necessita de 1 peça de tecido para mostruário?</p>
-		<p class="answer">Sim<br><strong>Data Limite:</strong> 15/09/2017</p>
-		<p class="title">Cliente exige exclusividade por um período?</p>
-		<p class="answer">Sim<br><strong>Data Limite:</strong> 15/09/2017</p>
-		<p class="title">Tipo de transporte desejado:</p>
+		<p class="subtitle">Quantidade estimada pelo cliente:</p>
+		<p class="answer">200 Metros</p>
+        <p class="subtitle">Quantidade por cor:</p>
+		<aside class="answer">
+			<dl>
+				<dt><strong>Nome/código por cor</strong></dt>
+				<dd>
+					Yellow ipsum dolor - 2JH32B<br>
+					Blue stronger- H2G3HJ<br>
+					Green adinet - 87AF84
+				</dd>
+			</dl>
+			<dl>
+				<dt><strong>Quantidade</strong></dt>
+				<dd>
+					26<br>
+					58<br>
+					113
+				</dd>
+			</dl>
+		</aside>
+		<p class="subtitle">Preço desejado pelo cliente:</p>
+		<aside class="answer">
+			<dl>
+				<dt><strong>Preço</strong></dt>
+				<dd>R$</dd>
+			</dl>
+			<dl>
+				<dt><strong>Prazo Médio:</strong></dt>
+				<dd>Quilos</dd>
+			</dl>
+		</aside>
+		<p class="subtitle">Entrega da Produção tem data limite?</p>
+		<aside class="answer">
+			<p>Sim</p>
+			<em><strong>Data limite</strong> 15/09/2017</em>
+		</aside>
+		<p class="subtitle">Cliente necessita de corte 5m da produção?</p>
+		<aside class="answer">
+			<p>Sim</p>
+			<em><strong>Data limite</strong> 15/09/2017</em>
+		</aside>
+		<p class="subtitle">Cliente necessita de 1 peça de tecido para mostruário?</p>
+		<aside class="answer">
+			<p>Sim</p>
+			<em><strong>Data limite</strong> 15/09/2017</em>
+		</aside>
+		<p class="subtitle">Cliente exige exclusividade por um período?</p>
+		<aside class="answer">
+			<p>Sim</p>
+			<em><strong>Data limite</strong> 15/09/2017</em>
+		</aside>
+		<p class="subtitle">Tipo de transporte desejado:</p>
 		<p class="answer">Marítimo</p>
 	</div>
 	<div class="l-bottom similaridade">
 		<h2 class="title">Similaridade</h2>
-		<p class="title">Algum concorrente produz tecido similar ao solicitado?</p>
+		<p class="subtitle">Algum concorrente produz tecido similar ao solicitado?</p>
 		<p class="answer">Desconheço</p>
 
-		<p class="title">Concorrente e dados do artigo na concorrência:</p>
-		<ul class="answer">
-			<li><strong>Nome do concorrente:</strong> Concorrente XYZ de Lorem</li>
-			<li><strong>Artigo:</strong> Lorem ipsum dolor</li>
-			<li><strong>Código:</strong> D76FG5DF</li>
-			<li><strong>Largura:</strong> 1,99cm</li>
-			<li><strong>Gramatura:</strong> 99,99g/m2 | 99,99g/m</li>
-			<li><strong>Rendimento:</strong> 01,00m | 10Kg</li>
-		</ul>
-
-		<p class="title">Condições comerciais praticadas pelo concorrente:</p>
-		<ul class="answer">
-			<li><strong>Preço:</strong> 15,23</li>
-			<li><strong>R$</strong>, <strong>Metros</strong>, <strong>Estampado</strong></li>
-			<li><strong>Prazo Médio:</strong> 15 dias</li>
-			<li><strong>ICMS:</strong> 4,36%</li>
-		</ul>
-
-		<p class="title">Há variação de preço por cor?</p>
+		<p class="subtitle">Concorrente e dados do artigo na concorrência:</p>
+		<aside class="answer">
+			<dl>
+				<dt><strong>Nome do concorrente</strong></dt>
+				<dd>Concorrente XYZ de Lorem</dd>
+			</dl>
+			<dl>
+				<dt><strong>Artigo</strong></dt>
+				<dd>Lorem ipsum dolor</dd>
+			</dl>
+			<dl>
+				<dt><strong>Código</strong></dt>
+				<dd>D76FG5DF</dd>
+			</dl>
+			<dl>
+				<dt><strong>Largura</strong></dt>
+				<dd>1,99cm</dd>
+			</dl>
+			<dl>
+				<dt><strong>Gramatura</strong></dt>
+				<dd>99,99g/m2 | 99,99g/m</dd>
+			</dl>
+			<dl>
+				<dt><strong>Rendimento</strong></dt>
+				<dd>01,00m | 10Kg</dd>
+			</dl>
+		</aside>
+		<p class="subtitle">Condições comerciais praticadas pelo concorrente:</p>
+		<aside class="answer">
+			<dl>
+				<dt><strong>Preço</strong></dt>
+				<dd>15,23</dd>
+			</dl>
+			<dl>
+				<dt><strong>---</strong></dt>
+				<dd>R$, Metros, Estampado</dd>
+			</dl>
+			<dl>
+				<dt><strong>Prazo Médio</strong></dt>
+				<dd>15 dias</dd>
+			</dl>
+			<dl>
+				<dt><strong>ICMS</strong></dt>
+				<dd>4,36%</dd>
+			</dl>
+		</aside>
+		<p class="subtitle">Há variação de preço por cor?</p>
 		<p class="answer">Sim</p>
         <ul class="form inline">
           <li>

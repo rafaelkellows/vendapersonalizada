@@ -142,6 +142,9 @@ main nav > ul > li.active > ul:not(.disabled) {
   width: 100%;
   height: 100%;
 }
+.left {
+  float: left;
+}
 .right,
 main nav > p {
   float: right;
@@ -229,7 +232,7 @@ main {
   /* HEADER */
   /* NAV */
   /* FORM */
-  /* TABLE */
+  /* TABLES */
   /* ICO LEGENDS */
   /* VP RESUME */
 }
@@ -338,18 +341,18 @@ main div.msg-box:after {
   width: 100%;
   height: 100%;
 }
-main header {
+main > header {
   background: #fafbfc;
   border-bottom: 2px solid #ced4d9;
 }
-main header h1 {
+main > header h1 {
   width: 141px;
   height: 38px;
   margin: 33px 19px 9px;
   display: inline-block;
   vertical-align: middle;
 }
-main header h2 {
+main > header h2 {
   display: inline-block;
   vertical-align: bottom;
   text-align: center;
@@ -659,13 +662,16 @@ main .vpResume a.btn {
   z-index: 99;
 }
 main form fieldset a.btn span,
-main .form fieldset a.btn span {
+main .form fieldset a.btn span,
+main .vpResume a.btn.prev span {
   display: inline-block;
   vertical-align: middle;
 }
 main form fieldset a.btn span i,
-main .form fieldset a.btn span i {
+main .form fieldset a.btn span i,
+main .vpResume a.btn.prev span i {
   margin: 0 -0.05em;
+  color: #fff;
 }
 main form fieldset a.btn:hover,
 main .form fieldset a.btn:hover,
@@ -676,6 +682,10 @@ main .vpResume a.btn:hover {
   font-weight: 700;
   background: #f2f3f5;
   border: 1px solid #ccd1d7;
+}
+main form fieldset a.btn:hover span i,
+main .form fieldset a.btn:hover span i {
+  color: #287bca;
 }
 main form fieldset a.btn.left,
 main .form fieldset a.btn.left {
@@ -1269,10 +1279,86 @@ main div.table_min dl {
   margin-right: -3px;
   float: none;
 }
+main div.table_min dl dt:before,
+main div.table_min dl dd:before,
+main div.table_min dl dd span.before {
+  content: '';
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
 main div.table_min dl dd {
   letter-spacing: -0.04em;
   border-bottom-width: 2px;
   font-size: 0.8em;
+}
+main div.table_min dl dd a {
+  color: #0056a5;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.05em;
+  letter-spacing: -0.02em;
+}
+main div.table_min.no_latbars {
+  border: none;
+}
+main div.table_min.no_latbars dl {
+  border: 0;
+}
+main div.table_min.no_latbars dl dt {
+  border-bottom: 2px solid #e7e7e8;
+}
+main div.table_min.no_latbars dl.first dd {
+  border-left: 2px solid #e7e7e8;
+}
+main div.table_min.no_latbars dl.last dd {
+  border-right: 2px solid #e7e7e8;
+}
+main div.table_print .w-30 {
+  width: 30% !important;
+}
+main div.table_print .w-60 {
+  width: 60% !important;
+}
+main div.table_print .w-100 {
+  width: 100% !important;
+}
+main div.table_print header {
+  background: #a3acb5;
+  padding: 6px;
+}
+main div.table_print header * {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0 5px;
+}
+main div.table_print header p {
+  text-transform: uppercase;
+}
+main div.table_print > ul {
+  border: 2px solid #efeff0;
+  padding: 10px;
+}
+main div.table_print > ul li {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.75em;
+  padding: 6px 0;
+}
+main div.table_print > ul li strong {
+  color: #000;
+}
+main div.table_print > p,
+main .vpResume form fieldset div.content div.disapproved p.msg {
+  background-color: #f2f3f5;
+  color: #ff0000;
+  font-size: 0.8125em;
+  font-weight: 700;
+  padding: 4px 8px;
 }
 main ul.legends {
   width: 1000px;
@@ -1316,10 +1402,35 @@ main .vpResume span.little-break {
   clear: both;
   margin-bottom: -40px;
 }
+main .vpResume .subtitle {
+  text-align: left;
+  color: #535659;
+  font-size: 0.9375em;
+  font-weight: 700;
+}
 main .vpResume a.btn {
   z-index: 99;
   top: -29px;
-  margin-right: 0;
+  margin: 10px 10px 20px 0;
+  color: #fff;
+}
+main .vpResume a.btn:hover i,
+main .vpResume a.btn:hover span i {
+  color: #287bca;
+}
+main .vpResume a.btn i {
+  color: #fff;
+}
+main .vpResume a.btn.prev span {
+  padding-right: 10px;
+}
+main .vpResume .btnsActions {
+  float: right;
+  text-align: right;
+}
+main .vpResume .btnsActions a {
+  float: left;
+  margin-left: 10px;
 }
 main .vpResume > h2 {
   display: none;
@@ -1328,12 +1439,11 @@ main .vpResume h2 {
   padding: 5px 0 15px;
   font-size: 1.125em;
   text-align: center;
-  color: #000;
   text-transform: uppercase;
 }
 main .vpResume .answer {
   padding: 10px;
-  font-size: 0.9125em;
+  font-size: 0.9375em;
   line-height: 24px;
 }
 main .vpResume .form {
@@ -1343,6 +1453,86 @@ main .vpResume .form li {
   padding: 4px 0;
   display: inline-block;
   vertical-align: top;
+}
+main .vpResume aside {
+  font-size: 0.9125em;
+  line-height: 24px;
+}
+main .vpResume aside p {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+main .vpResume aside em {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: -30px;
+  font-style: normal;
+  text-align: center;
+}
+main .vpResume aside em strong {
+  display: block;
+  font-size: 0.9375rem;
+  color: #535658;
+}
+main .vpResume aside dl {
+  width: 24.9%;
+  display: inline-block;
+  vertical-align: top;
+}
+main .vpResume aside dl.last {
+  width: 48%;
+}
+main .vpResume ul.info {
+  padding: 10px;
+}
+main .vpResume ul.info li {
+  width: 22.5%;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.75em;
+}
+main .vpResume ul.info li.w-60 {
+  width: 54%;
+}
+main .vpResume ul.info li strong {
+  font-size: 0.8125rem;
+}
+main .vpResume ul.info li * {
+  color: #000;
+}
+main .vpResume * {
+  color: #535658;
+}
+main .vpResume form {
+  margin-top: 10px;
+}
+main .vpResume form div.w-300 label {
+  font-size: 1.125rem;
+}
+main .vpResume form fieldset div.content div.approved p.title {
+  padding: 20px 0 10px 0;
+}
+main .vpResume form fieldset div.content div.approved div.w-300 {
+  padding: 10px 0 10px 0;
+}
+main .vpResume form fieldset div.content div.approved div.inline ul {
+  padding: 26px 15px;
+  vertical-align: bottom;
+}
+main .vpResume form fieldset div.content div.approved ul.info {
+  padding: 10px 0;
+}
+main .vpResume form fieldset div.content div.approved ul.info li {
+  width: 33%;
+  padding-bottom: 10px;
+}
+main .vpResume form fieldset div.content div.disapproved div.w-300 {
+  padding-top: 15px;
+}
+main .vpResume form fieldset div.content div.disapproved p.msg {
+  margin: 25px 0 10px;
+  padding: 10px 8px;
 }
 /*******************************
      					IE 9
@@ -1792,6 +1982,10 @@ main form.prazo_preco_quant .content .l-bottom p.title {
 main form.prazo_preco_quant .content .l-bottom ul.inline .w-210 {
   margin-left: -13px !important;
 }
+main form.prazo_preco_quant .content .l-bottom.commercialConditions > ul div.radio {
+  width: auto;
+  margin: 0;
+}
 main form.prazo_preco_quant .content ul.inline div.radio {
   width: 110px;
   margin: 0 0 -20px 0;
@@ -1845,15 +2039,22 @@ main form.similaridade .content .l-bottom.competitorDatas .w-220 {
 main form.similaridade .content .l-bottom:nth-child(3) ul.w-220,
 main form.similaridade .content .l-bottom.commercialConditions ul.w-220,
 main form.similaridade .content .l-bottom:nth-child(3) ul.w-210,
-main form.similaridade .content .l-bottom.commercialConditions ul.w-210 {
+main form.similaridade .content .l-bottom.commercialConditions ul.w-210,
+main form.prazo_preco_quant .content .l-bottom.commercialConditions ul.w-300,
+main form.prazo_preco_quant .content .l-bottom.commercialConditions ul.w-210,
+main form.financeiro .content .l-bottom ul li.commercialConditions ul.w-300,
+main form.financeiro .content .l-bottom ul li.commercialConditions ul.w-210 {
   border-left: 2px solid #ced4d9;
   padding-left: 20px;
   margin-left: -20px;
-  height: 30px;
+  /*height: 30px;*/
 }
 main form.similaridade .content .l-bottom:nth-child(3) > ul,
-main form.similaridade .content .l-bottom.commercialConditions > ul {
-  margin: 0 0 -20px 10px;
+main form.similaridade .content .l-bottom.commercialConditions > ul,
+main form.prazo_preco_quant .content .l-bottom.commercialConditions > ul,
+main form.financeiro .content .l-bottom ul li.commercialConditions > ul {
+  margin: 8px 0 -20px 10px;
+  height: 30px;
 }
 main form.similaridade .content .l-bottom:nth-child(4) .title,
 main form.similaridade .content .l-bottom.priceChange .title {
@@ -1905,7 +2106,8 @@ main form.superintendencia .content > div p.right {
 }
 main form.comercial .content > div p.title,
 main form.financeiro .content > div p.title,
-main form.superintendencia .content > div p.title {
+main form.superintendencia .content > div p.title,
+main .vpResume form p.title {
   padding: 10px 0;
 }
 main form.comercial .content > div ul,
@@ -1977,6 +2179,14 @@ main form.superintendencia .content > div ul li div.radio {
 main form.financeiro .content > div ul li.block label,
 main form.superintendencia .content > div ul li.block label {
   padding-top: 12px;
+}
+main form.financeiro .content .l-bottom ul li.commercialConditions > ul {
+  padding: 0;
+}
+main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radio {
+  width: auto;
+  min-width: auto;
+  margin: 0;
 }
 /*******************************
 

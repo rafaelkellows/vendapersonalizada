@@ -358,6 +358,17 @@ main{
 						margin-left: -13px !important;
 					}
 				}
+				&.commercialConditions{
+					ul.w-300, ul.w-210{
+						&:extend(main form.similaridade .content .l-bottom.commercialConditions ul.w-210);
+					}
+					>ul{
+						&:extend(main form.similaridade .content .l-bottom.commercialConditions > ul);
+						div.radio{
+							width: auto; margin: 0;
+						}
+					}
+				}
 			}	
 			ul.inline{
 				div.radio{
@@ -417,10 +428,11 @@ main{
 						border-left: 2px solid @dark-gray;
 						padding-left: 20px;
 	    				margin-left: -20px;
-	    				height: 30px;
+	    				/*height: 30px;*/
 					}
 					>ul{
-						margin: 0 0 -20px 10px; 
+						margin: 8px 0 -20px 10px;
+						height: 30px;
 					}
 				}
 				&:nth-child(4), &.priceChange{
@@ -486,4 +498,23 @@ main{
 	}
 	form.financeiro .content > div ul li.block label,
 	form.superintendencia .content > div ul li.block label{ padding-top: 12px; }
+	form.financeiro{
+		.content{
+			.l-bottom{
+				ul li.commercialConditions{
+					ul.w-300, ul.w-210{
+						&:extend(main form.similaridade .content .l-bottom.commercialConditions ul.w-210);
+					}
+					ul.w-170{  }
+					>ul{
+						padding: 0;
+						&:extend(main form.similaridade .content .l-bottom.commercialConditions > ul);
+						div.radio{
+							width: auto; min-width: auto; margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
 }

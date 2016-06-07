@@ -68,6 +68,15 @@ $(function(){
 				    		case 'fluxo/inicial':
 				    		vendapersonalizada.fluxo_inicial(); 
 				    		break;
+				    		case 'validacao/inicial':
+				    		vendapersonalizada.validacao_inicial(); 
+				    		break;
+				    		case 'validacao/resumo':
+				    		vendapersonalizada.validacao_resumo(); 
+				    		break;
+				    		case 'validacao/approved':
+				    		vendapersonalizada.validacao_result(); 
+				    		break;
 				    	}
 				    	if(page.indexOf('fluxo/') > -1){
 				    		$('a.btn').click(function(){
@@ -110,7 +119,7 @@ $(function(){
 	        			}
 	        			$(this).toggleClass('checked');
 	        		});
-
+	        		$('div.table_min dl dt, div.table_min dl dd').prepend('<span class="before"></span>');
 	        	};
 	        },
 	        segmentacao:function(){
@@ -315,8 +324,58 @@ $(function(){
 		        	setTimeout(function(){
 		        		var _h = $('main div.table > div > div.tbl-container-01').outerHeight();
 		        		$('main div.table').height(_h);
-		        	},1000)
+		        	},500);
 				}
+	        },
+	        validacao_inicial:function(){
+				$('main div.table_min dl dd a').click(function(){
+	        		vendapersonalizada.loader(1);
+	        		vendapersonalizada.load('validacao/resumo');
+				});
+	        },
+	        validacao_resumo : function(){
+	        	$('div.vpResume ul.consideredActions input[type=radio]').click(function(){
+					$('div.impracticable, div.practicable').addClass('hide');
+					var _t = $(this).val();
+					switch(_t) {
+					    case '0':
+					        $('div.vpResume div.impracticable').removeClass('hide');
+					   		$('div.vpResume div.conditions p.title').first().html('Com as seguintes conclusões:<br><br>');
+					        break;
+					    case '1':
+					   		$('div.vpResume div.conditions p.title').first().html('Com as seguintes condições:<br><br>');
+					        break;
+					    case '2':
+					        $('div.vpResume div.practicable').removeClass('hide');
+					        $('div.vpResume div.conditions p.title').first().html('Com as seguintes conclusões:<br><br>');
+					        break;
+					    default:
+					        null;
+					}
+	        	});
+	        	$('div.vpResume a.btn').click(function(){
+	        		vendapersonalizada.loader(1);
+	        		vendapersonalizada.load('validacao/inicial');
+	        	});
+	        	$('div.vpResume a.btn.view').click(function(){
+	        		vendapersonalizada.loader(1);
+	        		vendapersonalizada.load('validacao/approved');
+	        	})
+	        },
+	        validacao_result : function(){
+	        	$('form.finalResult ul li div input[type=radio]').click(function() {
+	        		var _t = $(this);
+	        		_t.closest('form').find('div.approved, div.disapproved').addClass('hide');
+	        		switch($(this).val()){
+	        			case '1':
+	        				_t.closest('form').find('div.approved').removeClass('hide');
+	        				break;
+	        			case '0':
+	        				_t.closest('form').find('div.disapproved').removeClass('hide');
+	        				break;
+	        		}
+	        		vendapersonalizada.navButtons(1);
+	        	});
 	        }
     	}
 		vendapersonalizada.init();

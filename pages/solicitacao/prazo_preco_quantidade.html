@@ -38,44 +38,44 @@
         </ul>
       </div>
 
-      <div class="l-bottom">
+      <div class="l-bottom commercialConditions">
         <p class="title">Preço desejado pelo cliente:</p>
-        <ul class="inline">
-          <li class="w-300">
-            <label for="estimadedPrice">Preço</label>
-            <input id="estimadedPrice" type="text" value="" />
+        <div class="w-300 inline">
+          <label for="price">Preço</label>
+          <input id="price" type="text" value="" />
+        </div>
+        <ul class="w-170 inline">
+          <li>
+            <div class="radio">
+              <input id="currencyReal" type="radio" name="currency" value="real" />
+              <label for="currencyReal">R$</label>
+            </div>
           </li>
           <li>
-           <div class="radio">
-             <input id="currencyReal" type="radio" name="currency" value="real" />
-             <label for="currencyReal">R$</label>
-           </div>
-          </li>
-          <li>
-           <div class="radio">
-             <input id="currencyDolar" type="radio" name="currency" value="dolar" />
-             <label for="currencyDolar">US$</label>
-           </div>
+            <div class="radio">
+              <input id="currencyDolar" type="radio" name="currency" value="dolar" />
+              <label for="currencyDolar">US$</label>
+            </div>
           </li>
         </ul>
-        <ul class="inline">
-          <li class="w-300">
-            <label for="averageTerm">Prazo Médio</label>
-            <input id="averageTerm" type="text" value="" />
+        <ul class="w-210 inline">
+          <li>
+            <div class="radio">
+              <input id="byMetros" type="radio" name="averageTerm" value="Metros" />
+              <label for="byMetros">Metros</label>
+            </div>
           </li>
           <li>
-           <div class="radio">
-             <input id="byMetros" type="radio" name="averageTerm" value="Metros" />
-             <label for="byMetros">Metros</label>
-           </div>
-          </li>
-          <li>
-           <div class="radio">
-             <input id="byKilos" type="radio" name="averageTerm" value="Quilos" />
-             <label for="byKilos">Quilos</label>
-           </div>
+            <div class="radio">
+              <input id="byKilos" type="radio" name="averageTerm" value="Quilos" />
+              <label for="byKilos">Quilos</label>
+            </div>
           </li>
         </ul>
+        <div class="w-300">
+          <label for="width">Prazo Médio</label>
+          <input id="width" type="text" placeholder="Dias" value="" />
+        </div>
       </div>
       
       <p class="title">Entrega da Produção tem data limite?</p>

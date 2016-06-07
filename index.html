@@ -86,7 +86,7 @@
             </ul>
           </li>
           <li>
-            <a data-url="validacao/inicial" href="javascript:void(0);"><p>Validação da Proposta Focus<span>Retorno para o Representante</span></p></a>
+            <a data-url="validacao/approved" href="javascript:void(0);"><p>Validação da Proposta Focus<span>Retorno para o Representante</span></p></a>
             <ul class="no_latbars disabled">
             </ul>
           </li>
@@ -106,7 +106,7 @@
       
       $(document).ready(function(){
         $('nav ul li').each(function(){
-          if( $(this).find('> a').attr('data-url') == "validacao/inicial" ){
+          if( $(this).find('> a').attr('data-url') == "validacao/approved" ){
             $(this).find('> a').click();
           }
         })

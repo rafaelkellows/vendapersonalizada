@@ -14,35 +14,37 @@
               <input id="fantasyName" type="text" value="" />
             </div>
           </li>
-          <li class="block">
-            <div class="w-235">
-              <label>Preço do artigo tabela 90 dias</label>
-              <input id="fantasyName" type="text" value="" />
+          <li class="commercialConditions">
+            <div class="w-300 inline">
+              <label for="width">Preço do artigo tabela 90 dias</label>
+              <input id="width" type="text" value="" />
             </div>
-            <ul class="inline w-235">
+            <ul class="w-170 inline">
               <li>
-               <div class="radio">
-                 <input id="txp" type="radio" name="info" value="TXP" />
-                 <label for="txp">R$</label>
-               </div>
+                <div class="radio">
+                  <input id="currencyReal" type="radio" name="currency" value="real" />
+                  <label for="currencyReal">R$</label>
+                </div>
               </li>
               <li>
-               <div class="radio">
-                 <input id="txp" type="radio" name="info" value="TXP" />  
-                 <label for="txp">US$</label>
-               </div>
+                <div class="radio">
+                  <input id="currencyDolar" type="radio" name="currency" value="dolar" />
+                  <label for="currencyDolar">US$</label>
+                </div>
+              </li>
+            </ul>
+            <ul class="w-210 inline">
+              <li>
+                <div class="radio">
+                  <input id="byMetros" type="radio" name="averageTerm" value="Metros" />
+                  <label for="byMetros">Metros</label>
+                </div>
               </li>
               <li>
-               <div class="radio">
-                 <input id="txp" type="radio" name="info" value="TXP" />
-                 <label for="txp">Metro</label>
-               </div>
-              </li>
-              <li>
-               <div class="radio">
-                 <input id="txp" type="radio" name="info" value="TXP" />
-                 <label for="txp">Quilo</label>
-               </div>
+                <div class="radio">
+                  <input id="byKilos" type="radio" name="averageTerm" value="Quilos" />
+                  <label for="byKilos">Quilos</label>
+                </div>
               </li>
             </ul>
           </li>
