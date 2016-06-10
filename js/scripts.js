@@ -3,16 +3,20 @@ $(function(){
 		var vendapersonalizada = {
 	        init: function() {
 	            this.menu();
+	            this.toTop('.toTop');
 	            $('div.loader').fadeOut('fast');
+        		vendapersonalizada.loader(1);
+        		vendapersonalizada.load('inicial');
 	        },
 	        menu: function() {
 	        	//Mobile
-	        	$('main nav > ul > li:first-child a').click(function() {
+	        	$('main nav > ul > li.m_menu a').click(function() {
+	        		$(this).parent().toggleClass('active');
 	        		$(this).find('i').toggleClass('fa-bars').toggleClass('fa-times');
-	        		$(this).closest('ul').find('>li').not(':first').fadeToggle('fast');
+	        		$(this).closest('ul').find('>li').not('.m_menu').toggleClass('f_menu');
 	        	});
 	        	//First Level
-	        	$('main nav > ul > li:not(.disabled) > a').click(function() {
+	        	$('main nav > ul > li').not(".disabled,.m_menu").find(' > a').click(function() {
 	        		$('main nav > ul li').removeClass('active');
 	        		$(this).parent().addClass('active');
 	        		if(
@@ -23,7 +27,7 @@ $(function(){
 	        			//$(this).next('ul').removeClass('disabled')
 		        		vendapersonalizada.loader(1);
 		        		vendapersonalizada.load($(this).attr('data-url'));
-	        			if( vendapersonalizada.wSize() < 990 ){ $('main nav > ul > li:first-child a').click(); }
+	        			if( vendapersonalizada.wSize() <= 990 ){ $('main nav > ul > li.m_menu a').click(); }
 	        		}
 	        	});
 	        	//Second Level
@@ -32,12 +36,29 @@ $(function(){
 	        		vendapersonalizada.load($(this).attr('data-url'));
 	        		$('main nav > ul li').removeClass('active');
 	        		$(this).parent().addClass('active').parents('li').addClass('active');
-	        		if( vendapersonalizada.wSize() < 990 ){ $('main nav > ul > li:first-child a').click(); }
+	        		if( vendapersonalizada.wSize() < 990 ){ $('main nav > ul > li.m_menu a').click(); }
 	        	})
 	        	$( window ).resize(function() {
-	        		$('main nav > ul li:first-child a i').removeClass('fa-times').addClass('fa-bars');
+	        		$('main nav > ul li.m_menu a i').removeClass('fa-times').addClass('fa-bars');
 					$('main nav > ul li').removeAttr('style');
 				});
+	        },
+	        toTop : function(elem){
+		        var offset = 220;
+		        var duration = 500;
+		        jQuery(window).scroll(function() {
+		          if (jQuery(this).scrollTop() > offset) {
+		            jQuery(elem).fadeIn(duration);
+		          } else {
+		            jQuery(elem).fadeOut(duration);
+		          }
+		        });
+		        
+		        jQuery(elem).click(function(event) {
+		          event.preventDefault();
+		          jQuery('html, body').animate({scrollTop: 0}, duration);
+		          return false;
+		        })
 	        },
 	        load: function(page){
 	        	$.ajax({
@@ -377,6 +398,10 @@ $(function(){
 	        		}
 	        		vendapersonalizada.navButtons(1);
 	        	});
+	        	$('main .vpResume a.btn.prev.left').click(function(){
+	        		vendapersonalizada.loader(1);
+	        		vendapersonalizada.load('validacao/resumo');
+	        	})
 	        }
     	}
 		vendapersonalizada.init();

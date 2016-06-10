@@ -9,21 +9,36 @@
         >p{ float: none; padding: 8px 0 16px; }
         >ul{
           position: fixed; top: 0; left: 0; width:calc(~"100% - 2px"); z-index: 99;
-          >li:first-child{
-            display:block;
-            background: #0056a5;
-            width: 2.5em;
-            margin: 0 -2px 0 calc(~"100% - 2.42em");
-            font-size: 1.2em;
-            border: 0;
-            a{
-              color: #fff;
-            }
-          }
           >li{
-            display: none;
-            width: 100%;
-            text-align: center;
+            opacity:0; width: 100%; text-align: center; display: none;
+            &.active{
+              &:before{
+                display: none;
+              }
+            }
+            &.m_menu{
+              opacity:1; display: block;
+              background: #0056a5;
+              width: 2.5em;
+              margin: 0 -2px 0 calc(~"100% - 2.42em");
+              font-size: 1.2em;
+              border: 0;
+              a{
+                color: #fff; 
+                &:before{ height:2.37em; }
+              }
+              &.active{
+                a:hover{ padding: 17px 14px; } 
+              }
+            }
+            &.f_menu{
+              opacity: 1; display: block;
+            }
+            >a{
+              &:before{
+                height:2.97em;
+              }
+            }
             >ul{
               position: relative !important;
               left: 0 !important;
@@ -44,9 +59,9 @@
         }
       }
       form{
-        margin: -10px 10px 0;
+        margin: -10px 10px 49px;
         width: calc(~"100% - 20px") !important;
-        fieldset{
+        fieldset{ 
           legend{
             .show;
             .txt-sets(center,@dark-blue,1.1,700);
@@ -157,7 +172,7 @@
       /* Fluxo de Aprovação */
       div.vpResume{
         margin: 0; width: 100%;
-        a.btn{ margin: 0; top:0;  }
+        a.btn.close{ margin: 0; top:0;  }
         >h2{
           display: block;
           >p{
@@ -166,10 +181,18 @@
           }
         }
         .table_min{ margin:0 10px; }
-        .form{
-          width: auto;
-        }
+        .form{ width: auto; }
         span.little-break{ margin-bottom: 0; }
+        &.validacao{
+          margin: 20px 10px;
+          width: calc(~"100% - 20px");          
+          div.conditions{
+            padding: 10px; margin: 10px 0;
+          }
+        }
+        ul.info li{
+          width: 32% !important;
+        }
       }
       form.comercial .content, form.financeiro .content, form.superintendencia .content{
         .close{ margin:-10px; }
@@ -187,6 +210,7 @@
           }
         }
       }
+      div.table_min{ width: calc(~"100% - 20px"); margin: 0 auto; }
       ul.legends{
         width: auto; 
         li{
@@ -194,6 +218,8 @@
         }
       }
       p.vp_info{ display: block; }
+      /* Validação da Proposta Focus */
+      .validacaoProposta{ width: 100%; margin:0; }
     }
   }
   @media (max-width: 768px) {
@@ -298,10 +324,17 @@
         }
       }
       /* Fluxo de Aprovação */
-      div.vpResume div.table_min dl{ 
-        width: 33% !important;
+      div.vpResume{
+        div.table_min dl{ 
+          /*width: 33% !important;*/
+        }
+        aside dl{
+          width: 48% !important; 
+        }
       }
       ul.legends li:first-child{ display: block; }
+
+      .validacaoProposta div.table_min dl{ width: 25% !important; }
     }
   }
   @media (max-width: 650px) {
@@ -353,7 +386,61 @@
         }
       }
       /* Fluxo de Aprovação */
-      div.vpResume div.table_min dl{ width: 50% !important; }
+      div.vpResume{
+        div.table_min dl{ width: 50% !important; }
+        aside {
+          p{ width: 70%; }
+          em{ 
+            margin-top: 0; text-align: left;
+            strong{
+              display: inline-block;
+            }
+          }
+          dl{ width: auto; }
+        }
+        div.base{
+          div.similar{
+            aside{
+              dl{ width: 100% !important; }
+            }
+          }
+        }
+        div.prazo_preco_qnt{
+          aside.colors{
+            dl{ 
+              width: 28% !important; 
+              &:first-child{
+                width: 70% !important; 
+              }
+            }
+          }
+        }
+        &.validacao{
+          .btnsActions{
+            float: none; text-align: center; padding:46px 0 0; 
+            a{ width: 235px; top:0; float: none; margin: 10px auto; } 
+          }
+          div.conditions{
+            aside.colors{
+              dl{
+                &:extend(main div.vpResume div.prazo_preco_qnt aside.colors dl);
+                &:first-child{
+                  &:extend(main div.vpResume div.prazo_preco_qnt aside.colors dl:first-child);
+                }
+                &.last{
+                  width: 100% !important;
+                }
+              }
+            }
+          }
+          ul.info li{
+            padding-bottom: 5px;
+            strong{
+              display: block; padding-bottom: 3px;
+            }
+          }
+        }
+      }
       form.comercial .content, form.financeiro .content, form.superintendencia .content{
         > div{
           ul li{
@@ -409,6 +496,9 @@
       form.base{
         div[class^='w-']{
           width: 100% !important; 
+          .btns a{
+            width: calc(~"50% - 4px") !important;
+          }
         }
         ul{ 
           li{
@@ -482,10 +572,40 @@
         }
       }
       /* Fluxo de Aprovação */
-      div.vpResume div.table_min dl{ 
-        width: 100% !important;
-      }
+      div.vpResume {
+        aside dl{
+          width: 100%;
+        }
+        div.table_min{
+          dl{ 
+            width: 100% !important;
+          }
+          &.no_latbars dl dd{
+            border-left: 2px solid #e7e7e8;
+            border-right: 2px solid #e7e7e8;
+          }
 
+        }
+        div.similaridade{
+          aside{
+            dl{ width: 98% !important; }
+          }
+        }
+        &.validacao{
+          ul.info li{
+            display: block;
+            width: 100% !important;
+          }
+          form.finalResult{
+            div.approved{
+              ul.w-300{
+                width: 100% !important;
+                padding: 0 15px 15px 0;
+              }
+            }
+          }
+        }
+      }
       div.table{
         height: 300px;
       }
@@ -493,6 +613,7 @@
         .txt-sets(left,#a3acb5,0.8125,400); padding: 30px 10px 0; margin-bottom: -20px;
         strong{font-weight: 700; color: @dark-blue; }
       }
+      .validacaoProposta div.table_min dl{ width: 50% !important; }
     }
   }
 }

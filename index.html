@@ -49,14 +49,13 @@
       </div>
       <div class="loader"><img src="images/loader.gif" height="32" width="32"></div>
       <header>
-        <h1><a href="http://www.focustextil.com.br" target="_blank"><img src="images/logo-focus-textil.png" height="38" width="141" /></a></h1>
+        <h1><a href="./"><img src="images/logo-focus-textil.png" height="38" width="141" /></a></h1>
         <h2>Venda Personalizada</h2>
       </header>
-
       <nav>
         <p>Representante | Data VP Nº 1234ABC-000</p>
         <ul>
-          <li>
+          <li class="m_menu">
             <a href="javascript:void(0);"><i class="fa fa-bars" aria-hidden="true"></i></a>
           </li>
           <li>
@@ -92,27 +91,14 @@
           </li>
         </ul>
       </nav>
-      
       <section>
-        
       </section>
-
+      <a class="toTop" href="javascript:void(0);"><i class="fa fa-level-up" aria-hidden="true"></i></a>
     </main>
 
 
     <!-- build:js js/scripts.js -->
     <script type="text/javascript" src="js/scripts.js"></script>
-    <script type="text/javascript">
-      
-      $(document).ready(function(){
-        $('nav ul li').each(function(){
-          if( $(this).find('> a').attr('data-url') == "validacao/approved" ){
-            //$(this).find('> a').click();
-          }
-        })
-      })
-
-    </script>
     <!-- endbuild -->
   </body>
 </html>

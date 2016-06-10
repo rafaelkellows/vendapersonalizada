@@ -66,7 +66,6 @@ strong {
 *******************************/
 html,
 body {
-  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -193,13 +192,15 @@ main .form textarea {
   display: block;
   padding: 0.75em;
 }
-.msg .error {
+.msg .error,
+main section div.inicial dl dd p.error {
   text-align: right;
   color: #d12527;
   font-size: 0.8125em;
   font-weight: 400;
 }
-.msg .success {
+.msg .success,
+main section div.inicial dl dd p.success {
   text-align: right;
   color: #287bca;
   font-size: 0.8125em;
@@ -226,7 +227,9 @@ ul.block li {
 *******************************/
 main {
   width: 100%;
+  height: 100%;
   padding-bottom: 120px;
+  /* SECTION */
   /* LOADER */
   /* MSG BOX */
   /* HEADER */
@@ -235,6 +238,84 @@ main {
   /* TABLES */
   /* ICO LEGENDS */
   /* VP RESUME */
+}
+main a.toTop {
+  background: #0056a5;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  text-align: center;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  display: none;
+}
+main a.toTop:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+main a.toTop i {
+  font-size: 22px;
+  vertical-align: middle;
+  outline: none;
+}
+main section div.inicial {
+  text-align: center;
+  padding-top: 20px;
+}
+main section div.inicial dl {
+  display: inline-block;
+  vertical-align: top;
+  width: 270px;
+  margin: 0 4px 10px;
+}
+main section div.inicial dl dt {
+  background-color: #0056a5;
+  color: #fff;
+  font-size: 1.125em;
+  box-sizing: border-box;
+  padding: 10px;
+  font-weight: 700;
+  line-height: 0.95em;
+  height: 54px;
+}
+main section div.inicial dl dt:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+main section div.inicial dl dd {
+  border: 1px solid #ced4d9;
+  background-color: #fafbfc;
+  color: #8d9195;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 80px;
+}
+main section div.inicial dl dd:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+main section div.inicial dl dd p.error {
+  text-align: center;
+  font-size: 1rem;
+}
+main section div.inicial dl dd p.success {
+  text-align: center;
+  font-size: 1rem;
+}
+main section div.inicial dl p {
+  display: inline-block;
+  vertical-align: middle;
+}
+main section div.inicial dl p span {
+  font-size: 0.875em;
 }
 main div.loader {
   position: fixed;
@@ -283,8 +364,8 @@ main div.msg-box div {
   z-index: 99;
 }
 main div.msg-box div > a {
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   width: 40px;
   height: 40px;
   border: 1px solid #3071b3;
@@ -374,9 +455,6 @@ main nav > p {
   font-weight: 400;
   padding-top: 16px;
 }
-main nav > ul li:first-child {
-  display: none;
-}
 main nav > ul > li {
   margin-right: -3px;
   background: #f2f3f5;
@@ -384,11 +462,13 @@ main nav > ul > li {
   position: static;
   display: inline-block;
   vertical-align: middle;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main nav > ul > li > a {
   padding: 0 14px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main nav > ul > li > a p {
   text-align: center;
@@ -533,8 +613,8 @@ main nav > ul > li > ul li:hover:not(.disabled):before {
 main nav > ul > li > ul li:hover:not(.disabled) a,
 main nav > ul > li > ul li:hover:not(.disabled) a * {
   color: #fff !important;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main nav > ul > li > ul li.active {
   background: #004fa5;
@@ -547,8 +627,8 @@ main nav > ul > li > ul li.active:before {
 main nav > ul > li > ul li.active a,
 main nav > ul > li > ul li.active a * {
   color: #fff !important;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main nav > ul > li > ul li.active ul {
   border: 1px solid #ced4d9;
@@ -580,14 +660,14 @@ main nav > ul > li > ul.no_latbars li:first-child:before {
 main nav > ul > li > ul.no_latbars li:last-child:after {
   display: none !important;
 }
-main nav > ul > li:hover:not(.disabled) {
+main nav > ul > li:hover:not(.disabled):not(.m_menu) {
   background: #0056a5;
   border-color: #0056a5;
 }
-main nav > ul > li:hover:not(.disabled) a * {
+main nav > ul > li:hover:not(.disabled):not(.m_menu) a * {
   color: #fff;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main nav > ul > li.active {
   background: #0056a5;
@@ -605,8 +685,8 @@ main nav > ul > li.active:before {
 }
 main nav > ul > li.active a * {
   color: #fff;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main nav > ul > li.active > ul:not(.disabled) {
   border: 1px solid #ced4d9;
@@ -614,13 +694,6 @@ main nav > ul > li.active > ul:not(.disabled) {
   left: 1px;
   width: 100%;
   margin: 11px -1px;
-  /*&:before{ 
-      content: "";
-      height: 0.62em;
-      width: calc(~"100% + 2px"); 
-      background: @medium-blue;
-      margin:-11px -1px 0;
-    }*/
 }
 main nav > ul > li.active > ul:not(.disabled) > li {
   display: inline-block;
@@ -632,6 +705,10 @@ main nav > ul > li.disabled a {
   opacity: 0.3;
   filter: alpha(opacity=30);
 }
+main nav > ul > li.m_menu {
+  opacity: 0;
+  display: none;
+}
 main form,
 main .form {
   width: 920px;
@@ -642,8 +719,8 @@ main .form fieldset [class^='w-'] {
   display: inline-block;
   vertical-align: middle;
   margin: 6px 6px 0 0;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main form fieldset [class^='w-'] label,
 main .form fieldset [class^='w-'] label {
@@ -666,8 +743,8 @@ main .vpResume a.btn {
   padding: 0 1em;
   height: 38px;
   margin: 10px 10px 20px;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
   z-index: 99;
 }
@@ -771,8 +848,8 @@ main .form fieldset a.ico-circle {
   background: #287bca;
   border-radius: 10px;
   border: 1px solid #287bca;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   position: absolute;
   top: 34px;
   right: -36px;
@@ -943,8 +1020,8 @@ main .form input[type=button] {
   font-size: 0.93em;
   font-weight: 400;
   cursor: pointer;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main form input[type=button]:hover,
 main .form input[type=button]:hover {
@@ -1044,8 +1121,8 @@ main div.table > div > div.tbl-container-01 {
   top: 0;
   left: 0;
   z-index: 100;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main div.table > div > div.tbl-container-01.hover {
   width: 475px;
@@ -1065,8 +1142,8 @@ main div.table > div > div.tbl-container-02 {
   top: 0;
   left: 196px;
   z-index: 99;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main div.table > div > div.tbl-container-02.hover {
   width: 877px;
@@ -1092,8 +1169,8 @@ main div.table > div > div.tbl-container-03 {
   top: 0;
   left: 645px;
   z-index: 98;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main div.table > div > div.tbl-container-03.hover {
   width: 655px;
@@ -1158,8 +1235,8 @@ main div.table dl dd ul {
 main div.table dl dd ul li,
 main div.table_min dl dd {
   background: #fff;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   padding: 5px;
   height: 38px;
   line-height: 14px;
@@ -1222,6 +1299,9 @@ main div.table_min * {
 }
 main div.table_min {
   border-left: 1px solid #929aa3;
+}
+main div.table_min .w-7_5 {
+  width: 7.5% !important;
 }
 main div.table_min .w-10 {
   width: 10% !important;
@@ -1349,6 +1429,9 @@ main div.table_print header * {
 main div.table_print header p {
   text-transform: uppercase;
 }
+main div.table_print header ul {
+  padding: 5px 0;
+}
 main div.table_print > ul {
   border: 2px solid #efeff0;
   padding: 10px;
@@ -1421,6 +1504,10 @@ main .vpResume .subtitle {
 main .vpResume.validacao {
   margin-top: 20px;
 }
+main .vpResume.validacao div.conditions {
+  padding: 10px;
+  margin: 10px 0;
+}
 main .vpResume a.btn {
   z-index: 99;
   top: -29px;
@@ -1492,6 +1579,8 @@ main .vpResume aside dl {
   width: 24.9%;
   display: inline-block;
   vertical-align: top;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main .vpResume aside dl.last {
   width: 48%;
@@ -1546,6 +1635,10 @@ main .vpResume form fieldset div.content div.disapproved div.w-300 {
 main .vpResume form fieldset div.content div.disapproved p.msg {
   margin: 25px 0 10px;
   padding: 10px 8px;
+}
+main .validacaoProposta {
+  width: 920px;
+  margin: 0 auto;
 }
 /*******************************
      					IE 9
@@ -1761,8 +1854,8 @@ main form.base div.w-410 > div.search span {
   width: 38px;
   height: 38px;
   text-align: center;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main form.base div.w-410 > div.search span:before {
   font-family: FontAwesome;
@@ -1807,8 +1900,8 @@ main form.base div.w-410 em {
   padding: 11px;
   display: block;
   background: #fafbfc;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main form.base div.w-410 em:hover {
   background: #287bca;
@@ -1909,8 +2002,8 @@ main form.finalidade_produto fieldset .l-bottom > ul {
 main form.finalidade_produto fieldset .l-bottom > ul li {
   display: inline-block;
   vertical-align: middle;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main form.finalidade_produto fieldset .l-bottom > ul li .checkbox label {
   margin-right: 0;
@@ -2008,8 +2101,8 @@ main form.prazo_preco_quant .content ul.inline div.checkbox {
 }
 main form.prazo_preco_quant .content ul.inline [class^='w-'] {
   margin-right: 20px;
-  -webkit-transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
-  transition: background 0.3s, border 0.3s, width 0.3s, height 0.3s, color 0.3s, opacity 0.3s, left 0.3s, top 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 main form.prazo_preco_quant .content > p.title {
   margin: 20px 10px 0;
@@ -2208,6 +2301,7 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
 @media screen and (max-width: 990px) {
   main {
     /* Fluxo de Aprovação */
+    /* Validação da Proposta Focus */
   }
   main nav > p {
     float: none;
@@ -2220,7 +2314,17 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
     width: calc(100% - 2px);
     z-index: 99;
   }
-  main nav > ul > li:first-child {
+  main nav > ul > li {
+    opacity: 0;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+  main nav > ul > li.active:before {
+    display: none;
+  }
+  main nav > ul > li.m_menu {
+    opacity: 1;
     display: block;
     background: #0056a5;
     width: 2.5em;
@@ -2228,13 +2332,21 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
     font-size: 1.2em;
     border: 0;
   }
-  main nav > ul > li:first-child a {
+  main nav > ul > li.m_menu a {
     color: #fff;
   }
-  main nav > ul > li {
-    display: none;
-    width: 100%;
-    text-align: center;
+  main nav > ul > li.m_menu a:before {
+    height: 2.37em;
+  }
+  main nav > ul > li.m_menu.active a:hover {
+    padding: 17px 14px;
+  }
+  main nav > ul > li.f_menu {
+    opacity: 1;
+    display: block;
+  }
+  main nav > ul > li > a:before {
+    height: 2.97em;
   }
   main nav > ul > li > ul {
     position: relative !important;
@@ -2254,7 +2366,7 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
     margin: 0 -1px 0 -2px !important;
   }
   main form {
-    margin: -10px 10px 0;
+    margin: -10px 10px 49px;
     width: calc(100% - 20px) !important;
   }
   main form fieldset legend,
@@ -2338,7 +2450,7 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
     margin: 0;
     width: 100%;
   }
-  main div.vpResume a.btn {
+  main div.vpResume a.btn.close {
     margin: 0;
     top: 0;
   }
@@ -2359,6 +2471,17 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
   }
   main div.vpResume span.little-break {
     margin-bottom: 0;
+  }
+  main div.vpResume.validacao {
+    margin: 20px 10px;
+    width: calc(100% - 20px);
+  }
+  main div.vpResume.validacao div.conditions {
+    padding: 10px;
+    margin: 10px 0;
+  }
+  main div.vpResume ul.info li {
+    width: 32% !important;
   }
   main form.comercial .content .close,
   main form.financeiro .content .close,
@@ -2393,6 +2516,10 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
   main div.table > div > div.tbl-container-03 {
     width: 655px;
   }
+  main div.table_min {
+    width: calc(100% - 20px);
+    margin: 0 auto;
+  }
   main ul.legends {
     width: auto;
   }
@@ -2401,6 +2528,10 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
   }
   main p.vp_info {
     display: block;
+  }
+  main .validacaoProposta {
+    width: 100%;
+    margin: 0;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2476,10 +2607,16 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
     width: calc(100% - 7px) !important;
   }
   main div.vpResume div.table_min dl {
-    width: 33% !important;
+    /*width: 33% !important;*/
+  }
+  main div.vpResume aside dl {
+    width: 48% !important;
   }
   main ul.legends li:first-child {
     display: block;
+  }
+  main .validacaoProposta div.table_min dl {
+    width: 25% !important;
   }
 }
 @media screen and (max-width: 650px) {
@@ -2513,6 +2650,51 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
   }
   main div.vpResume div.table_min dl {
     width: 50% !important;
+  }
+  main div.vpResume aside p {
+    width: 70%;
+  }
+  main div.vpResume aside em {
+    margin-top: 0;
+    text-align: left;
+  }
+  main div.vpResume aside em strong {
+    display: inline-block;
+  }
+  main div.vpResume aside dl {
+    width: auto;
+  }
+  main div.vpResume div.base div.similar aside dl {
+    width: 100% !important;
+  }
+  main div.vpResume div.prazo_preco_qnt aside.colors dl,
+  main div.vpResume.validacao div.conditions aside.colors dl {
+    width: 28% !important;
+  }
+  main div.vpResume div.prazo_preco_qnt aside.colors dl:first-child,
+  main div.vpResume.validacao div.conditions aside.colors dl:first-child {
+    width: 70% !important;
+  }
+  main div.vpResume.validacao .btnsActions {
+    float: none;
+    text-align: center;
+    padding: 46px 0 0;
+  }
+  main div.vpResume.validacao .btnsActions a {
+    width: 235px;
+    top: 0;
+    float: none;
+    margin: 10px auto;
+  }
+  main div.vpResume.validacao div.conditions aside.colors dl.last {
+    width: 100% !important;
+  }
+  main div.vpResume.validacao ul.info li {
+    padding-bottom: 5px;
+  }
+  main div.vpResume.validacao ul.info li strong {
+    display: block;
+    padding-bottom: 3px;
   }
   main form.comercial .content > div ul li.block textarea,
   main form.financeiro .content > div ul li.block textarea,
@@ -2579,6 +2761,9 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
   main form.base div[class^='w-'] {
     width: 100% !important;
   }
+  main form.base div[class^='w-'] .btns a {
+    width: calc(50% - 4px) !important;
+  }
   main form.base ul li {
     display: block;
     padding-bottom: 10px;
@@ -2620,8 +2805,26 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
   main form.similaridade div div[class^='w-'] {
     width: 100% !important;
   }
+  main div.vpResume aside dl {
+    width: 100%;
+  }
   main div.vpResume div.table_min dl {
     width: 100% !important;
+  }
+  main div.vpResume div.table_min.no_latbars dl dd {
+    border-left: 2px solid #e7e7e8;
+    border-right: 2px solid #e7e7e8;
+  }
+  main div.vpResume div.similaridade aside dl {
+    width: 98% !important;
+  }
+  main div.vpResume.validacao ul.info li {
+    display: block;
+    width: 100% !important;
+  }
+  main div.vpResume.validacao form.finalResult div.approved ul.w-300 {
+    width: 100% !important;
+    padding: 0 15px 15px 0;
   }
   main div.table {
     height: 300px;
@@ -2637,5 +2840,8 @@ main form.financeiro .content .l-bottom ul li.commercialConditions > ul div.radi
   main p.vp_info strong {
     font-weight: 700;
     color: #004fa5;
+  }
+  main .validacaoProposta div.table_min dl {
+    width: 50% !important;
   }
 }
