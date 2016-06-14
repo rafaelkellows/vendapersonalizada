@@ -16,8 +16,8 @@ $(function(){
 	        		$(this).closest('ul').find('>li').not('.m_menu').toggleClass('f_menu');
 	        	});
 	        	//First Level
-	        	$('main nav > ul > li').not(".disabled,.m_menu").find(' > a').click(function() {
-	        		$('main nav > ul li').removeClass('active');
+	        	$('main nav > ul > li').not(".disabled").not(".m_menu").find(' > a').click(function() {
+	        		$('main nav > ul li').not(".m_menu").removeClass('active');
 	        		$(this).parent().addClass('active');
 	        		if(
 	        			$(this).attr('data-url')!=undefined && 

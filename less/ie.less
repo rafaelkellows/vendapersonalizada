@@ -6,11 +6,18 @@
 /*******************************
      					IE 8
 *******************************/
+.borderRadius{ 
+  behavior:url(pie/PIE.htc);
+}
 .ie8{
   nav > ul li{
+    span.before{ width: 100.15%; }
     > a span{
-      behavior:url(pie/PIE.htc);
+      behavior:url(pie/PIE.htc); 
     }
+  }
+  main div.table dl dd ul li span, main ul.legends li span, main a.toTop, main div.table > div > div{
+    .borderRadius;
   }
 
   form{
