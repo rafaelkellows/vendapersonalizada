@@ -168,40 +168,42 @@ main{
   /* SECTION */
   section{
     div.inicial{
-      text-align: center; padding-top: 20px;
+      padding: 10px;
+      h3{
+        .txt-sets(left,#8d9195,1.3,700); padding-bottom: 20px; 
+      }
       dl{
-        .d-inline(top); width: 270px; margin: 0 4px 10px;
+        .d-inline(top); width: 100%; margin: 0 0 15px; font-size: 95%;
         dt{
-          background-color: #0056a5;
+          background-color: #fafbfc;
           &:before{
             content: ''; height: 54px; .d-inline(middle);
           }
           a{
-            color: #fff;
+            color: @medium-blue;
             font-size: 1.125em;
             box-sizing: border-box;
             padding: 10px;
             font-weight: 700;
             line-height: 0.95em;
-            height: 54px;
             .d-inline(middle);
           }
         }
         dd{
-          border: 1px solid #ced4d9;
-          background-color: #fafbfc;
           box-sizing: border-box;
           padding: 10px;
           ul{
             width: calc(~"100% - 4px");
             li {
-              padding: 8px 0;
+              list-style-type: circle;
+              margin-left: 20px;
+              padding: 4px 0;
               .error strong{ color: #d12527; }
             }
             a{ 
               color: #8d9195; .transit(0.3s);
               &:hover{
-                opacity:0.7;
+                color: #287bca;
               }
             }
           }
@@ -342,6 +344,20 @@ main{
             span{
               .txt-sets(center,@medium-blue,0.75,700);
             }
+          }
+          em{
+            position: absolute;
+            right: 3px;
+            top: -13px;
+            border-radius: 20px;
+            width: 20px;
+            height: 20px;
+            background: brown;
+            color: #fff;
+            line-height: 20px;
+            font-size: 0.9em;
+            text-align: center;
+            font-weight: 700;
           }
           &:before{
             content: "";
@@ -786,7 +802,7 @@ main{
           width: 100%; border-right:1px solid #929aa3; .d-inline(top); margin-right: -3px;
           li{
             background:#fff; .transit(0.3s); padding: 5px; height: 38px; line-height: 14px; cursor: crosshair; .txt-sets(left,#0d183d,0.75,400); letter-spacing: -0.08em; border-bottom: 1px solid #e7e7e8;
-            &:first-child{ 
+            &.first{ 
               .tbl-dark-gray; .txt-sets(left,#fff,0.79,700); letter-spacing: -0.02em; vertical-align: middle;
               &:before{ vertical-align:top; }
             }
@@ -814,10 +830,6 @@ main{
           &.t-center *{
             text-align: center;
           }
-          &:first-child{
-            li:first-child{
-            }
-          }
           &:last-child{
             border: none;
           }
@@ -825,7 +837,7 @@ main{
       }
       &.lightness{ 
         .tbl-middle-gray;
-        dd ul li:first-child{
+        dd ul li.first{
           .tbl-middle-gray;
         }
       }
@@ -948,13 +960,14 @@ main{
   /* VP RESUME */
   .vpResume{
     width: 950px; margin: 49px auto;
-    span.little-break{ clear:both; margin-bottom:-40px; }
+    span.little-break{ clear:both; /*margin-bottom:-40px; */}
     .subtitle{ .txt-sets(left,#535659,0.9375,700); }
     &.validacao{
       margin-top: 20px;
       div.conditions{
         padding: 10px; margin: 10px 0;
       }
+      div.table_min, div.table_print{ top: -40px; }
     }
     a.btn{
       z-index: 99; top:-29px; margin: 10px 10px 7px 0; color: #fff;
@@ -973,9 +986,9 @@ main{
     }
     .btnsActions{
       float: right;
-      text-align: right;
+      text-align: right; top: -29px;
       a{ 
-        float: left; margin: 10px 0px 0 10px;
+        float: left; margin: 10px 0px 0 10px; top:0;
       } 
     }
     >h2{ display: none; }
@@ -1000,7 +1013,7 @@ main{
       }
     }
     ul.info{
-      padding: 10px;
+      padding: 10px; 
       li{
         width: 22.5%;
         &.w-60{ width: 54%; }
@@ -1008,6 +1021,9 @@ main{
         strong{ font-size: 0.8125rem; }
         *{ color: #000; }
       }
+    }
+    > ul.info{
+      margin-top: -40px;
     }
     *{ color: #535658;  }
     form{

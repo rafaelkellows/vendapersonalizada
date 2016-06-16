@@ -268,17 +268,24 @@ main a.toTop i {
   outline: none;
 }
 main section div.inicial {
-  text-align: center;
-  padding-top: 20px;
+  padding: 10px;
+}
+main section div.inicial h3 {
+  text-align: left;
+  color: #8d9195;
+  font-size: 1.3em;
+  font-weight: 700;
+  padding-bottom: 20px;
 }
 main section div.inicial dl {
   display: inline-block;
   vertical-align: top;
-  width: 270px;
-  margin: 0 4px 10px;
+  width: 100%;
+  margin: 0 0 15px;
+  font-size: 95%;
 }
 main section div.inicial dl dt {
-  background-color: #0056a5;
+  background-color: #fafbfc;
 }
 main section div.inicial dl dt:before {
   content: '';
@@ -287,19 +294,16 @@ main section div.inicial dl dt:before {
   vertical-align: middle;
 }
 main section div.inicial dl dt a {
-  color: #fff;
+  color: #0056a5;
   font-size: 1.125em;
   box-sizing: border-box;
   padding: 10px;
   font-weight: 700;
   line-height: 0.95em;
-  height: 54px;
   display: inline-block;
   vertical-align: middle;
 }
 main section div.inicial dl dd {
-  border: 1px solid #ced4d9;
-  background-color: #fafbfc;
   box-sizing: border-box;
   padding: 10px;
 }
@@ -307,7 +311,9 @@ main section div.inicial dl dd ul {
   width: calc(100% - 4px);
 }
 main section div.inicial dl dd ul li {
-  padding: 8px 0;
+  list-style-type: circle;
+  margin-left: 20px;
+  padding: 4px 0;
 }
 main section div.inicial dl dd ul li .error strong {
   color: #d12527;
@@ -318,7 +324,7 @@ main section div.inicial dl dd ul a {
   transition: all 0.3s;
 }
 main section div.inicial dl dd ul a:hover {
-  opacity: 0.7;
+  color: #287bca;
 }
 main section div.inicial dl dd p.error {
   text-align: center;
@@ -500,6 +506,20 @@ main nav > ul > li > a p span {
   text-align: center;
   color: #0056a5;
   font-size: 0.75em;
+  font-weight: 700;
+}
+main nav > ul > li > a em {
+  position: absolute;
+  right: 3px;
+  top: -13px;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  background: brown;
+  color: #fff;
+  line-height: 20px;
+  font-size: 0.9em;
+  text-align: center;
   font-weight: 700;
 }
 main nav > ul > li > a:before {
@@ -1269,7 +1289,7 @@ main div.table_min dl dd {
   letter-spacing: -0.08em;
   border-bottom: 1px solid #e7e7e8;
 }
-main div.table dl dd ul li:first-child {
+main div.table dl dd ul li.first {
   background-color: #a3acb5;
   text-align: left;
   color: #ffffff;
@@ -1278,7 +1298,7 @@ main div.table dl dd ul li:first-child {
   letter-spacing: -0.02em;
   vertical-align: middle;
 }
-main div.table dl dd ul li:first-child:before {
+main div.table dl dd ul li.first:before {
   vertical-align: top;
 }
 main div.table dl dd ul li.hover {
@@ -1319,7 +1339,7 @@ main div.table dl dd ul:last-child {
 main div.table dl.lightness {
   background-color: #b5bdc4;
 }
-main div.table dl.lightness dd ul li:first-child {
+main div.table dl.lightness dd ul li.first {
   background-color: #b5bdc4;
 }
 main div.table *,
@@ -1522,7 +1542,7 @@ main .vpResume {
 }
 main .vpResume span.little-break {
   clear: both;
-  margin-bottom: -40px;
+  /*margin-bottom:-40px; */
 }
 main .vpResume .subtitle {
   text-align: left;
@@ -1536,6 +1556,10 @@ main .vpResume.validacao {
 main .vpResume.validacao div.conditions {
   padding: 10px;
   margin: 10px 0;
+}
+main .vpResume.validacao div.table_min,
+main .vpResume.validacao div.table_print {
+  top: -40px;
 }
 main .vpResume a.btn {
   z-index: 99;
@@ -1556,10 +1580,12 @@ main .vpResume a.btn.prev span {
 main .vpResume .btnsActions {
   float: right;
   text-align: right;
+  top: -29px;
 }
 main .vpResume .btnsActions a {
   float: left;
   margin: 10px 0px 0 10px;
+  top: 0;
 }
 main .vpResume > h2 {
   display: none;
@@ -1632,6 +1658,9 @@ main .vpResume ul.info li strong {
 main .vpResume ul.info li * {
   color: #000;
 }
+main .vpResume > ul.info {
+  margin-top: -40px;
+}
 main .vpResume * {
   color: #535658;
 }
@@ -1687,24 +1716,36 @@ main .validacaoProposta {
 .ie8 main div.table dl dd ul li span,
 .ie8 main ul.legends li span,
 .ie8 main a.toTop,
-.ie8 main div.table > div > div {
+.ie8 main div.table > div > div,
+.ie8 main nav > ul > li > a em {
   behavior: url(pie/PIE.htc);
 }
-.ie8 form fieldset a.ico-circle {
+.ie8 main div.table_min dl dt,
+.ie8 main div.table dl dt {
+  letter-spacing: -0.05em;
+}
+.ie8 form a.ico-circle,
+.ie8 .form a.ico-circle {
   behavior: url(pie/PIE.htc);
 }
-.ie8 form fieldset a.ico-circle i.fa-plus {
+.ie8 form a.ico-circle i.fa-plus,
+.ie8 .form a.ico-circle i.fa-plus {
   margin-top: -3px;
 }
-.ie8 form fieldset a.ico-circle i.fa-minus {
+.ie8 form a.ico-circle i.fa-minus,
+.ie8 .form a.ico-circle i.fa-minus {
   margin-left: -1px;
 }
-.ie8 form fieldset .radio label:before,
-.ie8 form fieldset .checkbox label:before {
+.ie8 form .radio label:before,
+.ie8 .form .radio label:before,
+.ie8 form .checkbox label:before,
+.ie8 .form .checkbox label:before {
   display: none;
 }
-.ie8 form fieldset .radio label .before,
-.ie8 form fieldset .checkbox label .before {
+.ie8 form .radio label .before,
+.ie8 .form .radio label .before,
+.ie8 form .checkbox label .before,
+.ie8 .form .checkbox label .before {
   content: "";
   display: inline-block;
   width: 16px;
@@ -1716,14 +1757,17 @@ main .validacaoProposta {
   background-color: #f3f3f3;
   border: 1px solid #e6e7e8;
 }
-.ie8 form fieldset .radio label .before {
+.ie8 form .radio label .before,
+.ie8 .form .radio label .before {
   border-radius: 8px;
   behavior: url(pie/PIE.htc);
 }
-.ie8 form fieldset .checkbox label .before {
+.ie8 form .checkbox label .before,
+.ie8 .form .checkbox label .before {
   border-radius: 0;
 }
-.ie8 form fieldset .radio label.checked span:before {
+.ie8 form .radio label.checked span:before,
+.ie8 .form .radio label.checked span:before {
   font-family: FontAwesome;
   content: "\f111";
   font-size: 0.91em;
@@ -1734,7 +1778,8 @@ main .validacaoProposta {
   top: 0px;
   left: 1px;
 }
-.ie8 form fieldset .checkbox label.checked span:before {
+.ie8 form .checkbox label.checked span:before,
+.ie8 .form .checkbox label.checked span:before {
   font-family: FontAwesome;
   font-weight: normal;
   content: "\f00c";
@@ -1832,7 +1877,7 @@ main form.segmentacao fieldset .content .l-both ul li p {
   width: calc(100% - 340px);
 }
 main form.segmentacao fieldset .content .l-both ul li ul {
-  width: 623px;
+  width: 622px;
   box-sizing: border-box;
   border: 1px solid #d7d7d7;
   background: #ebeced;
@@ -2190,11 +2235,14 @@ main form.similaridade .content .l-bottom.commercialConditions ul.w-210,
 main form.prazo_preco_quant .content .l-bottom.commercialConditions ul.w-300,
 main form.prazo_preco_quant .content .l-bottom.commercialConditions ul.w-220,
 main form.financeiro .content .l-bottom ul li.commercialConditions ul.w-300,
-main form.financeiro .content .l-bottom ul li.commercialConditions ul.w-210 {
+main form.financeiro .content .l-bottom ul li.commercialConditions ul.w-220 {
   border-left: 2px solid #ced4d9;
   padding-left: 20px;
   margin-left: -20px;
-  /*height: 30px;*/
+}
+main form.similaridade .content .l-bottom:nth-child(3) ul.w-220,
+main form.similaridade .content .l-bottom.commercialConditions ul.w-220 {
+  width: 230px;
 }
 main form.similaridade .content .l-bottom:nth-child(3) > ul,
 main form.similaridade .content .l-bottom.commercialConditions > ul,
@@ -2214,7 +2262,7 @@ main form.similaridade .content .l-bottom.priceChange .checkbox {
   padding: 10px 0;
 }
 main form.inicial {
-  width: 926px;
+  width: 927px;
 }
 main form.inicial .content div.w-335.block {
   margin-right: 50px;

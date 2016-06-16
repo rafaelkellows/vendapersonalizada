@@ -135,6 +135,7 @@ $(function(){
 	        ie8 : function(){
 	        	if( $("html").hasClass("ie8") ) { 
 	        		$('.radio label, .checkbox label').prepend('<span class="before"></span>').click(function(){
+	        			if($(this).prev('input').attr('disabled')){return;}
 	        			if( $(this).parent().hasClass('radio') ){
 	        				var _i_name = $(this).prev('input').attr('name');
 	        				$('input[name='+_i_name+']').prop('checked',false).next('label').removeClass('checked');
@@ -142,6 +143,13 @@ $(function(){
 	        			$(this).toggleClass('checked');
 	        		});
 	        		$('div.table_min dl dt, div.table_min dl dd').prepend('<span class="before"></span>');
+
+	        		/* Looping */
+	        		$('input').each(function(){
+	        			if($(this).attr('checked')){
+	        				$(this).next('label').addClass('checked');
+	        			}
+	        		});
 	        	};
 	        },
 	        segmentacao:function(){
