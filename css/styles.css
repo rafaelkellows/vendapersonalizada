@@ -1539,6 +1539,14 @@ main p.vp_info strong {
 main .vpResume {
   width: 950px;
   margin: 49px auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+main .vpResume.twoRows {
+  margin: 91px auto 49px;
+}
+main .vpResume.noRows {
+  margin: 11px auto 49px;
 }
 main .vpResume span.little-break {
   clear: both;

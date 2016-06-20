@@ -959,7 +959,13 @@ main{
   }
   /* VP RESUME */
   .vpResume{
-    width: 950px; margin: 49px auto;
+    width: 950px; margin: 49px auto; .transit(0.3s);
+    &.twoRows{
+      margin: 91px auto 49px;
+    }
+    &.noRows{
+      margin: 11px auto 49px;
+    }
     span.little-break{ clear:both; /*margin-bottom:-40px; */}
     .subtitle{ .txt-sets(left,#535659,0.9375,700); }
     &.validacao{
